@@ -1,0 +1,44 @@
+{
+  "name": "youtube",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "frontend-install": "npm install --prefix frontend",
+    "start": "node server.js",
+    "server": "nodemon server.js --exec babel-node --presets babel-preset-env",
+    "frontend": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.19.2",
+    "http-proxy-middleware": "^1.0.2",
+    "jwt-decode": "^2.2.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.0",
+    "bcrypt": "^3.0.0",
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^7.4.2",
+    "mongodb": "^3.1.6",
+    "mongoose": "^5.2.15",
+    "nodemon": "^1.18.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.17.5"
+  },
+  "author": "",
+  "license": "ISC"
+}
