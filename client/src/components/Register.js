@@ -5,7 +5,7 @@ class Register extends Component {
   constructor() {
     super()
     this.state = {
-      first_name: '',
+      username: '',
       last_name: '',
       email: '',
       password: '',
@@ -23,7 +23,7 @@ class Register extends Component {
     e.preventDefault()
 
     const newUser = {
-      first_name: this.state.first_name,
+      username: this.state.username,
       last_name: this.state.last_name,
       email: this.state.email,
       password: this.state.password
@@ -46,9 +46,9 @@ class Register extends Component {
                 <input
                   type="text"
                   className="form-control"
-                  name="first_name"
+                  name="username"
                   placeholder="Enter your first name"
-                  value={this.state.first_name}
+                  value={this.state.username}
                   onChange={this.onChange}
                 />
               </div>
