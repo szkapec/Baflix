@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const register = newUser => {
   return axios
-    .post('http://localhost:5000/users/register', {
+    .post('https://fierce-sands-71271.herokuapp.com/register', {
       first_name: newUser.first_name,
       last_name: newUser.last_name,
       email: newUser.email,
@@ -15,7 +15,7 @@ export const register = newUser => {
 
 export const login = user => {
   return axios
-    .post('http://localhost:5000/users/login', {
+    .post('https://fierce-sands-71271.herokuapp.com/users/login', {
       email: user.email,
       password: user.password
     })
@@ -30,7 +30,7 @@ export const login = user => {
 
 export const getProfile = user => {
   return axios
-    .get('http://localhost:5000/users/profile', {
+    .get('https://fierce-sands-71271.herokuapp.com/profile', {
       //headers: { Authorization: ` ${this.getToken()}` }
     })
     .then(response => {
