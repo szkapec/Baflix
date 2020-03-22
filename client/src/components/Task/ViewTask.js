@@ -62,6 +62,7 @@ export default class ViewTask extends Component {
           if(poj.username===this.state.username){
             return <Exercise exercise={poj} user={this.state.username} deleteExercise={this.deleteExercise} key={poj._id}/>
           } 
+          return null
 
         })
     }

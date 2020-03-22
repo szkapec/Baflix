@@ -61,7 +61,7 @@ class Register extends Component {
 
       })
     if(this.state.email.length>5) {
-      const regex = new RegExp('^[a-zA-Z0-9_.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}');
+      const regex = new RegExp('^[a-zA-Z0-9_.-]+@[a-zA-Z0-9.-]+[a-zA-Z]{2,3}');
 
       if(regex.test(this.state.email)){
         this.setState({comMail:'', flaga:true})

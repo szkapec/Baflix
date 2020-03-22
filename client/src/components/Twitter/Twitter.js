@@ -199,13 +199,13 @@ export default class Twitter extends Component {
                   <input style={{backgroundColor: '#2980b9', borderRadius: '20px', fontWeight: '700', width: '150px'}} type="submit" value="Dodaj twitta" className="btn" />
             </div> 
               <div style={{backgroundColor: '#2980b9', borderRadius: '50%', width: '50px',height: '50px', position:'absolute', bottom: '20px', right: '20px'}} >
-                <img style={{margin: '12px 12px'}} src={plus} onClick={this.onChangePlus}></img>
+                <img style={{margin: '12px 12px'}} src={plus} alt="plusowo" onClick={this.onChangePlus}></img>
              </div>
               </StyledWrapper>
              </form>
              
               <div style={{backgroundColor: '#2980b9', borderRadius: '50%',border: '1px solid black', width: '50px',height: '50px', position: 'fixed', left: '20px', bottom: '20px'}} >
-              <img style={{margin: '12px 12px',}} src={plus} onClick={this.onChangePlus}></img> 
+              <img style={{margin: '12px 12px',}} src={plus} alt="plus" onClick={this.onChangePlus}></img> 
              </div>
    
              {this.viewsList()}
