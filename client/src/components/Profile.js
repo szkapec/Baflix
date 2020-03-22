@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import jwt_decode from 'jwt-decode'
+import jwt_decode from 'jwt-decode';
 
 class Profile extends Component {
   constructor() {
@@ -13,13 +13,20 @@ class Profile extends Component {
   }
 
   componentDidMount() {
-    const token = localStorage.usertoken
-    const decoded = jwt_decode(token)
-    this.setState({
-      username: decoded.username,
-      last_name: decoded.last_name,
-      email: decoded.email
-    })
+    if(!localStorage.usertoken) {
+      return null;
+    } 
+    else {
+      const token = localStorage.usertoken
+      const decoded = jwt_decode(token)
+      this.setState({
+        username: decoded.username,
+        last_name: decoded.last_name,
+        email: decoded.email
+      })
+      
+    }
+
   }
 
   render() {
@@ -27,20 +34,20 @@ class Profile extends Component {
       <div className="container">
         <div className="jumbotron mt-5">
           <div className="col-sm-8 mx-auto">
-            <h1 className="text-center">PROFILE</h1>
+            <h4 className="text-center">Profil użytkownika</h4>
           </div>
-          <table className="table col-md-6 mx-auto">
+          <table style={{fontSize:'12px'}} className="table col-md-6 mx-auto">
             <tbody>
               <tr>
-                <td>Nazwa</td>
+                <td>Nazwa: </td>
                 <td>{this.state.username}</td>
               </tr>
               <tr>
-                <td>Last Name</td>
+                <td>Imię: </td>
                 <td>{this.state.last_name}</td>
               </tr>
               <tr>
-                <td>Email</td>
+                <td>Email:</td>
                 <td>{this.state.email}</td>
               </tr>
             </tbody>

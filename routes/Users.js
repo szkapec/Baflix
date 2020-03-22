@@ -51,11 +51,15 @@ users.post('/register', (req, res) => {
 
 
 users.post('/login', (req, res) => {
+
+
   User.findOne({
     email: req.body.email
   })
     .then(user => {
+      console.log("JEST")
       if (user) {
+        console.log("Uzytkownik user")
         if (bcrypt.compareSync(req.body.password, user.password)) {
           // Passwords match
           const payload = {
@@ -68,6 +72,7 @@ users.post('/login', (req, res) => {
             expiresIn: 1440
           })
           res.send(token)
+          console.log("Zalogowano?")
         } else {
           // Passwords don't match
           res.json({ error: 'User does not exist' })
@@ -80,6 +85,8 @@ users.post('/login', (req, res) => {
       res.send('error: ' + err)
     })
 })
+
+
 
 users.get('/profile', (req, res) => {
   var decoded = jwt.verify(req.headers['authorization'], process.env.SECRET_KEY)
