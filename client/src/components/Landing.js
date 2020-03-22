@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Comunicator from './Comunicator/Comunicator'
 
 const Zalogowany = () => {
 

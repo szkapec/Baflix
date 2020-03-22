@@ -44,7 +44,7 @@ const Exercise = props => {
                              <StyledText> <b>Treść: </b>  {props.exercise.description}</StyledText>
                              {/* <div>Czas: {props.exercise.duration}</div> */}
                             {/* <div> Data {props.exercise.date.substring(0,10)}</div> */}
-                            <StyledLink> <Link style={{textDecoration:'none',color:'black'}} to={"/edit/"+props.exercise._id}>Edytuj</Link> | <a  style={{textDecoration:'none',color:'black', }} href="#" onClick={() => { props.deleteExercise(props.exercise._id) }}>Usuń</a></StyledLink>
+                            <StyledLink> <Link style={{textDecoration:'none',color:'black'}} to={"/edit/"+props.exercise._id}>Edytuj</Link> | <a  style={{textDecoration:'none',color:'black', }} href="/viewtask" onClick={() => { props.deleteExercise(props.exercise._id) }}>Usuń</a></StyledLink>
                         </StyledCard>
                     </>
             )}

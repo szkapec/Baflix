@@ -1,6 +1,5 @@
 import React from 'react';
-import axios from 'axios';
-import styled,  { css }  from "styled-components";
+import styled  from "styled-components";
 import twitter from '../../assets/twitter.png';
 import {Link} from 'react-router-dom';
 
@@ -23,16 +22,6 @@ padding: 10px 10px;
 background-color: #2980b9;
 `
 
-const StyledText = styled.div`
-    padding: 10px 10px;
-    
-    
-`
-const StyledLink = styled.a`
-    text-decoration: none;
-    color: grey;
-
-`
 const StyledTextarea = styled.div`
     padding: 10px 10px;
     box-shadow: 0 0 10px grey;
