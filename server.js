@@ -31,8 +31,8 @@ var Users = require('./routes/Users')
 app.use('/users', Users)
 
 
-// const exercisesRouter = require('./routes/Exercises');
-// app.use('/exercises', exercisesRouter); 
+var ExercisesRouter = require('./routes/Exercises');
+app.use('/exercises', ExercisesRouter); 
 
 
 // const userRouter = require('./routes/users');
