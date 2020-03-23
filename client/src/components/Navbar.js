@@ -26,7 +26,7 @@ class Landing extends Component {
 
     const userLink = (
       <ul className="navbar-nav">
-          <li className="nav-item">
+          {/* <li className="nav-item">
               <Link to="/chat" className="nav-link">
                 Chat
               </Link>
@@ -47,7 +47,7 @@ class Landing extends Component {
             <Link to="/twitter" className="nav-link">
                 Twitter
               </Link>
-          </li>
+          </li> */}
 
         <li className="nav-item">
           <Link to="/profile" className="nav-link">
