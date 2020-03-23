@@ -43,8 +43,8 @@ app.use('/users', Users)
 var messages = require('./routes/Messages');
 app.use('/message', messages)
 
-// var twitters = require('./routes/Twitter');
-// app.use('/twitter', twitters)
+var twitters = require('./routes/Twitter');
+app.use('/twitter', twitters)
 
 
 if(process.env.NODE_ENV === "production") {
