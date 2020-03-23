@@ -34,9 +34,9 @@ app.use('/users', Users)
 
 
 
-const exercisesRouter = require('./routes/Exercises');
+// const exercisesRouter = require('./routes/Exercises');
 // const userRouter = require('./routes/users');
-app.use('/exercises', exercisesRouter); 
+// app.use('/exercises', exercisesRouter); 
 // app.use('/users', userRouter);
 
 
