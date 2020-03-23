@@ -38,7 +38,7 @@ messages.post('/add', (req,res) => {
  
     });
     newExercise.save()
-         .then(()=> res.json('Exercises added!!!'))
+         .then(()=> res.json('Messages added!!!'))
          .catch(err=> res.status(400).json('Error: ' + err))
         }
     })

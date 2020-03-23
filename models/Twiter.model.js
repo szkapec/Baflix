@@ -11,4 +11,4 @@ const twitterSchema = new Schema({
  {
     timestamps: true,
 });
-module.exports = TwitterModel = mongoose.model("Twitter", twitterSchema); //nazwa tabeli Exercise
+module.exports = Twitter = mongoose.model("Twitter", twitterSchema); //nazwa tabeli Exercise

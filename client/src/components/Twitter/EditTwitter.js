@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
+import jwt_decode from 'jwt-decode';
+
+
 export default class EditTwitter extends Component {
 
     constructor(props){
@@ -17,10 +20,11 @@ export default class EditTwitter extends Component {
 
     componentDidMount() {
 
+        
+
         axios.get('/twitter/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
-                    username: response.data.username,
                     description: response.data.description,
                     link: response.data.link,
                     title: response.data.title,
@@ -28,14 +32,19 @@ export default class EditTwitter extends Component {
             })
             .catch(error => console.log(error))
 
-
+            if(!localStorage.usertoken) {
+                return null;
+              } 
+              else {
+                const token = localStorage.usertoken
+                const decoded = jwt_decode(token)
+                this.setState({
+                  username: decoded.username,
+                })
+              }
     }
 
-    onChangeUsername=(e)=> {
-        this.setState({
-            username: e.target.value
-        })
-    }
+
 
     onChangeDescription=(e)=> {
         this.setState({
@@ -61,10 +70,10 @@ export default class EditTwitter extends Component {
             link: this.state.link,
             title: this.state.title,
         }
-
+console.log(this.state.username)
         axios.post('/twitter/updateTwitter/' + this.props.match.params.id, twitters)
         .then(res => console.log(res));
-        window.location = '/twitter'; //na strone glowna
+        // window.location = '/twitter'; //na strone glowna
     }
 
 
@@ -79,7 +88,6 @@ export default class EditTwitter extends Component {
                   <input  type="text"
                       required
                       className="form-control"
-                      value={this.state.description}
                       onChange={this.onChangeDescription}
                       />
                 </div>
@@ -88,14 +96,13 @@ export default class EditTwitter extends Component {
                   <input 
                       type="text" 
                       className="form-control"
-                      value={this.state.title}
                       onChange={this.onChangeTitle}
                       />
                 </div>
                 <div className="form-group">
                 <label>link: </label>
                 <div>
-                  <input type="text" className="form-control" value={this.state.link} onChange={this.onChangeLink}></input>
+                  <input type="text" className="form-control"  onChange={this.onChangeLink}></input>
                 </div>
               </div>
       
