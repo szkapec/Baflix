@@ -20,7 +20,9 @@ const mongoURI = 'mongodb+srv://admin1:admin@cluster0-rqbof.mongodb.net/test?ret
 mongoose
   .connect(
     mongoURI,
-    { useNewUrlParser: true }
+    { useNewUrlParser: true,
+      useUnifiedTopology: true,
+      }
   )
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err))
@@ -32,7 +34,7 @@ app.use('/users', Users)
 
 
 
-const exercisesRouter = require('./routes/exercises');
+const exercisesRouter = require('./routes/Exercises');
 // const userRouter = require('./routes/users');
 app.use('/exercises', exercisesRouter); 
 // app.use('/users', userRouter);
