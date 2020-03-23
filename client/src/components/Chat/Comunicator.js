@@ -64,9 +64,10 @@ onSubmit=(e)=>{
 }
 
     exercisesList = () => {
+        console.log(this.state.exercises.length>0)
         var description = []
         var username = [];
-        this.state.exercises.map((poj,number) => {
+        this.state.exercises.length>0&&this.state.exercises.map((poj,number) => {
            description.push(poj.description)
            username.push(poj.username)
         })
