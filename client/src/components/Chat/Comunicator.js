@@ -60,7 +60,7 @@ onSubmit=(e)=>{
 
     axios.post('/message/add', message)
     .then(res => console.log(res.data))
-    window.location = '/'; //na strone glowna
+    // window.location = '/'; //na strone glowna
 }
 
     exercisesList = () => {

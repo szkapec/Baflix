@@ -34,7 +34,7 @@ export default class Comunicator extends Component {
           }
 
 
-        axios.get('/message/')
+        axios.get('http://localhost:5000/message/')
             .then(response => {
                 this.setState({
                     exercises: response.data
@@ -59,9 +59,9 @@ onSubmit=(e)=>{
         
     }
 
-    axios.post('/message/add', message)
+    axios.post('http://localhost:5000/message/add', message)
     .then(res => console.log(res.data))
-    window.location = '/'; //na strone glowna
+    // window.location = '/'; //na strone glowna
 }
 
     exercisesList = () => {
@@ -96,7 +96,7 @@ onSubmit=(e)=>{
 
             <div>
             <br></br>
-              <h3>Napisz wiadomość</h3>
+              <h3>Napisz wiadomośćs</h3>
               <form onSubmit={this.onSubmit}>
                 <div className="form-group"> 
                   <label>Wiadomość: </label>

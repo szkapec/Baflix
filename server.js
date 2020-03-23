@@ -40,8 +40,8 @@ app.use('/users', Users)
 // app.use('/users', userRouter);
 
 
-// var messages = require('./routes/Messages');
-// app.use('/message', messages)
+var messages = require('./routes/Messages');
+app.use('/message', messages)
 
 // var twitters = require('./routes/Twitter');
 // app.use('/twitter', twitters)
