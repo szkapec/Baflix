@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const register = newUser => {
   return axios
-    .post('/users/register', { //    .post('/users/register', {     /////////git add . ///git commit -m 'assdda' ///// git push heroku master xD
+    .post('http://localhost:5000/users/register', { //    .post('/users/register', {     /////////git add . ///git commit -m 'assdda' ///// git push heroku master xD
       username: newUser.username,
       last_name: newUser.last_name,
       email: newUser.email,
@@ -15,7 +15,7 @@ export const register = newUser => {
 
 export const login = user => {
   return axios
-    .post('/users/login', { //.post('/users/login', {
+    .post('http://localhost:5000/users/login', { //.post('/users/login', {
       email: user.email,
       password: user.password
     })
@@ -30,7 +30,7 @@ export const login = user => {
 
 export const getProfile = user => {
   return axios
-    .get('/users/profile', { // .get('/users/profile', {
+    .get('http://localhost:5000/users/profile', { // .get('/users/profile', {
       //headers: { Authorization: ` ${this.getToken()}` }
     })
     .then(response => {

@@ -15,6 +15,7 @@ const StyledWrapper = styled.div`
   display: flex;
   padding: 100px 90px;
   flex-direction: column;
+  border-radius: 20px;
   right: 0;
   top: 0;
   height: 100vh;
@@ -25,6 +26,20 @@ const StyledWrapper = styled.div`
   transition: transform 0.25s ease-in-out;
   
 `;
+const StyledH3 = styled.h3 `
+text-decoration: underline;
+width: 80%;
+text-align: center;
+margin: 30px auto;
+font-size: 22px;
+
+@media(min-width:500px){
+  font-size: 26px;
+}
+@media(min-width:1000px){
+  font-size: 28px;
+}
+`
 
 const Textarea = styled.textarea`
   padding: 25px 30px;
@@ -93,7 +108,7 @@ export default class Twitter extends Component {
         username: decoded.username,
       })
     }
-    axios.get('/twitter/')
+    axios.get('http://localhost:5000/twitter/')
     .then(response => {
         this.setState({
             twittersy: response.data
@@ -158,7 +173,7 @@ export default class Twitter extends Component {
             title: this.state.title,
             link: this.state.link
         }
-        axios.post('/twitter/add', twitt)
+        axios.post('http://localhost:5000/twitter/add', twitt)
         .then(res => console.log(res.data));
         this.setState({
           info: '',
@@ -186,7 +201,7 @@ export default class Twitter extends Component {
     render() {
         return (
             <div>
-              <h3 style={{margin: '20px 0', textDecoration: 'underline'}}>Lista twitterów</h3>
+              <StyledH3>Lista twitterów</StyledH3>
               <form onSubmit={this.onSubmit}>
                
               <StyledWrapper isVisible={this.state.plus}>

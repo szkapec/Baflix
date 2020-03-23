@@ -2,9 +2,35 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import ComunicatorMessage from './ComunicatorMessage';
+import styled from 'styled-components';
 
+const StyledTextArea = styled.textarea`
+    max-width: 80%;
+    margin: auto;
     
-
+`
+const StyledLabel = styled.div`
+    text-align: center;
+    margin: 15px auto;
+`
+const StyledInput = styled.input`
+    margin: 20px 0 20px 40px;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #6B4226;;
+    border: none;
+    border-radius: 50px;
+    @media(min-width: 700px){
+        margin: 20px 0 20px 69px;
+    }
+    @media(min-width: 1000px){
+        margin: 20px 0 20px 93px;
+    }
+    @media(min-width: 1200px){
+        margin: 20px 0 20px 111px;
+    }
+`
    
 
 
@@ -33,7 +59,7 @@ export default class Comunicator extends Component {
           }
 
 
-        axios.get('/message/')
+        axios.get('http://localhost:5000/message/')
             .then(response => {
                 this.setState({
                     exercises: response.data
@@ -58,7 +84,7 @@ onSubmit=(e)=>{
         
     }
 
-    axios.post('/message/add', message)
+    axios.post('http://localhost:5000/message/add', message)
     .then(res => console.log(res.data))
     // window.location = '/'; //na strone glowna
 }
@@ -91,16 +117,17 @@ onSubmit=(e)=>{
             <br></br>
               <form onSubmit={this.onSubmit}>
                 <div className="form-group"> 
-                  <label>Napisz wiadomość: </label>
-                  <textarea   type="text"
+                  <StyledLabel>Napisz wiadomość: </StyledLabel>
+                  <StyledTextArea   type="text"
                       required
                       className="form-control"
                       value={this.state.description}
                       onChange={this.onChangeDescription}
+                     
                       />
                 </div>
                 <div className="form-group">
-                  <input type="submit" value="Wyślij" className="btn btn-primary" />
+                  <StyledInput type="submit" value="Wyślij" className="btn" />
                 </div>
               </form>
             </div>

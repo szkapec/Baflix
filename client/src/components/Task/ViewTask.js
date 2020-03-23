@@ -7,13 +7,31 @@ import styled from 'styled-components';
 
 
 const StyledButton = styled.button`
+    display: inline-block;
+    margin: 20px auto;
     background-color: white; 
-  color: black; 
-  border: 2px solid yellowgreen;
-  border-radius: 20px;
-  margin-top: 20px;
-`
+    color: black; 
+    border: 2px solid yellowgreen;
+    border-radius: 20px;
 
+`
+const StyledButtonContener = styled.div`
+    width: 100%;
+    text-align: center;
+`
+const StyledH3 = styled.h3`
+    font-size: 14px;
+    margin: 15px 30px;
+
+        @media(min-width: 400px){
+        font-size: 18px;
+        text-align: center;
+    }
+        @media(min-width: 900px){
+        font-size: 22px;
+        text-align: center;
+    }
+`
 
 export default class ViewTask extends Component {
     constructor(props) {
@@ -38,7 +56,7 @@ export default class ViewTask extends Component {
             
         
 
-        axios.get('/exercises/')
+        axios.get('http://localhost:5000/exercises/')
             .then(response => {
                 this.setState({
                     exercises: response.data
@@ -70,11 +88,11 @@ export default class ViewTask extends Component {
     render() {
         return (
             <div>
-                <h3 style={{margin: '10px',fontSize: '14px'}}>Notatki widzisz je tylko Ty :)</h3>
+                <StyledH3>Twoje prywatne notatki</StyledH3>
                 
                 {this.exercisesList()}
 
-                <Link to="addtask"><StyledButton  className="btn">Dodaj nowe zadanie!</StyledButton></Link>
+                <StyledButtonContener><Link to="addtask"><StyledButton  className="btn">Dodaj nowe zadanie!</StyledButton></Link></StyledButtonContener>
             </div>
         )
     }

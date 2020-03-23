@@ -9,6 +9,16 @@ const StyledCard = styled.div`
     min-height: 150px;
   
    
+    @media(min-width: 400px){
+        width: 80%;
+        margin: 30px auto 0;
+        font-size: 18px;
+    }
+    @media(min-width: 900px){
+        width: 80%;
+        margin: 30px auto 0;
+        font-size: 20px;
+    }
 
 `
 const StyledUser = styled.div`
