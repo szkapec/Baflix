@@ -64,6 +64,7 @@ onSubmit=(e)=>{
 }
 
     exercisesList = () => {
+        console.log(this.state.exercises)
         console.log(this.state.exercises.length>0)
         var description = []
         var username = [];
