@@ -31,20 +31,20 @@ var Users = require('./routes/Users')
 app.use('/users', Users)
 
 
+const exercisesRouter = require('./routes/Exercises');
+app.use('/exercises', exercisesRouter); 
 
 
-
-// const exercisesRouter = require('./routes/Exercises');
 // const userRouter = require('./routes/users');
-// app.use('/exercises', exercisesRouter); 
+
 // app.use('/users', userRouter);
 
 
-// const messages = require('./routes/Messages');
+// var messages = require('./routes/Messages');
 // app.use('/message', messages)
 
-// const twitters = require('./routes/Twitter');
-// app.use('/twitter', twitters)
+var twitters = require('./routes/Twitter');
+app.use('/twitter', twitters)
 
 
 if(process.env.NODE_ENV === "production") {
