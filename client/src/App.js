@@ -23,12 +23,12 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/profile" component={Profile} />
-            {/* <Route path="/edit/:id" component={EditTask}/> */}
-            {/* <Route path="/editTwitter/:id" component={EditTwitter}/>
+            <Route path="/edit/:id" component={EditTask}/>
+            <Route path="/editTwitter/:id" component={EditTwitter}/>
             <Route exact path="/addtask" component={Addtask} />
             <Route exact path="/viewtask" component={ViewTask} />
             <Route exact path="/twitter" component={Twitter} />
-            <Route exact path="/chat" component={Comunicator} /> */}
+            <Route exact path="/chat" component={Comunicator} />
           </div>
         </div>
       </Router>
