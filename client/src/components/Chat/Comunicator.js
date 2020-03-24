@@ -7,15 +7,27 @@ import styled from 'styled-components';
 const StyledTextArea = styled.textarea`
     max-width: 80%;
     margin: auto;
+
+    @media(min-width: 1000px) {
+    max-width: 800px;
+   }
     
 `
 const StyledLabel = styled.div`
     text-align: center;
     color: white;
     margin: 15px auto;
+    font-size: 16px;
+    @media(min-width: 600px) {
+        font-size: 18px;
+        padding-top: 40px;
+    }
+    @media(min-width: 600px) {
+        font-size: 20px;
+    }
 `
 const StyledInput = styled.input`
-    margin: 20px 0 20px 40px;
+    margin: 20px 0 20px 0px;
     padding: 10px 30px;
     font-size: 16px;
     font-weight: 700;
@@ -23,14 +35,20 @@ const StyledInput = styled.input`
     color: ${({inputs}) => inputs?'black':'white'};
     border: none;
     border-radius: 50px;
-    @media(min-width: 700px){
-        margin: 20px 0 20px 69px;
+
+
+`
+const StyledH3 = styled.h3`
+    font-size:20px;
+    color:white;
+    padding: 12px;
+    text-align: center;
+    @media(min-width: 600px) {
+        font-size: 24px;
+        padding-top: 40px;
     }
-    @media(min-width: 1000px){
-        margin: 20px 0 20px 93px;
-    }
-    @media(min-width: 1200px){
-        margin: 20px 0 20px 111px;
+    @media(min-width: 600px) {
+        font-size: 28px;
     }
 `
    const StyledAll = styled.div`
@@ -56,7 +74,7 @@ export default class Comunicator extends Component {
     componentDidMount() {
         
         if(!localStorage.usertoken) {
-            return window.location = '/login';
+            // return window.location = '/login';
           } 
           else {
             const token = localStorage.usertoken
@@ -94,7 +112,7 @@ onSubmit=(e)=>{
 
     axios.post('/message/add', message)
     .then(res => console.log(res.data))
-    // window.location = '/'; //na strone glowna
+    window.location = '/chat'; //na strone glowna
 }
 
     exercisesList = () => {
@@ -120,7 +138,7 @@ onSubmit=(e)=>{
         return (
             <StyledAll>
             <div>
-                <h3 style={{fontSize: '20px',color:'white', padding: "12px"}}>Czat:</h3>
+                <StyledH3>Czat:</StyledH3>
                 <div style={{marginTop:'30px'}}>{this.exercisesList()}</div>
                         
         
@@ -140,7 +158,7 @@ onSubmit=(e)=>{
                      
                       />
                 </div>
-                <div className="form-group">
+                <div style={{textAlign:'center'}}>
                   <StyledInput inputs={this.state.input} onClick={this.onChangeInput} type="submit" value="Wyślij" className="btn" />
                 </div>
               </form>

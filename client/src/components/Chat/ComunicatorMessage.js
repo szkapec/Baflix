@@ -13,6 +13,9 @@ const StyledAll = styled.div`
     font-size: 12px;
     box-shadow: 0 0 5px  #6B4226;
     border-radius: 20px;
+    @media(min-width:600px){
+    font-size: 14px;
+ }
 `
 const StyledAll1 = styled.div`
     padding: 10px;
@@ -26,6 +29,12 @@ const StyledAll1 = styled.div`
     font-size: 12px;
     box-shadow: 0 0 5px #00CC66;
     border-radius: 20px;
+    @media(min-width:600px){
+    font-size: 14px;
+ }
+ @media(min-width:1000px){
+    font-size: 16px;
+ }
 `
 
 const StyledName = styled.div`
@@ -34,6 +43,12 @@ const StyledName = styled.div`
  font-weight: 700;
  margin-left: 10px;
  color: white;
+ @media(min-width:600px){
+    font-size: 14px;
+ }
+ @media(min-width:1000px){
+    font-size: 16px;
+ }
 `
 const StyledName1 = styled.div`
  width: 100%;
@@ -41,12 +56,24 @@ const StyledName1 = styled.div`
  font-weight: 700;
  margin-left: 40px;
  color: white;
+
+ @media(min-width:600px){
+    font-size: 14px;
+ }
+ @media(min-width:1000px){
+    font-size: 16px;
+ }
 `
 const StyledCard = styled.div`
    box-shadow: 0 0 5px black;
    padding: 10px;
    width: 80%;
    margin: 0 auto;
+
+   @media(min-width: 1000px) {
+    max-width: 800px;
+   }
+   
 `
 
 const Message = (props) => {

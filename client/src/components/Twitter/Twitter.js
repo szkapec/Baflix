@@ -130,7 +130,7 @@ export default class Twitter extends Component {
             description: '',
             title: '',
             link: '',
-            plus: true,
+            plus: false,
             twittersy: [],
             info: '',
             infoTitle: '',
