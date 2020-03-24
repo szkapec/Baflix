@@ -20,6 +20,7 @@ export default class EditTwitter extends Component {
             link: '',
             users: []
         }
+      }
 
     componentDidMount() {
 
