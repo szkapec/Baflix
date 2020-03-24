@@ -94,8 +94,8 @@ export default class CreateExercise extends Component {
     onChangeDate=(date) =>{
         this.setState({
             date,
-        })
-    }
+    })
+  }
 
     onSubmit=(e)=>{
         e.preventDefault();

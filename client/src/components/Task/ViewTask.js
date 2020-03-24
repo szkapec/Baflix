@@ -47,7 +47,6 @@ export default class ViewTask extends Component {
             username: '',
         };
     }
-    
 
 
 

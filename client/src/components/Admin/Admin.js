@@ -34,8 +34,8 @@ export default class Admin extends Component {
               <br></br>
               <br></br>
 
-              <div>idz do fimów: </div><Link to="/profile/film">Filmy</Link>
-              <div>Wróć do strony głównej: </div> <Link to="/profile">Wróć</Link>
+              <div>idz do fimów: <Link to="/profile/film">Filmy</Link></div>
+              <div>Wróć do strony głównej:  <Link to="/profile">Wróć</Link> </div>
               </StyledContainer>
             </>
 

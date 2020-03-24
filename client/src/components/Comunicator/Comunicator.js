@@ -6,7 +6,6 @@ import Message from './Message';
 
     
 
-   
 
 
 export default class Comunicator extends Component {
