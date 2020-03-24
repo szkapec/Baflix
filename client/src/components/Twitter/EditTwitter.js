@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from "react-router-dom";
 import jwt_decode from 'jwt-decode';
+import styled from 'styled-components'
 
-
+const StyledContainer = styled.div`
+  background-color: #ecf0f1;
+  min-height: 100vh;
+`
 export default class EditTwitter extends Component {
 
     constructor(props){
@@ -16,13 +20,12 @@ export default class EditTwitter extends Component {
             link: '',
             users: []
         }
-    }
 
     componentDidMount() {
 
         
 
-        axios.get('http://localhost:5000/twitter/'+this.props.match.params.id)
+        axios.get('/twitter/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     description: response.data.description,
@@ -33,7 +36,7 @@ export default class EditTwitter extends Component {
             .catch(error => console.log(error))
 
             if(!localStorage.usertoken) {
-                return null;
+                return window.location = '/login';
               } 
               else {
                 const token = localStorage.usertoken
@@ -71,7 +74,7 @@ export default class EditTwitter extends Component {
             title: this.state.title,
         }
 console.log(this.state.username)
-        axios.post('http://localhost:5000/twitter/updateTwitter/' + this.props.match.params.id, twitters)
+        axios.post('/twitter/updateTwitter/' + this.props.match.params.id, twitters)
         .then(res => console.log(res));
         // window.location = '/twitter'; //na strone glowna
     }
@@ -79,40 +82,46 @@ console.log(this.state.username)
 
     render() {
         return (
-            <div>
+            <StyledContainer>
+              <div className="container"> 
               <h3>Edycja twittera</h3>
               <form onSubmit={this.onSubmit}>
                 
-                <div className="form-group"> 
-                  <label>Treść: </label>
-                  <input  type="text"
-                      required
-                      className="form-control"
-                      onChange={this.onChangeDescription}
-                      />
-                </div>
+                
                 <div className="form-group">
                   <label> Tytuł </label>
                   <input 
+                  style={{maxWidth: '500px'}}
                       type="text" 
                       className="form-control"
                       onChange={this.onChangeTitle}
+                      placeholder="Tytuł"
                       />
                 </div>
                 <div className="form-group">
                 <label>link: </label>
                 <div>
-                  <input type="text" className="form-control"  onChange={this.onChangeLink}></input>
+                  <input style={{maxWidth: '500px'}} type="text" className="form-control" placeholder="Link"  onChange={this.onChangeLink}></input>
                 </div>
               </div>
-      
+
+              <div className="form-group"> 
+                  <label>Treść: </label>
+                  <textarea style={{maxWidth: '500px'}} type="text"
+                      required
+                      className="form-control"
+                      onChange={this.onChangeDescription}
+                      placeholder="Treść"
+                      />
+                </div>
         
                 <div className="form-group">
                  <button style={{color: 'black', border: '2px solid #2980b9',backgroundColor: 'white', padding: '8px 15px', margin: '10px'}} type="text" >Wróć<Link to="twitter"></Link></button>
                   <input style={{color: 'black', border: '2px solid #2980b9',backgroundColor: 'white', padding: '8px 15px', margin: '10px'}} type="submit" value="Edytuj"  />
                 </div>
               </form>
-            </div>
+              </div>
+            </StyledContainer>
             )  
           }
         }

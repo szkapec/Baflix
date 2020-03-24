@@ -11,6 +11,7 @@ const StyledTextArea = styled.textarea`
 `
 const StyledLabel = styled.div`
     text-align: center;
+    color: white;
     margin: 15px auto;
 `
 const StyledInput = styled.input`
@@ -18,7 +19,8 @@ const StyledInput = styled.input`
     padding: 10px 30px;
     font-size: 16px;
     font-weight: 700;
-    background-color: #6B4226;;
+    background-color: ${({inputs}) => (inputs?'#6B4226':'#00CC66')} ;
+    color: ${({inputs}) => inputs?'black':'white'};
     border: none;
     border-radius: 50px;
     @media(min-width: 700px){
@@ -31,7 +33,12 @@ const StyledInput = styled.input`
         margin: 20px 0 20px 111px;
     }
 `
-   
+   const StyledAll = styled.div`
+        width: 100%;
+        min-height: 100vh;
+         margin: 0;
+        background-color: #2c3e50;
+   `
 
 
 export default class Comunicator extends Component {
@@ -41,14 +48,15 @@ export default class Comunicator extends Component {
             exercises: [],
             username: "",
             description: '',
+            input: true,
         };
     }
 
 
     componentDidMount() {
-
+        
         if(!localStorage.usertoken) {
-            return null;
+            return window.location = '/login';
           } 
           else {
             const token = localStorage.usertoken
@@ -59,7 +67,7 @@ export default class Comunicator extends Component {
           }
 
 
-        axios.get('http://localhost:5000/message/')
+        axios.get('/message/')
             .then(response => {
                 this.setState({
                     exercises: response.data
@@ -84,7 +92,7 @@ onSubmit=(e)=>{
         
     }
 
-    axios.post('http://localhost:5000/message/add', message)
+    axios.post('/message/add', message)
     .then(res => console.log(res.data))
     // window.location = '/'; //na strone glowna
 }
@@ -102,12 +110,17 @@ onSubmit=(e)=>{
         return <ComunicatorMessage username={username.reverse()} description={description.reverse()}/>
     }
 
+    onChangeInput = () => {
+        this.setState({
+            input: !this.state.input,
+        })
+    }
     //   return <Message exercise={poj} key={poj._id}/>
     render() {
         return (
-            <>
+            <StyledAll>
             <div>
-                <h3 style={{fontSize: '20px', margin: "12px"}}>Czat:</h3>
+                <h3 style={{fontSize: '20px',color:'white', padding: "12px"}}>Czat:</h3>
                 <div style={{marginTop:'30px'}}>{this.exercisesList()}</div>
                         
         
@@ -123,15 +136,16 @@ onSubmit=(e)=>{
                       className="form-control"
                       value={this.state.description}
                       onChange={this.onChangeDescription}
+                      placeholder="Text"
                      
                       />
                 </div>
                 <div className="form-group">
-                  <StyledInput type="submit" value="Wyślij" className="btn" />
+                  <StyledInput inputs={this.state.input} onClick={this.onChangeInput} type="submit" value="Wyślij" className="btn" />
                 </div>
               </form>
             </div>
-            </>
+            </StyledAll>
         )
     }
 }

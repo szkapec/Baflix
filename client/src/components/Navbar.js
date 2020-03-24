@@ -5,7 +5,7 @@ class Landing extends Component {
   logOut(e) {
     e.preventDefault()
     localStorage.removeItem('usertoken')  //wylogowanie
-    this.props.history.push(`login/`)
+    this.props.history.push(`/login`)
   }
 
   render() {
@@ -61,7 +61,6 @@ class Landing extends Component {
         </li>
       </ul>
     )
-
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded">
         <button

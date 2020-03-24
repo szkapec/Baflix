@@ -1,5 +1,47 @@
 import React, { Component } from 'react'
 import { login } from './UserFunctions'
+import styled from 'styled-components';
+
+
+const StyledContainer = styled.div`
+  background-color: #ecf0f1;
+  min-height: 100vh;
+`
+
+const StyledButton = styled.button`
+  color: black;
+  border: 1px solid #7f8c8d;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 20px 0;
+
+  @media(min-width:600px) {
+    padding:10px 35px;
+    font-size: 20px;
+  }
+`
+const StyledH1 = styled.h1`
+  font-size: 20px;
+  padding: 0 0 20px 0;
+
+  @media(min-width: 600px) {
+    font-size: 22px;
+  }
+  @media(min-width: 600px) {
+    font-size: 24px;
+  }
+`
+
+const StyledLogin = styled.label`
+  font-size:16px;
+  @media(min-width: 600px) {
+    font-size: 18px;
+  }
+  @media(min-width: 600px) {
+    font-size: 20px;
+  }
+`
+
 
 class Login extends Component {
   constructor() {
@@ -43,23 +85,6 @@ class Login extends Component {
    }
 
    if(this.flag){
-
-
-
-
-    /*
-const token = localStorage.usertoken
-      const decoded = jwt_decode(token)
-      this.setState({
-        username: decoded.username,
-        last_name: decoded.last_name,
-        email: decoded.email
-      })
-      
-    */
-    //261
- 
-
       const user = {
         email: this.state.email,
         password: this.state.password
@@ -80,8 +105,6 @@ const token = localStorage.usertoken
           }
           
         }
-          
-
         
         if(!res){
           return console.log('blad')
@@ -92,20 +115,19 @@ const token = localStorage.usertoken
         // this.props.history.push(`/login`)
       })
     }
-  
    }
-  
-
   render() {
+
     return (
-      <div className="container">
+      <StyledContainer>
+           <div className="container">
         <div className="row">
           <div className="col-md-6 mt-5 mx-auto">
             <form noValidate onSubmit={this.onSubmit}>
-              <h1 className="h3 mb-3 font-weight-normal">Prosze się zalogować</h1>
+              <StyledH1>Prosze się zalogować</StyledH1>
               <div className="form-group">
               <div style={{color:'red'}}>{this.state.comPassword?this.state.comPassword:null}</div>
-                <label htmlFor="email">Adres email</label>
+                <StyledLogin htmlFor="email">Adres email</StyledLogin>
                 <input
                   type="email"
                   className="form-control"
@@ -116,7 +138,7 @@ const token = localStorage.usertoken
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="password">Hasło</label>
+                <StyledLogin htmlFor="password">Hasło</StyledLogin>
                 <input
                   type="password"
                   className="form-control"
@@ -126,16 +148,19 @@ const token = localStorage.usertoken
                   onChange={this.onChange}
                 />
               </div>
-              <button
+              <StyledButton
                 type="submit"
-                className="btn btn-lg btn-primary btn-block"
+                className="btn"
               >
                 Zaloguj
-              </button>
+              </StyledButton>
             </form>
           </div>
         </div>
       </div>
+
+      </StyledContainer>
+     
     )
   }
 }

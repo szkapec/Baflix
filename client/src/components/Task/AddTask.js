@@ -4,13 +4,10 @@ import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import styled from 'styled-components';
 
-const StyledAll = styled.div`
 
-`
 const StyledH3 = styled.h3`
     font-size: 20px;
-    text-decoration: underline;
-    margin: 20px 0px;
+    padding: 30px 0px 10px;
     @media(min-width:500px){
         font-size: 22px;
     }
@@ -22,14 +19,20 @@ const StyledLabel = styled.label `
         font-size: 19px;
     }
 `
+const StyledContainer = styled.div`
+  background-color: #ecf0f1;
+  min-height: 100vh;
+`
 const StyledInput = styled.input`
   padding: 10px 30px;
   font-size: 16px;
   margin: 20px 0px;
   font-weight: 700;
-  background-color: yellowgreen;
-  border: none;
-  border-radius: 50px;
+  background-color: #ecf0f1;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #7f8c8d;
+    border-radius: 20px;
   @media(min-width:800px){
         font-size:18px;
         padding: 10px 35px;
@@ -62,7 +65,7 @@ export default class CreateExercise extends Component {
     
   componentDidMount() {
     if(!localStorage.usertoken) {
-      return null;
+      return window.location = '/login';
     } 
     else {
       const token = localStorage.usertoken
@@ -73,6 +76,7 @@ export default class CreateExercise extends Component {
       })
       
     }
+    
    
   }
 
@@ -102,7 +106,7 @@ export default class CreateExercise extends Component {
             date: this.state.date
         }
 
-        axios.post('http://localhost:5000/exercises/add', exercise)
+        axios.post('/exercises/add', exercise)
         .then(res => console.log(res.data));
         window.location = '/viewtask'; //na strone glowna
     }
@@ -110,8 +114,9 @@ export default class CreateExercise extends Component {
 
     render() {
         return (
-            <div>
-              <StyledH3 >Dodaj nowa notatkę</StyledH3>
+          <StyledContainer>
+            <div className="container">
+              <StyledH3 >Dodaj nowa prywatną notatkę</StyledH3>
               <form onSubmit={this.onSubmit}>
                 <div className="form-group"> 
                   <StyledLabel>Użytkownik: </StyledLabel>
@@ -143,6 +148,7 @@ export default class CreateExercise extends Component {
                 </div>
               </form>
             </div>
+            </StyledContainer>
             )
           }
         }

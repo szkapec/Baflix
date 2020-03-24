@@ -19,7 +19,9 @@ users.post('/register', (req, res) => {
     last_name: req.body.last_name,
     email: req.body.email,
     password: req.body.password,
-    created: today
+    date: today,
+    premium: false,
+    admin: false,
   }
  
   User.findOne({ //znajdz jeden
@@ -63,11 +65,15 @@ users.post('/login', (req, res) => {
         console.log("Uzytkownik user")
         if (bcrypt.compareSync(req.body.password, user.password)) {
           // Passwords match
+          const today = new Date()
           const payload = {
             _id: user._id,
             username: user.username,
             last_name: user.last_name,
-            email: user.email
+            email: user.email,
+            date: today,
+            premium: user.premium,
+            admin: user.admin,
           }
           let token = jwt.sign(payload, process.env.SECRET_KEY, {
             expiresIn: 1440

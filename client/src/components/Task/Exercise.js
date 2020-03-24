@@ -23,7 +23,7 @@ const StyledCard = styled.div`
 `
 const StyledUser = styled.div`
     padding: 10px 0 10px 0;
-    background-color: yellowgreen;
+    background-color: #bdc3c7;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     height: 50px;
@@ -34,6 +34,10 @@ const StyledText = styled.div`
     min-height: 150px;
     padding: 10px 0 10px 10px;
     box-shadow: 0 0 10px grey;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
 `
 const StyledLink = styled.div`
     text-align:center;

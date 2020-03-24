@@ -1,5 +1,46 @@
 import React, { Component } from 'react'
 import { register } from './UserFunctions'
+import styled from 'styled-components';
+
+
+const StyledContainer = styled.div`
+  background-color: #ecf0f1;
+  min-height: 100vh;
+`
+
+const StyledButton = styled.button`
+  color: black;
+  border: 1px solid #7f8c8d;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 20px 0;
+
+  @media(min-width:600px) {
+    padding:10px 35px;
+    font-size: 20px;
+  }
+`
+const StyledH1 = styled.h1`
+  font-size: 20px;
+  padding: 0 0 20px 0;
+
+  @media(min-width: 600px) {
+    font-size: 22px;
+  }
+  @media(min-width: 600px) {
+    font-size: 24px;
+  }
+`
+
+const StyledLogin = styled.label`
+  font-size:16px;
+  @media(min-width: 600px) {
+    font-size: 18px;
+  }
+  @media(min-width: 600px) {
+    font-size: 20px;
+  }
+`
 
 class Register extends Component {
 
@@ -30,7 +71,7 @@ class Register extends Component {
       username: this.state.username,
       last_name: this.state.last_name,
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
     }
 
     if(this.state.username.length < 4){
@@ -114,13 +155,14 @@ class Register extends Component {
 
   render() {
     return (
+      <StyledContainer>
       <div className="container">
         <div className="row">
           <div className="col-md-6 mt-5 mx-auto">
             <form  onSubmit={this.onSubmit}>
-              <h1 className="h3 mb-3 font-weight-normal">Zarejestruj się</h1>
+              <StyledH1>Zarejestruj się</StyledH1>
               <div className="form-group">
-                <label htmlFor="name">Login</label>
+                <StyledLogin htmlFor="name">Login</StyledLogin>
                 <input style={this.state.comLog?{border:'1px solid red'}:null}
                   type="text"
                   className="form-control"
@@ -132,7 +174,7 @@ class Register extends Component {
               </div>
               <div style={{color:'red'}}>{this.state.comLog?this.state.comLog:null}</div>
               <div className="form-group">
-                <label htmlFor="name">Imię</label>
+                <StyledLogin htmlFor="name">Imię</StyledLogin>
                 <input style={this.state.comName?{border:'1px solid red'}:null}
                   type="text"
                   className="form-control"
@@ -144,7 +186,7 @@ class Register extends Component {
               </div>
               <div style={{color:'red'}}>{this.state.comName?this.state.comName:null}</div>
               <div className="form-group">
-                <label htmlFor="email">Adres email </label>
+                <StyledLogin htmlFor="email">Adres email </StyledLogin>
                 <input style={this.state.comMail?{border:'1px solid red'}:null}
                   type="email"
                   className="form-control"
@@ -156,7 +198,7 @@ class Register extends Component {
               </div>
               <div style={{color:'red'}}>{this.state.comMail?this.state.comMail:null}</div>
               <div className="form-group">
-                <label htmlFor="password">Hasło</label>
+                <StyledLogin htmlFor="password">Hasło</StyledLogin>
                 <input style={this.state.comPass?{border:'1px solid red'}:null}
                   type="password"
                   className="form-control"
@@ -168,17 +210,18 @@ class Register extends Component {
                 />
               </div>
               <div style={{color:'red'}}>{this.state.comPass?this.state.comPass:null}</div>
-              <button
+              <StyledButton
                 type="submit"
-                className="btn btn-lg btn-primary btn-block"
+                className="btn"
               >
                 Zarejestruj!
-              </button>
+              </StyledButton>
               
             </form>
           </div>
         </div>
       </div>
+      </StyledContainer>
     )
   }
 }

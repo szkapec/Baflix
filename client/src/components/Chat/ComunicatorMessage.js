@@ -6,22 +6,26 @@ const StyledAll = styled.div`
     margin: 10px;
     margin-bottom: 10px;
     display: flex;
+    margin-right: 40px;
     background-color: #6B4226;
     color: white;
     flex-wrap: wrap;
     font-size: 12px;
-    box-shadow: 0 0 10px  #6B4226;
+    box-shadow: 0 0 5px  #6B4226;
+    border-radius: 20px;
 `
 const StyledAll1 = styled.div`
     padding: 10px;
     margin: 10px;
+    margin-left: 40px;
     background-color: #00CC66;
     color: white;
     margin-bottom: 10px;
     display: flex;
     flex-wrap: wrap;
     font-size: 12px;
-    box-shadow: 0 0 10px #00CC66;
+    box-shadow: 0 0 5px #00CC66;
+    border-radius: 20px;
 `
 
 const StyledName = styled.div`
@@ -29,10 +33,20 @@ const StyledName = styled.div`
  font-size: 12px;
  font-weight: 700;
  margin-left: 10px;
+ color: white;
+`
+const StyledName1 = styled.div`
+ width: 100%;
+ font-size: 12px;
+ font-weight: 700;
+ margin-left: 40px;
+ color: white;
 `
 const StyledCard = styled.div`
-   box-shadow: 0 0 10px grey;
+   box-shadow: 0 0 5px black;
    padding: 10px;
+   width: 80%;
+   margin: 0 auto;
 `
 
 const Message = (props) => {
@@ -46,13 +60,13 @@ const Message = (props) => {
                 
                 (
                        <>
-                            <div>Brak wiadomości</div>
-                            <div>Proszę dodać nową</div>
+                            <StyledName>Brak wiadomości</StyledName>
+                            <StyledName>Proszę dodać nową</StyledName>
                         </>
                     )}
                     
                 {props.username[1]&&(<div>
-                    <StyledName>{props.username[1]&&props.username[1]}:</StyledName>
+                    <StyledName1>{props.username[1]&&props.username[1]}:</StyledName1>
                     
                     <StyledAll1>{props.username[1]&&props.description[1]}</StyledAll1>
                 </div>)}
@@ -62,7 +76,7 @@ const Message = (props) => {
                     <StyledAll>{props.username[2]&&props.description[2]}</StyledAll>
                 </div>)}
                 {props.username[3]&&(<div>
-                    <StyledName>{props.username[3]&&props.username[3]}:</StyledName>
+                    <StyledName1>{props.username[3]&&props.username[3]}:</StyledName1>
                     <StyledAll1>{props.username[3]&&props.description[3]}</StyledAll1>
                 </div>)}
                 {props.username[4]&&(<div>
@@ -71,7 +85,7 @@ const Message = (props) => {
                 </div>)}
 
                 {props.username[5]&&(<div>
-                    <StyledName>{props.username[5]&&props.username[5]}:</StyledName>
+                    <StyledName1>{props.username[5]&&props.username[5]}:</StyledName1>
                     <StyledAll1>{props.username[5]&&props.description[5]}</StyledAll1>
                 </div>)}
 
@@ -81,7 +95,7 @@ const Message = (props) => {
                 </div>)}
 
                 {props.username[7]&&(<div>
-                    <StyledName>{props.username[7]&&props.username[7]}:</StyledName>
+                    <StyledName1>{props.username[7]&&props.username[7]}:</StyledName1>
                     <StyledAll1>{props.username[7]&&props.description[7]}</StyledAll1>
                 </div>)}
 
@@ -91,7 +105,7 @@ const Message = (props) => {
                 </div>)}
 
                 {props.username[9]&&(<div>
-                    <StyledName>{props.username[9]&&props.username[9]}:</StyledName>
+                    <StyledName1>{props.username[9]&&props.username[9]}:</StyledName1>
                     
                     <StyledAll1>{props.username[9]&&props.description[9]}</StyledAll1>
                 </div>)}
@@ -102,7 +116,7 @@ const Message = (props) => {
                 </div>)}
                 
                 {props.username[11]&&(<div>
-                    <StyledName>{props.username[11]&&props.username[11]}:</StyledName>
+                    <StyledName1>{props.username[11]&&props.username[11]}:</StyledName1>
                     <StyledAll1>{props.username[11]&&props.description[11]}</StyledAll1>
                 </div>)}
                 
@@ -112,7 +126,7 @@ const Message = (props) => {
                 </div>)}
                 
                 {props.username[13]&&(<div>
-                    <StyledName>{props.username[13]&&props.username[13]}:</StyledName>
+                    <StyledName1>{props.username[13]&&props.username[13]}:</StyledName1>
                     <StyledAll1>{props.username[13]&&props.description[14]}</StyledAll1>
                 </div>)}
                 

@@ -12,6 +12,12 @@ import EditTask from './components/Task/EditTask';
 import Twitter from './components/Twitter/Twitter';
 import EditTwitter from './components/Twitter/EditTwitter'
 import Comunicator from './components/Chat/Comunicator';
+import ViewAdmin from './components/Admin/ViewAdmin';
+import ViewsFilm from './components/Filmy/ViewsFilm';
+import Programing from './components/Filmy/Programing';
+import Music from './components/Filmy/Music';
+import Mountains from './components/Filmy/Mountains';
+import Story from './components/Filmy/Story';
 class App extends Component {
   render() {
     return (
@@ -19,7 +25,7 @@ class App extends Component {
         <div className="App">
           <Navbar />
           <Route exact path="/" component={Landing} />
-          <div className="container">
+          <div className="">
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/profile" component={Profile} />
@@ -29,6 +35,14 @@ class App extends Component {
             <Route exact path="/viewtask" component={ViewTask} />
             <Route exact path="/twitter" component={Twitter} />
             <Route exact path="/chat" component={Comunicator} />
+            <Route exact path="/profile/admin" component={ViewAdmin} />
+            <Route exact path="/profile/film" component={ViewsFilm} />
+            <Route exact path="/profile/film/programing" component={Programing} />
+            <Route exact path="/profile/film/music" component={Music} />
+            <Route exact path="/profile/film/mountains" component={Mountains} />
+            <Route exact path="/profile/film/story" component={Story} />
+
+
           </div>
         </div>
       </Router>

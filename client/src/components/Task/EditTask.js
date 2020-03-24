@@ -1,35 +1,32 @@
 import React, { Component } from 'react';
-import DatePicker from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css"
 import axios from 'axios';
 import styled from 'styled-components';
 
-const StyledAll = styled.div`
 
-`
 const StyledH3 = styled.h3`
     font-size: 20px;
     text-decoration: underline;
-    margin: 20px 0px;
+    padding: 20px 20px;
     @media(min-width:500px){
         font-size: 22px;
     }
 `
 const StyledLabel = styled.label `
     font-size: 17px;
-    margin: 20px 0px;
+    margin: 20px 20px;
     @media(min-width:800px){
         font-size: 19px;
     }
 `
 const StyledInput = styled.input`
-  padding: 10px 30px;
-  font-size: 16px;
-  margin: 20px 0px;
-  font-weight: 700;
-  background-color: yellowgreen;
-  border: none;
-  border-radius: 50px;
+    padding: 10px 30px;
+    font-size: 16px;
+    margin: 20px 20px;
+    font-weight: 700;
+    background-color: #ecf0f1; 
+    color: black; 
+    border: 2px solid #bdc3c7;
+    border-radius: 20px;
   @media(min-width:800px){
         font-size:18px;
         padding: 10px 35px;
@@ -41,6 +38,10 @@ const StyledInput = styled.input`
     color: grey;
   }
   `
+  const StyledContainer = styled.div`
+  background-color: #bdc3c7;
+  min-height: 100vh;
+`
 
 export default class EditTask extends Component {
 
@@ -58,7 +59,12 @@ export default class EditTask extends Component {
 
     componentDidMount() {
 
-        axios.get('http://localhost:5000/exercises/'+this.props.match.params.id)
+
+        if(!localStorage.usertoken) {
+            return window.location = '/login';;
+          } 
+
+        axios.get('/exercises/'+this.props.match.params.id)
             .then(response => {
                 this.setState({
                     username: response.data.username,
@@ -102,7 +108,7 @@ export default class EditTask extends Component {
             date: this.state.date
         }
 
-        axios.post('http://localhost:5000/exercises/update/' + this.props.match.params.id, exercise)
+        axios.post('/exercises/update/' + this.props.match.params.id, exercise)
         .then(res => console.log(res));
         window.location = '/viewtask'; //na strone glowna
     }
@@ -110,13 +116,13 @@ export default class EditTask extends Component {
 
     render() {
         return (
-            <div>
+            <StyledContainer>
               <StyledH3>Edycja notatki</StyledH3>
               <form onSubmit={this.onSubmit}>
                 
                 <div className="form-group"> 
                   <StyledLabel>Notatka: </StyledLabel>
-                  <textarea  style={{maxWidth: '500px', minHeight: '150px'}} type="text"
+                  <textarea  style={{maxWidth: '500px', minHeight: '150px', marginLeft: '20px'}} type="text"
                       required
                       className="form-control"
                       value={this.state.description}
@@ -130,7 +136,7 @@ export default class EditTask extends Component {
                   <StyledInput type="submit" value="Edytuj" className="btn" />
                 </div>
               </form>
-            </div>
+            </StyledContainer>
             )
           }
         }

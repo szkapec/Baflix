@@ -5,7 +5,8 @@ import {Link} from 'react-router-dom';
 
 const StyledCard = styled.div`
     width: 80vw;
-    margin: 40px auto;
+    margin: 0px auto;
+    padding: 40px 0;
     min-height: 200px;
     max-width: 1000px;
 

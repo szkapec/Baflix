@@ -11,7 +11,7 @@ const StyledButton = styled.button`
     margin: 20px auto;
     background-color: white; 
     color: black; 
-    border: 2px solid yellowgreen;
+    border: 2px solid #bdc3c7;
     border-radius: 20px;
 
 `
@@ -21,7 +21,7 @@ const StyledButtonContener = styled.div`
 `
 const StyledH3 = styled.h3`
     font-size: 14px;
-    margin: 15px 30px;
+    padding: 15px 30px;
 
         @media(min-width: 400px){
         font-size: 18px;
@@ -32,6 +32,11 @@ const StyledH3 = styled.h3`
         text-align: center;
     }
 `
+const StyledContainer = styled.div`
+  background-color: #ecf0f1;
+  min-height: 100vh;
+`
+
 
 export default class ViewTask extends Component {
     constructor(props) {
@@ -48,15 +53,23 @@ export default class ViewTask extends Component {
 
     componentDidMount() {
 
+
+        if(!localStorage.usertoken) {
+            return window.location = '/login';
+          } 
+          else {
             const token = localStorage.usertoken
             const decoded = jwt_decode(token)
             this.setState({
               username: decoded.username,
             })
+          }
+
+            
             
         
 
-        axios.get('http://localhost:5000/exercises/')
+        axios.get('/exercises/')
             .then(response => {
                 this.setState({
                     exercises: response.data
@@ -87,13 +100,13 @@ export default class ViewTask extends Component {
 
     render() {
         return (
-            <div>
+            <StyledContainer>
                 <StyledH3>Twoje prywatne notatki</StyledH3>
                 
                 {this.exercisesList()}
 
                 <StyledButtonContener><Link to="addtask"><StyledButton  className="btn">Dodaj nowe zadanie!</StyledButton></Link></StyledButtonContener>
-            </div>
+            </StyledContainer>
         )
     }
 }

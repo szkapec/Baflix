@@ -29,8 +29,10 @@ const StyledWrapper = styled.div`
 const StyledH3 = styled.h3 `
 text-decoration: underline;
 width: 80%;
+margin: 0px auto 0px;
+padding: 20px 0;
 text-align: center;
-margin: 30px auto;
+padding: 30px auto;
 font-size: 22px;
 
 @media(min-width:500px){
@@ -76,6 +78,11 @@ const Input = styled.input`
       background-repeat: no-repeat;
     `}
 `;
+const StyledContainer = styled.div`
+  background-color: #ecf0f1;
+  min-height: 100vh;
+`
+
 
 export default class Twitter extends Component {
 
@@ -98,7 +105,7 @@ export default class Twitter extends Component {
     
   componentDidMount() {
     if(!localStorage.usertoken) {
-      return null;
+      return window.location = '/login'
     } 
     else {
       const token = localStorage.usertoken
@@ -108,7 +115,7 @@ export default class Twitter extends Component {
         username: decoded.username,
       })
     }
-    axios.get('http://localhost:5000/twitter/')
+    axios.get('/twitter/')
     .then(response => {
         this.setState({
             twittersy: response.data
@@ -173,7 +180,7 @@ export default class Twitter extends Component {
             title: this.state.title,
             link: this.state.link
         }
-        axios.post('http://localhost:5000/twitter/add', twitt)
+        axios.post('/twitter/add', twitt)
         .then(res => console.log(res.data));
         this.setState({
           info: '',
@@ -200,7 +207,7 @@ export default class Twitter extends Component {
 
     render() {
         return (
-            <div>
+            <StyledContainer>
               <StyledH3>Lista twitterów</StyledH3>
               <form onSubmit={this.onSubmit}>
                
@@ -227,7 +234,7 @@ export default class Twitter extends Component {
              </div>
    
              {this.viewsList()}
-            </div>
+            </StyledContainer>
             )
           }
         }
