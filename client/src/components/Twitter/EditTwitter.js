@@ -4,6 +4,24 @@ import {Link} from "react-router-dom";
 import jwt_decode from 'jwt-decode';
 import styled from 'styled-components'
 
+
+const StyledH3 = styled.h3`
+    font-size: 20px;
+    text-decoration: underline;
+    padding: 20px 20px;
+    @media(min-width:500px){
+        font-size: 22px;
+    }
+`
+const StyledLabel = styled.label `
+    font-size: 17px;
+    margin: 20px 0px;
+    @media(min-width:800px){
+        font-size: 19px;
+    }
+`
+
+
 const StyledContainer = styled.div`
   background-color: #ecf0f1;
   min-height: 100vh;
@@ -85,12 +103,12 @@ console.log(this.state.username)
         return (
             <StyledContainer>
               <div className="container"> 
-              <h3>Edycja twittera</h3>
+              <StyledH3>Edycja twittera</StyledH3>
               <form onSubmit={this.onSubmit}>
                 
                 
                 <div className="form-group">
-                  <label> Tytuł </label>
+                  <StyledLabel> Tytuł </StyledLabel>
                   <input 
                   style={{maxWidth: '500px'}}
                       type="text" 
@@ -100,14 +118,14 @@ console.log(this.state.username)
                       />
                 </div>
                 <div className="form-group">
-                <label>link: </label>
+                <StyledLabel>Link: </StyledLabel>
                 <div>
                   <input style={{maxWidth: '500px'}} type="text" className="form-control" placeholder="Link"  onChange={this.onChangeLink}></input>
                 </div>
               </div>
 
               <div className="form-group"> 
-                  <label>Treść: </label>
+                  <StyledLabel>Treść: </StyledLabel>
                   <textarea style={{maxWidth: '500px'}} type="text"
                       required
                       className="form-control"
@@ -117,8 +135,8 @@ console.log(this.state.username)
                 </div>
         
                 <div className="form-group">
-                 <button style={{color: 'black', border: '2px solid #2980b9',backgroundColor: 'white', padding: '8px 15px', margin: '10px'}} type="text" >Wróć<Link to="twitter"></Link></button>
-                  <input style={{color: 'black', border: '2px solid #2980b9',backgroundColor: 'white', padding: '8px 15px', margin: '10px'}} type="submit" value="Edytuj"  />
+                 <button style={{color: 'black', border: '2px solid #2980b9',backgroundColor: 'white', padding: '8px 15px', margin: '10px', borderRadius:'10px'}} type="text" >Wróć<Link to="twitter"></Link></button>
+                  <input style={{color: 'black', border: '2px solid #2980b9',backgroundColor: 'white', padding: '8px 15px', margin: '10px', borderRadius:'10px'}} type="submit" value="Edytuj"  />
                 </div>
               </form>
               </div>

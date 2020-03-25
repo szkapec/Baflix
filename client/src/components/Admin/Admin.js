@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
 import {Link} from 'react-router-dom';
-
+import Navi from '../Filmy/Navi';
 
 const StyledContainer = styled.div`
   background-color: #ecf0f1;
@@ -24,6 +24,7 @@ export default class Admin extends Component {
     render() {
         return (
             <>
+            <Navi/>
             <StyledContainer>
 
          

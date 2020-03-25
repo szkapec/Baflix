@@ -4,13 +4,24 @@ import twitter from '../../assets/twitter.png';
 import {Link} from 'react-router-dom';
 
 const StyledCard = styled.div`
+    position: relative;
     width: 80vw;
     margin: 0px auto;
     padding: 40px 0;
     min-height: 200px;
     max-width: 1000px;
 
+    @media(min-width: 400px){
+        width: 80%;
+        margin: 30px auto 0;
+        font-size: 18px;
+    }
+    @media(min-width: 600px){
+        width: 500px;
+    }
+
 `
+
 const StyledImg = styled.img`
     width:50px;
     height:50px;
@@ -61,13 +72,13 @@ const StyledTextarea = styled.div`
     }
 `
 const StyledButton = styled.button`
-float: right;
+    position: absolute;
     right: 10px;
-    bottom: 10px;
+    bottom: 50px;
     background-color: white; 
-  color: black; 
-  border: 2px solid #2980b9;
-  border-radius: 20px;
+    color: black; 
+    border: 2px solid #2980b9;
+    border-radius: 20px;
 `
 
 const ViewTwitters = props => {
@@ -79,18 +90,14 @@ const ViewTwitters = props => {
     return(
     <>
         <StyledCard>
-            <StyledUser style={{}}><b>User:</b> {username}<a href={`https://${link}`}>  <StyledImg src={twitter}></StyledImg> </a></StyledUser>
-            <StyledTitle><b>Tytuł:</b> {title} </StyledTitle>
-            <StyledTextarea style={{borderBottomLeftRadius: '20px',borderBottomRightRadius: '20px'}}><b>Treść:</b> {description} 
-            
-            {props.username===props.user?(
-                <StyledButton><Link style={{textDecoration: 'none', color:'black'}} to={"/editTwitter/"+props.twitty._id}>Edytuj</Link></StyledButton>)
-                :null}
-            </StyledTextarea>
-           
-
-            
-
+                <StyledUser style={{}}><b>User:</b> {username}<a href={`https://${link}`}>  <StyledImg src={twitter}></StyledImg> </a></StyledUser>
+                <StyledTitle><b>Tytuł:</b> {title} </StyledTitle>
+                <StyledTextarea style={{borderBottomLeftRadius: '20px',borderBottomRightRadius: '20px'}}><b>Treść:</b> {description} 
+                
+                {props.username===props.user?(
+                    <StyledButton><Link style={{textDecoration: 'none', color:'black'}} to={"/editTwitter/"+props.twitty._id}>Edytuj</Link></StyledButton>)
+                    :null}
+                </StyledTextarea>
         </StyledCard>
     </>
     )

@@ -69,7 +69,6 @@ class Mountains extends Component {
     else {
       const token = localStorage.usertoken
       const decoded = jwt_decode(token)
-      console.log(decoded)
       this.setState({
         username: decoded.username,
         premium: decoded.premium,
@@ -93,7 +92,6 @@ class Mountains extends Component {
                 <StyledTitle>Programming / Coding / Hacking music vol.16 (CONNECTION LOST)</StyledTitle>
                 <StyledIframe width="560" height="315" src="https://www.youtube.com/embed/l9nh1l8ZIJQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
               </StyledContener>
-
       </StyledCard>
            
       </>

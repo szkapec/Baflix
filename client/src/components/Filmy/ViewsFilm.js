@@ -74,7 +74,6 @@ class ViewFilm extends Component {
     else {
       const token = localStorage.usertoken
       const decoded = jwt_decode(token)
-      console.log(decoded)
       this.setState({
         username: decoded.username,
         premium: decoded.premium,

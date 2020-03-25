@@ -8,8 +8,9 @@ const Input = styled.input`
   font-size: 14px;
   margin: 20px 20px;
   font-weight: 700;
-  background-color: ${({colors}) => colors?'#ecf0f1':'black'};
+  background-color: ${({colors}) => colors?'#7f8c8d':'black'};
   color: ${({colors}) => colors?'black':'white'};
+  border:none;
   border-radius: 50px;
   float: right;
   margin-right: 30px;
@@ -41,6 +42,8 @@ const StyledTitle = styled.div`
     font-weight: 700;
     margin-bottom: 5px;
     font-size: 12px;
+    padding-top: 30px;
+    color: ${({colors}) => !colors?'black':'#7f8c8d'};
     
   @media(min-width: 400px) {
     font-size: 16px;
@@ -85,7 +88,6 @@ class Music extends Component {
     else {
       const token = localStorage.usertoken
       const decoded = jwt_decode(token)
-      console.log(decoded)
       this.setState({
         username: decoded.username,
         premium: decoded.premium,
@@ -108,16 +110,16 @@ class Music extends Component {
   }
 
   container = () => {
-    console.log(this.state.valueColor)
     return(
       <>
       <StyledCard colors={this.state.valueColor}>
-          <Navi/>
-         
+          
+            <Navi colors={this.state.valueColor}/>
             <StyledContener>
-                <StyledTitle>Programming / Coding / Hacking music vol.16 (CONNECTION LOST)</StyledTitle>
+                <StyledTitle colors={this.state.valueColor}>Programming / Coding / Hacking music vol.16 (CONNECTION LOST)</StyledTitle>
                 <StyledIframe width="560" height="315" src="https://www.youtube.com/embed/l9nh1l8ZIJQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
                 <Input colors={this.state.valueColor} type="button" onClick={this.changeInput} value={this.state.valueColor?'Jasny':'Ciemny'}></Input>
+
               </StyledContener>
               
       </StyledCard>

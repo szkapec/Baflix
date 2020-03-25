@@ -29,7 +29,10 @@ const StyledWrapper = styled.div`
     padding: 100px 90px;
     width: 480px;
   }
+
 `;
+
+
 const StyledText = styled.div`
   font-size: 14px;
   font-weight: 700;
@@ -118,7 +121,20 @@ const StyledContainer = styled.div`
   background-color: #ecf0f1;
   min-height: 100vh;
 `
+const StyledGrid = styled.div`
 
+@media(min-width: 1000px){
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+@media(min-width: 1500px){
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+`
 
 export default class Twitter extends Component {
 
@@ -245,7 +261,10 @@ export default class Twitter extends Component {
         return (
             <StyledContainer>
               <StyledH3>Lista twitterów</StyledH3>
+              
+          
               <form onSubmit={this.onSubmit}>
+               
                
               <StyledWrapper isVisible={this.state.plus}>
               <div className="all"> 
@@ -265,11 +284,12 @@ export default class Twitter extends Component {
               </StyledWrapper>
              </form>
              
+             
               <div style={{backgroundColor: '#2980b9', borderRadius: '50%',border: '1px solid black', width: '50px',height: '50px', position: 'fixed', left: '20px', bottom: '20px'}} >
               <img style={{margin: '12px 12px',}} src={plus} alt="plus" onClick={this.onChangePlus}></img> 
              </div>
    
-             {this.viewsList()}
+             <StyledGrid>{this.viewsList()}</StyledGrid>
             </StyledContainer>
             )
           }

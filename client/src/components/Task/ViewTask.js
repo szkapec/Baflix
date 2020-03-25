@@ -21,22 +21,40 @@ const StyledButtonContener = styled.div`
 `
 const StyledH3 = styled.h3`
     font-size: 14px;
-    padding: 15px 30px;
+    padding: 15px 0px;
+    text-align: center;
 
         @media(min-width: 400px){
         font-size: 18px;
         text-align: center;
     }
+
         @media(min-width: 900px){
         font-size: 22px;
         text-align: center;
     }
 `
+
 const StyledContainer = styled.div`
   background-color: #ecf0f1;
   min-height: 100vh;
-`
 
+`
+const StyledAllGrid = styled.div`
+
+@media(min-width: 1000px){
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 20px;
+}
+@media(min-width: 1500px){
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+`
 
 export default class ViewTask extends Component {
     constructor(props) {
@@ -102,7 +120,7 @@ export default class ViewTask extends Component {
             <StyledContainer>
                 <StyledH3>Twoje prywatne notatki</StyledH3>
                 
-                {this.exercisesList()}
+                <StyledAllGrid>{this.exercisesList()}</StyledAllGrid>
 
                 <StyledButtonContener><Link to="addtask"><StyledButton  className="btn">Dodaj nowe zadanie!</StyledButton></Link></StyledButtonContener>
             </StyledContainer>

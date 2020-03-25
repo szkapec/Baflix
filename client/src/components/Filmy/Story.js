@@ -56,7 +56,6 @@ class Story extends Component {
     else {
       const token = localStorage.usertoken
       const decoded = jwt_decode(token)
-      console.log(decoded)
       this.setState({
         username: decoded.username,
         premium: decoded.premium,
@@ -78,9 +77,7 @@ class Story extends Component {
 
         
           <Navi/>
-          <StyledContener>
-              <StyledIframe width="560" height="315" src="https://www.youtube.com/embed/tXk-m5Ps_sw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
-          </StyledContener>
+          
         </StyledContainer>
       </>
     )

@@ -12,11 +12,13 @@ const StyledContainer = styled.ul`
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     list-style-type: none;
-    padding: 0;
+    margin:0;
     padding-top: 15px;
     padding-bottom: 25px;
-    margin: 0 10px;
+    padding-left: 10px;
+    padding-right: 10px;
     text-align: center;
+    background-color: ${({colors})=> colors?'black':'#ecf0f1'} ;
     
 
     @media(min-width:600px) {
@@ -25,7 +27,6 @@ const StyledContainer = styled.ul`
     }
     @media(min-width:1000px) {
         padding: 20px 50px;
-        margin: 0 30px;
     }
     @media(min-width:1400px) {
         padding: 20px 60px;
@@ -65,7 +66,7 @@ class Navi extends Component {
     return (
         <>
         <div>
-            <StyledContainer>
+            <StyledContainer colors={this.props.colors}>
             <StyledLi><Link style={{color:'black'}} to="/profile/film/programing">
                 Programowanie
             </Link>

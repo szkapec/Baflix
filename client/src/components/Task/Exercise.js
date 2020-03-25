@@ -5,6 +5,7 @@ import styled from 'styled-components';
 const StyledCard = styled.div`
     
     margin-top: 30px;
+    margin: 30px auto 0;
     width: 250px;
     min-height: 150px;
   
@@ -14,11 +15,10 @@ const StyledCard = styled.div`
         margin: 30px auto 0;
         font-size: 18px;
     }
-    @media(min-width: 900px){
-        width: 80%;
-        margin: 30px auto 0;
-        font-size: 20px;
+    @media(min-width: 600px){
+        width: 500px;
     }
+
 
 `
 const StyledUser = styled.div`
