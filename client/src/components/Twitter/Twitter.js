@@ -166,8 +166,8 @@ export default class Twitter extends Component {
         username: decoded.username,
       })
     }
-    
-    axios.get('http://localhost:5000/twitter/')
+
+    axios.get('/twitter/')
     .then(response => {
         this.setState({
             twittersy: response.data
@@ -232,7 +232,7 @@ export default class Twitter extends Component {
             title: this.state.title,
             link: this.state.link
         }
-        axios.post('http://localhost:5000/twitter/add', twitt)
+        axios.post('/twitter/add', twitt)
         .then(res => console.log(res.data));
         this.setState({
           info: '',
