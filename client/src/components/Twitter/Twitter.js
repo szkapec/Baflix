@@ -155,28 +155,30 @@ export default class Twitter extends Component {
 
 
     
-  componentDidMount() {
-    if(!localStorage.usertoken) {
-      return window.location = '/login'
-    } 
-    else {
-      const token = localStorage.usertoken
-      const decoded = jwt_decode(token)
-      this.setState({
-        username: decoded.username,
-      })
-    }
-
-    axios.get('/twitter/')
-    .then(response => {
-        this.setState({
-            twittersy: response.data
-        })
+/*
+  // componentDidMount() {
+  //   if(!localStorage.usertoken) {
+  //     return window.location = '/login'
+  //   } 
+  //   else {
+  //     const token = localStorage.usertoken
+  //     const decoded = jwt_decode(token)
+  //     this.setState({
+  //       username: decoded.username,
+  //     })
+  //   }
+    
+  //   axios.get('http://localhost:5000/twitter/')
+  //   .then(response => {
+  //       this.setState({
+  //           twittersy: response.data
+  //       })
         
         
-    })
-    .catch(error => console.log(error))
-  }
+  //   })
+  //   .catch(error => console.log(error))
+  // }
+*/
 
     onChangeLink = (e) => {
         this.setState({
@@ -232,7 +234,7 @@ export default class Twitter extends Component {
             title: this.state.title,
             link: this.state.link
         }
-        axios.post('/twitter/add', twitt)
+        axios.post('http://localhost:5000/twitter/add', twitt)
         .then(res => console.log(res.data));
         this.setState({
           info: '',
