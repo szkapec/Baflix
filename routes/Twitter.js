@@ -8,15 +8,16 @@ const bcrypt = require('bcrypt')
 const Twitter = require('../models/Twiter.model');
 twitters.use(cors());
 
-twitters.get('/', (req, res) => {
+
+twitters.get('/', (req,res) => {
     Twitter.find({
 
     })
-    .then(twitter=> {
-        if(twitter){
-            res.json(twitter);
+    .then(message=> {
+        if(message){
+            res.json(message)
         } else {
-            res.send("Twitters does not exist")
+            res.send("Messages does not exist")
         }
     })
     .catch(err => {
