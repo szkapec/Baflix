@@ -9,24 +9,21 @@ const Twitter = require('../models/Twiter.model');
 twitters.use(cors());
 
 
-let Exercise = require('../models/Exercise.model');
-exercises.use(cors());
+twitters.get('/', (req,res) => {
+    Twitter.find({
 
-exercises.get('/', (req,res) => {
-    Exercise.find({
     })
-    .then(exercis => {
-        if(exercis){
-            res.json(exercis)
+    .then(message=> {
+        if(message){
+            res.json(message)
         } else {
-            res.send("execises does not exist")
+            res.send("Messages does not exist")
         }
     })
     .catch(err => {
-        res.send("Exercises error" +  err)
+        res.send('error: ' + err)
     })
 })
-
 
 twitters.post('/add', (req,res) => {
     Twitter.find({
