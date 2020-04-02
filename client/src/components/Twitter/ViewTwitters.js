@@ -90,14 +90,14 @@ const ViewTwitters = props => {
     return(
     <>
         <StyledCard>
-                {/* <StyledUser style={{}}><b>User:</b> {username}<a href={`https://${link}`}>  <StyledImg src={twitter}></StyledImg> </a></StyledUser>
+                <StyledUser style={{}}><b>User:</b> {username}<a href={`https://${link}`}>  <StyledImg src={twitter}></StyledImg> </a></StyledUser>
                 <StyledTitle><b>Tytuł:</b> {title} </StyledTitle>
                 <StyledTextarea style={{borderBottomLeftRadius: '20px',borderBottomRightRadius: '20px'}}><b>Treść:</b> {description} 
                 
                 {props.username===props.user?(
                     <StyledButton><Link style={{textDecoration: 'none', color:'black'}} to={"/editTwitter/"+props.twitty._id}>Edytuj</Link></StyledButton>)
                     :null}
-                </StyledTextarea> */}
+                </StyledTextarea>
         </StyledCard>
     </>
     )

@@ -155,115 +155,112 @@ export default class Twitter extends Component {
 
 
     
-/*
-  // componentDidMount() {
-  //   if(!localStorage.usertoken) {
-  //     return window.location = '/login'
-  //   } 
-  //   else {
-  //     const token = localStorage.usertoken
-  //     const decoded = jwt_decode(token)
-  //     this.setState({
-  //       username: decoded.username,
-  //     })
-  //   }
+  componentDidMount() {
+    if(!localStorage.usertoken) {
+      return window.location = '/login'
+    } 
+    else {
+      const token = localStorage.usertoken
+      const decoded = jwt_decode(token)
+      this.setState({
+        username: decoded.username,
+      })
+    }
     
-  //   axios.get('http://localhost:5000/twitter/')
-  //   .then(response => {
-  //       this.setState({
-  //           twittersy: response.data
-  //       })
+    axios.get('http://localhost:5000/twitter/')
+    .then(response => {
+        this.setState({
+            twittersy: response.data
+        })
         
         
-  //   })
-  //   .catch(error => console.log(error))
-  // }
-*/
+    })
+    .catch(error => console.log(error))
+  }
 
-  //   onChangeLink = (e) => {
-  //       this.setState({
-  //           link: e.target.value,
-  //       })
-  //   }
+    onChangeLink = (e) => {
+        this.setState({
+            link: e.target.value,
+        })
+    }
 
-  //   onChangeTitle = (e) => {
-  //       this.setState({
-  //           title: e.target.value
-  //       })
-  //   }
+    onChangeTitle = (e) => {
+        this.setState({
+            title: e.target.value
+        })
+    }
 
-  //   onChangeDescription=(e)=> {
-  //       this.setState({
-  //           description: e.target.value
-  //       })
-  //   }
-  //   onChangeDuration=(e)=> {
-  //       this.setState({
-  //           duration: e.target.value
-  //       })
-  //   }
-  //   onChangeDate=(date) =>{
-  //       this.setState({
-  //           date,
-  //       })
-  //   }
-  //   onChangePlus = (e) => {
-  //       this.setState({
-  //           plus: !this.state.plus
-  //       })
-  //   }
+    onChangeDescription=(e)=> {
+        this.setState({
+            description: e.target.value
+        })
+    }
+    onChangeDuration=(e)=> {
+        this.setState({
+            duration: e.target.value
+        })
+    }
+    onChangeDate=(date) =>{
+        this.setState({
+            date,
+        })
+    }
+    onChangePlus = (e) => {
+        this.setState({
+            plus: !this.state.plus
+        })
+    }
 
-  //   onSubmit=(e)=>{
-  //       e.preventDefault();
+    onSubmit=(e)=>{
+        e.preventDefault();
         
-  //       if(this.state.description.length<=5) {
-  //         this.setState({
-  //           info: "Za któtka treść!"
-  //         })
-  //       }
-  //       if(this.state.title.length<=3){
-  //         this.setState({
-  //           infoTitle: "Za któtka treść!"
-  //         })
-  //       }
+        if(this.state.description.length<=5) {
+          this.setState({
+            info: "Za któtka treść!"
+          })
+        }
+        if(this.state.title.length<=3){
+          this.setState({
+            infoTitle: "Za któtka treść!"
+          })
+        }
         
-  //       if(this.state.description.length>5 && this.state.title.length>3) {
-  //         const twitt = {
-  //           username: this.state.username,
-  //           description: this.state.description,
-  //           title: this.state.title,
-  //           link: this.state.link
-  //       }
-  //       axios.post('http://localhost:5000/twitter/add', twitt)
-  //       .then(res => console.log(res.data));
-  //       this.setState({
-  //         info: '',
-  //         plus: false,
+        if(this.state.description.length>5 && this.state.title.length>3) {
+          const twitt = {
+            username: this.state.username,
+            description: this.state.description,
+            title: this.state.title,
+            link: this.state.link
+        }
+        axios.post('http://localhost:5000/twitter/add', twitt)
+        .then(res => console.log(res.data));
+        this.setState({
+          info: '',
+          plus: false,
 
-  //       })
-  //       window.location = '/twitter'; //na strone glowna
-  //       } 
+        })
+        window.location = '/twitter'; //na strone glowna
+        } 
 
     
-  //   }
+    }
 
 
-  //   viewsList = () => {
+    viewsList = () => {
        
-  //     return this.state.twittersy.map(poj => {
+      return this.state.twittersy.map(poj => {
         
-  //         return <ViewTwitters twitty={poj} username={poj.username} user={this.state.username}  key={poj._id}/>
+          return <ViewTwitters twitty={poj} username={poj.username} user={this.state.username}  key={poj._id}/>
         
       
-  //     })
-  // }
+      })
+  }
 
 
     render() {
         return (
             <StyledContainer>
-              asdas
-              {/* <StyledH3>Lista twitterów</StyledH3>
+              <StyledH3>Lista twitterów</StyledH3>
               
           
               <form onSubmit={this.onSubmit}>
@@ -292,7 +289,7 @@ export default class Twitter extends Component {
               <img style={{margin: '12px 12px',}} src={plus} alt="plus" onClick={this.onChangePlus}></img> 
              </div>
    
-             <StyledGrid>{this.viewsList()}</StyledGrid> */}
+             <StyledGrid>{this.viewsList()}</StyledGrid>
             </StyledContainer>
             )
           }
