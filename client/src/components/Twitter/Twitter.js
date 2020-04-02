@@ -162,12 +162,12 @@ export default class Twitter extends Component {
     else {
       const token = localStorage.usertoken
       const decoded = jwt_decode(token)
-
       this.setState({
         username: decoded.username,
       })
     }
-    axios.get('/twitter/')
+    
+    axios.get('http://localhost:5000/twitter/')
     .then(response => {
         this.setState({
             twittersy: response.data
@@ -232,7 +232,7 @@ export default class Twitter extends Component {
             title: this.state.title,
             link: this.state.link
         }
-        axios.post('/twitter/add', twitt)
+        axios.post('http://localhost:5000/twitter/add', twitt)
         .then(res => console.log(res.data));
         this.setState({
           info: '',

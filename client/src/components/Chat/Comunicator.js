@@ -74,7 +74,7 @@ export default class Comunicator extends Component {
     componentDidMount() {
         
         if(!localStorage.usertoken) {
-            // return window.location = '/login';
+            return window.location = '/login';
           } 
           else {
             const token = localStorage.usertoken
@@ -85,7 +85,7 @@ export default class Comunicator extends Component {
           }
 
 
-        axios.get('/message/')
+        axios.get('http://localhost:5000/message/')
             .then(response => {
                 this.setState({
                     exercises: response.data
@@ -110,7 +110,7 @@ onSubmit=(e)=>{
         
     }
 
-    axios.post('/message/add', message)
+    axios.post('http://localhost:5000/message/add', message)
     .then(res => console.log(res.data))
     window.location = '/chat'; //na strone glowna
 }
