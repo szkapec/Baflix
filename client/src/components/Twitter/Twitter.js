@@ -261,38 +261,38 @@ export default class Twitter extends Component {
 
     render() {
         return (
-            // <StyledContainer>
-            //   <StyledH3>Lista twitterów</StyledH3>
+            <StyledContainer>
+              {/* <StyledH3>Lista twitterów</StyledH3>
               
           
-            //   <form onSubmit={this.onSubmit}>
+              <form onSubmit={this.onSubmit}>
                
                
-            //   <StyledWrapper isVisible={this.state.plus}>
-            //   <div className="all"> 
-            //   <div style={{color:'red'}}> {this.state.infoTitle?this.state.infoTitle:null}</div>
-            //    <StyledText> Tytuł twittera: <div><Input onChange={this.onChangeTitle} placeholder="Tytuł"></Input></div></StyledText>
-            //    <StyledText>Link <div> <Input onChange={this.onChangeLink} placeholder="Link"></Input></div></StyledText>
-            //   <div style={{color:'red'}}> {this.state.info?this.state.info:null}</div>
-            //    <StyledText> Treść: <div><Textarea onChange={this.onChangeDescription} placeholder="TREŚĆ"></Textarea></div></StyledText>
-            //   </div>
+              <StyledWrapper isVisible={this.state.plus}>
+              <div className="all"> 
+              <div style={{color:'red'}}> {this.state.infoTitle?this.state.infoTitle:null}</div>
+               <StyledText> Tytuł twittera: <div><Input onChange={this.onChangeTitle} placeholder="Tytuł"></Input></div></StyledText>
+               <StyledText>Link <div> <Input onChange={this.onChangeLink} placeholder="Link"></Input></div></StyledText>
+              <div style={{color:'red'}}> {this.state.info?this.state.info:null}</div>
+               <StyledText> Treść: <div><Textarea onChange={this.onChangeDescription} placeholder="TREŚĆ"></Textarea></div></StyledText>
+              </div>
 
-            //   <div className="form-group">
-            //       <StyledInput type="submit" value="Dodaj twitta" className="btn" />
-            // </div> 
-            //   <div style={{backgroundColor: '#2980b9', borderRadius: '50%', width: '50px',height: '50px', position:'absolute', bottom: '20px', right: '20px'}} >
-            //     <img style={{margin: '12px 12px'}} src={plus} alt="plusowo" onClick={this.onChangePlus}></img>
-            //  </div>
-            //   </StyledWrapper>
-            //  </form>
+              <div className="form-group">
+                  <StyledInput type="submit" value="Dodaj twitta" className="btn" />
+            </div> 
+              <div style={{backgroundColor: '#2980b9', borderRadius: '50%', width: '50px',height: '50px', position:'absolute', bottom: '20px', right: '20px'}} >
+                <img style={{margin: '12px 12px'}} src={plus} alt="plusowo" onClick={this.onChangePlus}></img>
+             </div>
+              </StyledWrapper>
+             </form>
              
              
-            //   <div style={{backgroundColor: '#2980b9', borderRadius: '50%',border: '1px solid black', width: '50px',height: '50px', position: 'fixed', left: '20px', bottom: '20px'}} >
-            //   <img style={{margin: '12px 12px',}} src={plus} alt="plus" onClick={this.onChangePlus}></img> 
-            //  </div>
+              <div style={{backgroundColor: '#2980b9', borderRadius: '50%',border: '1px solid black', width: '50px',height: '50px', position: 'fixed', left: '20px', bottom: '20px'}} >
+              <img style={{margin: '12px 12px',}} src={plus} alt="plus" onClick={this.onChangePlus}></img> 
+             </div>
    
-            //  <StyledGrid>{this.viewsList()}</StyledGrid>
-            // </StyledContainer>
+             <StyledGrid>{this.viewsList()}</StyledGrid> */}
+            </StyledContainer>
             )
           }
         }
