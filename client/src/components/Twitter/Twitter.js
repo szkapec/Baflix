@@ -180,83 +180,83 @@ export default class Twitter extends Component {
   // }
 */
 
-    onChangeLink = (e) => {
-        this.setState({
-            link: e.target.value,
-        })
-    }
+  //   onChangeLink = (e) => {
+  //       this.setState({
+  //           link: e.target.value,
+  //       })
+  //   }
 
-    onChangeTitle = (e) => {
-        this.setState({
-            title: e.target.value
-        })
-    }
+  //   onChangeTitle = (e) => {
+  //       this.setState({
+  //           title: e.target.value
+  //       })
+  //   }
 
-    onChangeDescription=(e)=> {
-        this.setState({
-            description: e.target.value
-        })
-    }
-    onChangeDuration=(e)=> {
-        this.setState({
-            duration: e.target.value
-        })
-    }
-    onChangeDate=(date) =>{
-        this.setState({
-            date,
-        })
-    }
-    onChangePlus = (e) => {
-        this.setState({
-            plus: !this.state.plus
-        })
-    }
+  //   onChangeDescription=(e)=> {
+  //       this.setState({
+  //           description: e.target.value
+  //       })
+  //   }
+  //   onChangeDuration=(e)=> {
+  //       this.setState({
+  //           duration: e.target.value
+  //       })
+  //   }
+  //   onChangeDate=(date) =>{
+  //       this.setState({
+  //           date,
+  //       })
+  //   }
+  //   onChangePlus = (e) => {
+  //       this.setState({
+  //           plus: !this.state.plus
+  //       })
+  //   }
 
-    onSubmit=(e)=>{
-        e.preventDefault();
+  //   onSubmit=(e)=>{
+  //       e.preventDefault();
         
-        if(this.state.description.length<=5) {
-          this.setState({
-            info: "Za któtka treść!"
-          })
-        }
-        if(this.state.title.length<=3){
-          this.setState({
-            infoTitle: "Za któtka treść!"
-          })
-        }
+  //       if(this.state.description.length<=5) {
+  //         this.setState({
+  //           info: "Za któtka treść!"
+  //         })
+  //       }
+  //       if(this.state.title.length<=3){
+  //         this.setState({
+  //           infoTitle: "Za któtka treść!"
+  //         })
+  //       }
         
-        if(this.state.description.length>5 && this.state.title.length>3) {
-          const twitt = {
-            username: this.state.username,
-            description: this.state.description,
-            title: this.state.title,
-            link: this.state.link
-        }
-        axios.post('http://localhost:5000/twitter/add', twitt)
-        .then(res => console.log(res.data));
-        this.setState({
-          info: '',
-          plus: false,
+  //       if(this.state.description.length>5 && this.state.title.length>3) {
+  //         const twitt = {
+  //           username: this.state.username,
+  //           description: this.state.description,
+  //           title: this.state.title,
+  //           link: this.state.link
+  //       }
+  //       axios.post('http://localhost:5000/twitter/add', twitt)
+  //       .then(res => console.log(res.data));
+  //       this.setState({
+  //         info: '',
+  //         plus: false,
 
-        })
-        window.location = '/twitter'; //na strone glowna
-        } 
+  //       })
+  //       window.location = '/twitter'; //na strone glowna
+  //       } 
 
     
-    }
+  //   }
 
 
-    viewsList = () => {
+  //   viewsList = () => {
        
-      return this.state.twittersy.map(poj => {
+  //     return this.state.twittersy.map(poj => {
         
-          return <ViewTwitters twitty={poj} username={poj.username} user={this.state.username}  key={poj._id}/>
+  //         return <ViewTwitters twitty={poj} username={poj.username} user={this.state.username}  key={poj._id}/>
         
       
-      })
-  }
+  //     })
+  // }
 
 
     render() {
