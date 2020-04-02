@@ -169,6 +169,7 @@ export default class Twitter extends Component {
     
     axios.get('http://localhost:5000/twitter/')
     .then(response => {
+      console.log(response)
         this.setState({
             twittersy: response.data
         })
