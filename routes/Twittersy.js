@@ -28,11 +28,13 @@ twitters.post('/add', (req,res) => {
     })
     .then(exercis => {
         if(exercis){
+            const username = req.body.username;
             const title = req.body.title;
             const description = req.body.description;
 
         
            const newTwitt = new Twitters({
+               username,
                title,
                description,
 

@@ -55,6 +55,8 @@ console.log(props)
                     <>
                         <StyledCard>
                              <StyledUser>  <b>{props.twitters.username}</b>   </StyledUser>
+                             <StyledUser>  <b>{props.twitters.title}</b>   </StyledUser>
+
                              <StyledText> <b>Treść: </b>  {props.twitters.description}</StyledText>
                              
                              {/* <div>Czas: {props.exercise.duration}</div> */}

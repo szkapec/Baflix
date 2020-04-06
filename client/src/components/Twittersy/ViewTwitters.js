@@ -117,7 +117,7 @@ export default class ViewTask extends Component {
         console.log(this.state.exercises)
         return (
             <StyledContainer>
-                <StyledH3>Twoje prywatne notatki</StyledH3>
+                <StyledH3>Twittersy</StyledH3>
                 
                 <StyledAllGrid>{this.exercisesList()}</StyledAllGrid>
 

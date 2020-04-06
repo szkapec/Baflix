@@ -58,7 +58,7 @@ export default class AddTwitters extends Component {
             duration: 0,
             date: new Date(),
             users: [],
-            title: 'szkapencjusz',
+            title: '',
         }
     }
 
@@ -87,7 +87,12 @@ export default class AddTwitters extends Component {
             description: e.target.value
         })
     }
-    onChangeDuration=(e)=> {
+    // onChangeDuration=(e)=> {
+    //     this.setState({
+    //         title: e.target.value
+    //     })
+    // }
+    onChangeTitle=(e)=> {
         this.setState({
             title: e.target.value
         })
@@ -101,7 +106,7 @@ export default class AddTwitters extends Component {
     onSubmit=(e)=>{
         e.preventDefault();
         const exercise = {
-            // username: this.state.username,
+            username: this.state.username,
             title: this.state.title,
             description: this.state.description,
             
@@ -117,16 +122,27 @@ export default class AddTwitters extends Component {
         return (
           <StyledContainer>
             <div className="container">
-              <StyledH3 >wpisz twittera</StyledH3>
+              <StyledH3 >Napisz twittera</StyledH3>
               <form onSubmit={this.onSubmit}>
                 <div className="form-group"> 
-                  <StyledLabel>title: </StyledLabel>
+                  <StyledLabel>Osoba: </StyledLabel>
+                  <input style={{maxWidth: '400px'}} ref="userInput"
+                      required
+                      className="form-control"
+                      value={this.state.username}
+                      onChange={this.onChangeDuration}
+                      disabled
+                      >
+                      
+                  </input>
+                </div>
+                <div className="form-group"> 
+                  <StyledLabel>tytuł: </StyledLabel>
                   <input style={{maxWidth: '400px'}} ref="userInput"
                       required
                       className="form-control"
                       value={this.state.title}
-                      onChange={this.onChangeDuration}
-                      disabled
+                      onChange={this.onChangeTitle}
                       >
                       
                   </input>
