@@ -5,41 +5,42 @@ const cors = require('cors')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
 
-const Twitters = require('../models/Messages.model')
+let Twitters = require('../models/Twittersy.model');
 twitters.use(cors());
 
 twitters.get('/', (req,res) => {
     Twitters.find({
-
     })
-    .then(message=> {
-        if(message){
-            res.json(message)
+    .then(exercis => {
+        if(exercis){
+            res.json(exercis)
         } else {
-            res.send("Twitters does not exist")
+            res.send("execises does not exist")
         }
     })
     .catch(err => {
-        res.send('error: ' + err)
+        res.send("Twitters error" +  err)
     })
 })
+
 twitters.post('/add', (req,res) => {
     Twitters.find({
-
     })
-    .then(message => {
-        if(message){
+    .then(exercis => {
+        if(exercis){
             const title = req.body.title;
             const description = req.body.description;
 
-    const newExercise = new Twitters({
-        title,
-        description,
- 
-    });
-    newExercise.save()
-         .then(()=> res.json('twitters added!!!'))
-         .catch(err=> res.status(400).json('Error: ' + err))
+        
+           const newTwitt = new Twitters({
+               title,
+               description,
+
+           });
+           newTwitt.save()
+        .then(()=> res.json('Exercises added!!!'))
+        .catch(err=> res.status(400).json('Error: ' + err))
         }
     })
 })
+module.exports = twitters

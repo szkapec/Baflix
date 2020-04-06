@@ -26,6 +26,25 @@ class Landing extends Component {
 
     const userLink = (
       <ul className="navbar-nav">
+
+          <li className="nav-item">
+              <Link to="/addtwitters" className="nav-link">
+                addtwiters
+              </Link>
+          </li>
+          <li className="nav-item">
+              <Link to="/viewTwitter" className="nav-link">
+              viewTwitter
+              </Link>
+          </li>
+          <li className="nav-item">
+              <Link to="/chat" className="nav-link">
+                addtwiters
+              </Link>
+          </li>
+
+
+
           <li className="nav-item">
               <Link to="/chat" className="nav-link">
                 Chat

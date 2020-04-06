@@ -46,6 +46,9 @@ app.use('/message', messages)
 var twitters = require('./routes/Twitter');
 app.use('/twitter', twitters)
 
+var twittersy = require('./routes/Twittersy');
+app.use('/twittery', twittersy)
+
 
 if(process.env.NODE_ENV === "production") {
   //set static folder
