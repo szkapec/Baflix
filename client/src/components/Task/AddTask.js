@@ -23,10 +23,9 @@ const StyledContainer = styled.div`
   background-color: #ecf0f1;
   min-height: 100vh;
 `
-const StyledInput = styled.input`
-  padding: 10px 30px;
+const StyledInput2 = styled.button`
+  padding: 5px 15px;
   font-size: 16px;
-  margin: 20px 0px;
   font-weight: 700;
   background-color: #ecf0f1;
     background-color: white; 
@@ -35,7 +34,28 @@ const StyledInput = styled.input`
     border-radius: 20px;
   @media(min-width:800px){
         font-size:18px;
-        padding: 10px 35px;
+        padding: 10px 30px;
+    }
+
+  ::placeholder {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: grey;
+  }
+  `
+  const StyledInput = styled.input`
+  padding: 5px 15px;
+  font-size: 16px;
+  margin: 20px 20px;
+  font-weight: 700;
+  background-color: #ecf0f1;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #7f8c8d;
+    border-radius: 20px;
+  @media(min-width:800px){
+        font-size:18px;
+        padding: 10px 30px;
     }
 
   ::placeholder {
@@ -144,6 +164,7 @@ export default class CreateExercise extends Component {
                 
         
                 <div className="form-group">
+                <StyledInput2 type="text" ><a style={{textDecoration: 'none',color: 'black'}} href="/viewtask">Wróć</a></StyledInput2>
                   <StyledInput type="submit" value="Utwórz" className="btn" />
                 </div>
               </form>

@@ -52,7 +52,7 @@ twitters.get('/:id', (req,res) => {
     Twitters.findById(req.params.id)
     .then(twit => {
         if(twit){
-            res.json(twitt)
+            res.json(twit)
         } else {
             res.send("Twitters id does exist")
         }

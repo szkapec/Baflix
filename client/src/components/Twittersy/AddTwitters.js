@@ -84,7 +84,7 @@ export default class AddTwitters extends Component {
           plus: false,
 
         })
-        // window.location = '/twitter'; //na strone glowna
+        window.location = '/viewTwitter'; //na strone glowna
         } 
 
     
@@ -100,7 +100,7 @@ export default class AddTwitters extends Component {
                <div className="all"> 
                <div style={{color:'red'}}> {this.state.infoTitle?this.state.infoTitle:null}</div>
                 <StyledText> Tytuł twittera: <div><Input onChange={this.onChangeTitle} placeholder="Tytuł"></Input></div></StyledText>
-                <StyledText>Link <div> <Input onChange={this.onChangeLink} placeholder="Link"></Input></div></StyledText>
+                <StyledText>Link <div> <Input onChange={this.onChangeLink} placeholder="https://"></Input></div></StyledText>
                <div style={{color:'red'}}> {this.state.info?this.state.info:null}</div>
                 <StyledText> Treść: <div><Textarea onChange={this.onChangeDescription} placeholder="TREŚĆ"></Textarea></div></StyledText>
                </div>
@@ -130,7 +130,8 @@ const StyledWrapper = styled.div`
   display: flex;
   padding: 30px 30px;
   flex-direction: column;
-  border-radius: 20px;
+  border-radius: 20px 0 0 20px;
+
   right: 0;
   top: 0;
   height: 100vh;

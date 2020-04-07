@@ -57,21 +57,17 @@ export default class ViewTask extends Component {
     exercisesList = () => {
        
         return this.state.exercises.map(poj => {
-          console.log(poj)
+            console.log(poj)
             return <ExerciseTwitter twitters={poj} user={this.state.username} deleteTwitters={this.deleteExercise}  key={poj._id} username={poj.username}/>
 
         })
     }
 
     render() {
-        console.log(this.state.exercises)
         return (
             <StyledContainer>
                 <StyledH3>Twittersy</StyledH3>
                 <StyledAllGrid>{this.exercisesList()}</StyledAllGrid>
-                <StyledButtonContener><Link to="/addtwitters"><StyledButton  className="btn">Dodaj nowe zadanie!</StyledButton></Link></StyledButtonContener>
-
-                
                 <AddTwitters username={this.state.username}/>
             </StyledContainer>
         )
@@ -79,20 +75,6 @@ export default class ViewTask extends Component {
 }
 
 
-
-const StyledButton = styled.button`
-    display: inline-block;
-    margin: 20px auto;
-    background-color: white; 
-    color: black; 
-    border: 2px solid #bdc3c7;
-    border-radius: 20px;
-
-`
-const StyledButtonContener = styled.div`
-    width: 100%;
-    text-align: center;
-`
 
 
 const StyledAllGrid = styled.div`
@@ -114,20 +96,7 @@ const StyledContainer = styled.div`
   background-color: #ecf0f1;
   min-height: 100vh;
 `
-const StyledGrid = styled.div`
 
-@media(min-width: 1000px){
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-}
-@media(min-width: 1500px){
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 20px;
-    grid-row-gap: 20px;
-}
-`
 
 const StyledH3 = styled.h3 `
 text-decoration: underline;

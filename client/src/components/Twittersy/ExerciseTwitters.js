@@ -1,8 +1,54 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import twitter from '../../assets/twitter.png';
 import styled from 'styled-components';
 
-const StyledCard = styled.div`
+
+const Exercise = props => {
+
+
+    let conn = () => {
+        let min = props.twitters.updatedAt.substr(11,8)
+        let time = props.twitters.updatedAt.substr(0,10)
+        let conn = time.concat(`:${min}`)
+        return conn
+     }
+    return(
+        <>
+                    <>
+                        <StyledCard>
+                             <StyledUser>  <b>{props.twitters.username}</b>  {props.twitters.link&&(<a href={props.twitters.link}>  <StyledImg src={twitter}></StyledImg> </a>)}  </StyledUser>
+                             <StyledTitle>  <b>{props.twitters.title}</b>   </StyledTitle>
+
+                             <StyledTextarea style={{borderBottomLeftRadius: '20px',borderBottomRightRadius: '20px'}}> 
+                                  <b>Treść: </b>  {props.twitters.description}
+                                  {props.username===props.user?(
+                                  <StyledButton><Link style={{textDecoration: 'none', color:'black'}} to={"/editTwitter/"+props.twitters._id}>Edytuj</Link></StyledButton>) 
+                                   :null}
+                                   <StyledCzas>{conn()} </StyledCzas>
+                            </StyledTextarea>
+                        </StyledCard>
+                
+                       
+                    </>
+           
+
+        </>
+        
+      )
+    }
+
+    export default Exercise;
+
+
+    const StyledCzas = styled.div`
+    position: absolute;
+    left: 10px;
+    bottom: 50px;
+    color: black; 
+    `
+
+    const StyledCard = styled.div`
     position: relative;
     width: 80vw;
     margin: 0px auto;
@@ -79,37 +125,3 @@ const StyledButton = styled.button`
     border: 2px solid #2980b9;
     border-radius: 20px;
 `
-const StyledLink = styled.div`
-    text-align:center;
-    padding: 5px;
-
-`
-
-const Exercise = props => {
-
-console.log(props)
-    return(
-        <>
-                    <>
-                        <StyledCard>
-                             <StyledUser>  <b>{props.twitters.username}</b>   </StyledUser>
-                             <StyledTitle>  <b>{props.twitters.title}</b>   </StyledTitle>
-
-                             <StyledTextarea style={{borderBottomLeftRadius: '20px',borderBottomRightRadius: '20px'}}> 
-                                  <b>Treść: </b>  {props.twitters.description}
-                                  {props.username===props.user?(
-                                  <StyledButton><Link style={{textDecoration: 'none', color:'black'}} to={"/editTwitter/"+props.twitters._id}>Edytuj</Link></StyledButton>) 
-                                   :null}
-                            </StyledTextarea>
-                        </StyledCard>
-                
-                       
-                    </>
-           
-
-        </>
-        
-      )
-    }
-
-    export default Exercise;

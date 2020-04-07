@@ -3,45 +3,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 
 
-const StyledH3 = styled.h3`
-    font-size: 20px;
-    text-decoration: underline;
-    padding: 20px 20px;
-    @media(min-width:500px){
-        font-size: 22px;
-    }
-`
-const StyledLabel = styled.label `
-    font-size: 17px;
-    margin: 20px 20px;
-    @media(min-width:800px){
-        font-size: 19px;
-    }
-`
-const StyledInput = styled.input`
-    padding: 10px 30px;
-    font-size: 16px;
-    margin: 20px 20px;
-    font-weight: 700;
-    background-color: #ecf0f1; 
-    color: black; 
-    border: 2px solid #bdc3c7;
-    border-radius: 20px;
-  @media(min-width:800px){
-        font-size:18px;
-        padding: 10px 35px;
-    }
 
-  ::placeholder {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: grey;
-  }
-  `
-  const StyledContainer = styled.div`
-  background-color: #bdc3c7;
-  min-height: 100vh;
-`
 
 export default class EditTask extends Component {
 
@@ -120,9 +82,9 @@ export default class EditTask extends Component {
               <StyledH3>Edycja notatki</StyledH3>
               <form onSubmit={this.onSubmit}>
                 
-                <div className="form-group"> 
-                  <StyledLabel>Notatka: </StyledLabel>
-                  <textarea  style={{maxWidth: '500px', minHeight: '150px', marginLeft: '20px'}} type="text"
+                <div className="form-groups"> 
+                  <StyledLabel>Treść: </StyledLabel>
+                  <StyledTextArea  style={{maxWidth: '500px', minHeight: '150px', marginLeft: '20px'}} type="text"
                       required
                       className="form-control"
                       value={this.state.description}
@@ -140,3 +102,62 @@ export default class EditTask extends Component {
             )
           }
         }
+
+
+   const StyledTextArea = styled.textarea`
+    padding: 10px 10px;
+    box-shadow: 0 0 10px grey;
+    font-size: 14px;
+    min-height: 100px;
+    width: 85%;
+@media(min-width: 500px) {
+     font-size: 16px;   
+     height: 200px;
+     padding: 15px 10px;
+    }
+@media(min-width: 1000px) {
+     font-size: 18px;   
+     height: 250px;
+    }
+  `
+
+
+    const StyledH3 = styled.h3`
+        font-size: 20px;
+        text-decoration: underline;
+        padding: 20px 20px;
+        @media(min-width:500px){
+            font-size: 22px;
+        }
+    `
+    const StyledLabel = styled.label `
+        font-size: 17px;
+        margin: 20px 20px;
+        @media(min-width:800px){
+            font-size: 19px;
+        }
+    `
+    const StyledInput = styled.input`
+        padding: 10px 30px;
+        font-size: 16px;
+        margin: 20px 20px;
+        font-weight: 700;
+        background-color: #ecf0f1; 
+        color: black; 
+        border: 2px solid #bdc3c7;
+        border-radius: 20px;
+      @media(min-width:800px){
+            font-size:18px;
+            padding: 10px 35px;
+        }
+    
+      ::placeholder {
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: grey;
+      }
+      `
+      const StyledContainer = styled.div`
+      background-color: #bdc3c7;
+      min-height: 100vh;
+    `

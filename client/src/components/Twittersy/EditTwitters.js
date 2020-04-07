@@ -24,12 +24,14 @@ export default class EditTwitter extends Component {
 
         axios.get('http://localhost:5000/twittery/'+this.props.match.params.id)
             .then(response => {
+              console.log(response)
                 this.setState({
                     description: response.data.description,
                     link: response.data.link,
                     title: response.data.title,
                 })
             })
+            
             .catch(error => console.log(error))
 
             if(!localStorage.usertoken) {
@@ -73,11 +75,13 @@ export default class EditTwitter extends Component {
         
         axios.post('http://localhost:5000/twittery/updateTwitter/' + this.props.match.params.id, twitters)
         .then(res => console.log(res));
-        // window.location = '/twitter'; //na strone glowna
+        window.location = '/viewTwitter'; //na strone glowna
     }
 
 
     render() {
+
+      console.log(this.state)
         return (
             <StyledContainer>
               <div className="container"> 
@@ -91,6 +95,7 @@ export default class EditTwitter extends Component {
                   style={{maxWidth: '500px'}}
                       type="text" 
                       className="form-control"
+                      value={this.state.title}
                       onChange={this.onChangeTitle}
                       placeholder="Tytuł"
                       />
@@ -98,7 +103,7 @@ export default class EditTwitter extends Component {
                 <div className="form-group">
                 <StyledLabel>Link: </StyledLabel>
                 <div>
-                  <input style={{maxWidth: '500px'}} type="text" className="form-control" placeholder="Link"  onChange={this.onChangeLink}></input>
+                  <input style={{maxWidth: '500px'}} value={this.state.link} type="text" className="form-control" placeholder="https://www.google.pl/"  onChange={this.onChangeLink}></input>
                 </div>
               </div>
 
@@ -107,13 +112,14 @@ export default class EditTwitter extends Component {
                   <textarea style={{maxWidth: '500px'}} type="text"
                       required
                       className="form-control"
+                      value={this.state.description}
                       onChange={this.onChangeDescription}
                       placeholder="Treść"
                       />
                 </div>
         
                 <div className="form-group">
-                 <button style={{color: 'black', border: '2px solid #2980b9',backgroundColor: 'white', padding: '8px 15px', margin: '10px', borderRadius:'10px'}} type="text" >Wróć<Link to="twitter"></Link></button>
+                 <button style={{color: 'black', border: '2px solid #2980b9',backgroundColor: 'white', padding: '8px 15px', margin: '10px', borderRadius:'10px'}} type="text" ><a style={{textDecoration: 'none',color: 'black'}} href="/viewTwitter">Wróć</a></button>
                   <input style={{color: 'black', border: '2px solid #2980b9',backgroundColor: 'white', padding: '8px 15px', margin: '10px', borderRadius:'10px'}} type="submit" value="Edytuj"  />
                 </div>
               </form>

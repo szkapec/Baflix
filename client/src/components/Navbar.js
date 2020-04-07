@@ -27,34 +27,19 @@ class Landing extends Component {
     const userLink = (
       <ul className="navbar-nav">
 
-          <li className="nav-item">
-              <Link to="/addtwitters" className="nav-link">
-                addtwiters
-              </Link>
-          </li>
-          <li className="nav-item">
-              <Link to="/viewTwitter" className="nav-link">
-              viewTwitter
-              </Link>
-          </li>
-          <li className="nav-item">
-              <Link to="/chat" className="nav-link">
-                addtwiters
-              </Link>
-          </li>
-
-
+        
+   
 
           <li className="nav-item">
               <Link to="/chat" className="nav-link">
                 Chat
               </Link>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
               <Link to="/addtask" className="nav-link">
                 Dodaj notatkę
               </Link>
-          </li>
+          </li> */}
 
           <li  className="nav-item">
             <Link to="/viewtask" className="nav-link">
@@ -62,9 +47,9 @@ class Landing extends Component {
               </Link>
           </li>
 
-          <li  className="nav-item">
-            <Link to="/twitter" className="nav-link">
-                Twitter
+          <li className="nav-item">
+              <Link to="/viewTwitter" className="nav-link">
+              Twitter
               </Link>
           </li>
 

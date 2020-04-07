@@ -9,7 +9,7 @@ const twittersSchema = new Schema({
     description: {type:String,required: false},
     },
  {
-    timestamps: false,
+    timestamps: true,
 });
 const TwittersModel = mongoose.model("twittersy", twittersSchema); //nazwa tabeli Exercise
 module.exports = TwittersModel;

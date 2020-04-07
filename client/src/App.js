@@ -46,8 +46,8 @@ class App extends Component {
             {/* <Route exact path="/addtwitters" component={ViewTwitters} /> */}
             <Route exact path="/viewTwitter" component={ViewTwitters} />
 
-            <Route exact path="/twitter" component={Twitter} />
-            <Route exact path="/twitter/add" component={Twitter} />
+            {/* <Route exact path="/twitter" component={Twitter} />
+            <Route exact path="/twitter/add" component={Twitter} /> */}
             <Route exact path="/chat" component={Comunicator} />
             <Route exact path="/profile/admin" component={ViewAdmin} />
             <Route exact path="/profile/film" component={ViewsFilm} />
