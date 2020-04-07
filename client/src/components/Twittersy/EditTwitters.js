@@ -1,9 +1,132 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
+import {Link} from "react-router-dom";
+import jwt_decode from 'jwt-decode';
+import styled from 'styled-components'
 
 
-const StyledH3 = styled.h3`
+
+export default class EditTwitter extends Component {
+
+    constructor(props){
+
+        super(props)
+        this.state = {
+            username: "",
+            description: '',
+            title: '',
+            link: '',
+            users: []
+        }
+      }
+
+    componentDidMount() {
+
+        axios.get('http://localhost:5000/twittery/'+this.props.match.params.id)
+            .then(response => {
+                this.setState({
+                    description: response.data.description,
+                    link: response.data.link,
+                    title: response.data.title,
+                })
+            })
+            .catch(error => console.log(error))
+
+            if(!localStorage.usertoken) {
+                return window.location = '/login';
+              } 
+              else {
+                const token = localStorage.usertoken
+                const decoded = jwt_decode(token)
+                this.setState({
+                  username: decoded.username,
+                })
+              }
+    }
+
+    onChangeDescription=(e)=> {
+        this.setState({
+            description: e.target.value
+        })
+    }
+    onChangeLink=(e)=> {
+        this.setState({
+            link: e.target.value
+        })
+    }
+    onChangeTitle=(e) =>{
+        this.setState({
+            title: e.target.value,
+        })
+    }
+
+    onSubmit=(e)=>{
+        e.preventDefault();
+        const twitters = {
+            username: this.state.username,
+            title: this.state.title,
+            link: this.state.link,
+            description: this.state.description,
+            
+            
+        }
+        
+        axios.post('http://localhost:5000/twittery/updateTwitter/' + this.props.match.params.id, twitters)
+        .then(res => console.log(res));
+        // window.location = '/twitter'; //na strone glowna
+    }
+
+
+    render() {
+        return (
+            <StyledContainer>
+              <div className="container"> 
+              <StyledH3>Edycja twittera</StyledH3>
+              <form onSubmit={this.onSubmit}>
+                
+                
+                <div className="form-group">
+                  <StyledLabel> Tytuł </StyledLabel>
+                  <input 
+                  style={{maxWidth: '500px'}}
+                      type="text" 
+                      className="form-control"
+                      onChange={this.onChangeTitle}
+                      placeholder="Tytuł"
+                      />
+                </div>
+                <div className="form-group">
+                <StyledLabel>Link: </StyledLabel>
+                <div>
+                  <input style={{maxWidth: '500px'}} type="text" className="form-control" placeholder="Link"  onChange={this.onChangeLink}></input>
+                </div>
+              </div>
+
+              <div className="form-group"> 
+                  <StyledLabel>Treść: </StyledLabel>
+                  <textarea style={{maxWidth: '500px'}} type="text"
+                      required
+                      className="form-control"
+                      onChange={this.onChangeDescription}
+                      placeholder="Treść"
+                      />
+                </div>
+        
+                <div className="form-group">
+                 <button style={{color: 'black', border: '2px solid #2980b9',backgroundColor: 'white', padding: '8px 15px', margin: '10px', borderRadius:'10px'}} type="text" >Wróć<Link to="twitter"></Link></button>
+                  <input style={{color: 'black', border: '2px solid #2980b9',backgroundColor: 'white', padding: '8px 15px', margin: '10px', borderRadius:'10px'}} type="submit" value="Edytuj"  />
+                </div>
+              </form>
+              </div>
+            </StyledContainer>
+            )  
+          }
+        }
+
+
+
+
+        const StyledH3 = styled.h3`
     font-size: 20px;
     text-decoration: underline;
     padding: 20px 20px;
@@ -13,128 +136,14 @@ const StyledH3 = styled.h3`
 `
 const StyledLabel = styled.label `
     font-size: 17px;
-    margin: 20px 20px;
+    margin: 20px 0px;
     @media(min-width:800px){
         font-size: 19px;
     }
 `
-const StyledInput = styled.input`
-    padding: 10px 30px;
-    font-size: 16px;
-    margin: 20px 20px;
-    font-weight: 700;
-    background-color: #ecf0f1; 
-    color: black; 
-    border: 2px solid #bdc3c7;
-    border-radius: 20px;
-  @media(min-width:800px){
-        font-size:18px;
-        padding: 10px 35px;
-    }
 
-  ::placeholder {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: grey;
-  }
-  `
-  const StyledContainer = styled.div`
-  background-color: #bdc3c7;
+
+const StyledContainer = styled.div`
+  background-color: #ecf0f1;
   min-height: 100vh;
 `
-
-export default class EditTask extends Component {
-
-    constructor(props){
-
-        super(props)
-        this.state = {
-            username: "",
-            description: '',
-            duration: 0,
-            date: new Date(),
-            users: [],
-            title: ''
-        }
-    }
-
-    componentDidMount() {
-
-
-        if(!localStorage.usertoken) {
-            return window.location = '/login';;
-          } 
-
-        axios.get('http://localhost:5000/twittery/'+this.props.match.params.id)
-            .then(response => {
-                this.setState({
-                    description: response.data.description,
-                    title: response.data.title,
-                })
-            })
-            .catch(error => console.log(error))
-
-    }
-
-    // onChangeUsername=(e)=> {
-    //     this.setState({
-    //         username: e.target.value
-    //     })
-    // }
-
-    onChangeDescription=(e)=> {
-        this.setState({
-            description: e.target.value
-        })
-    }
-    onChangeDuration=(e)=> {
-        this.setState({
-            title: e.target.value
-        })
-    }
-    onChangeDate=(date) =>{
-        this.setState({
-            date,
-        })
-    }
-
-    onSubmit=(e)=>{
-        e.preventDefault();
-        const exercise = {
-            title: this.state.title,
-            description: this.state.description,
-            
-        }
-
-        axios.post('http://localhost:5000/twittery/update/' + this.props.match.params.id, exercise)
-        .then(res => console.log(res));
-        window.location = '/viewtask'; //na strone glowna
-    }
-
-
-    render() {
-        return (
-            <StyledContainer>
-              <StyledH3>twitter</StyledH3>
-              <form onSubmit={this.onSubmit}>
-                
-                <div className="form-group"> 
-                  <StyledLabel>twitter: </StyledLabel>
-                  <textarea  style={{maxWidth: '500px', minHeight: '150px', marginLeft: '20px'}} type="text"
-                      required
-                      className="form-control"
-                      value={this.state.description}
-                      onChange={this.onChangeDescription}
-                      />
-                </div>
-                
-      
-        
-                <div className="form-group">
-                  <StyledInput type="submit" value="Edytuj" className="btn" />
-                </div>
-              </form>
-            </StyledContainer>
-            )
-          }
-        }

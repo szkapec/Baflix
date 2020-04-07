@@ -79,7 +79,11 @@ const StyledButton = styled.button`
     border: 2px solid #2980b9;
     border-radius: 20px;
 `
+const StyledLink = styled.div`
+    text-align:center;
+    padding: 5px;
 
+`
 
 const Exercise = props => {
 
@@ -91,12 +95,15 @@ console.log(props)
                              <StyledUser>  <b>{props.twitters.username}</b>   </StyledUser>
                              <StyledTitle>  <b>{props.twitters.title}</b>   </StyledTitle>
 
-                             <StyledTextarea> <b>Treść: </b>  {props.twitters.description}</StyledTextarea>
-                             
-                             {/* <div>Czas: {props.exercise.duration}</div> */}
-                            {/* <div> Data {props.exercise.date.substring(0,10)}</div> */}
-                            {/* <StyledLink> <Link style={{textDecoration:'none',color:'black'}} to={"/edit/"+props.exercise._id}>Edytuj</Link> | <a  style={{textDecoration:'none',color:'black', }} href="/viewtwitters" onClick={() => { props.deleteTwitters(props.twitters._id) }}>Usuń</a></StyledLink> */}
+                             <StyledTextarea style={{borderBottomLeftRadius: '20px',borderBottomRightRadius: '20px'}}> 
+                                  <b>Treść: </b>  {props.twitters.description}
+                                  {props.username===props.user?(
+                                  <StyledButton><Link style={{textDecoration: 'none', color:'black'}} to={"/editTwitter/"+props.twitters._id}>Edytuj</Link></StyledButton>) 
+                                   :null}
+                            </StyledTextarea>
                         </StyledCard>
+                
+                       
                     </>
            
 

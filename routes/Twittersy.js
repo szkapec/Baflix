@@ -45,4 +45,54 @@ twitters.post('/add', (req,res) => {
         }
     })
 })
+
+
+
+twitters.get('/:id', (req,res) => {
+    Twitters.findById(req.params.id)
+    .then(twit => {
+        if(twit){
+            res.json(twitt)
+        } else {
+            res.send("Twitters id does exist")
+        }
+    })
+    .catch(err => {
+        res.send('error: ' + err)
+    })
+})
+
+
+twitters.delete('/:id', (req,res) => {
+    Twitters.findByIdAndDelete(req.params.id)
+    .then(twit => {
+        if(twit){
+            res.json(twitt)
+        } else {
+            res.send("Twitters delete does exist")
+        }
+    })
+    .catch(err => {
+        res.send('error: ' + err)
+    })
+})
+
+twitters.post('/updateTwitter/:id' , (req, res) => {
+    Twitters.findById(req.params.id) 
+        .then(twitt => {
+            twitt.username = req.body.username;
+            twitt.description = req.body.description;
+            twitt.title = req.body.title;
+            twitt.link = req.body.link;
+
+            twitt.save()
+            .then(()=> res.json('TwitterModel updated!'))
+            .catch(err => {
+                res.send("errory: " + err)
+            })
+        })
+        .catch(err => {
+            res.send("error: " + err)
+        });
+})
 module.exports = twitters

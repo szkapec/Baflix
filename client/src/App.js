@@ -37,7 +37,6 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/profile" component={Profile} />
             
-            <Route path="/editTwitter/:id" component={EditTwitter}/>
 
             <Route path="/edit/:id" component={EditTask}/>
             <Route exact path="/addtask" component={Addtask} />

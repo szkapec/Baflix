@@ -82,7 +82,7 @@ console.log(this.state.username)
     render() {
         return (
             <StyledContainer>
-              <div className="container"> 
+              {/* <div className="container"> 
               <StyledH3>Edycja twittera</StyledH3>
               <form onSubmit={this.onSubmit}>
                 
@@ -119,7 +119,7 @@ console.log(this.state.username)
                   <input style={{color: 'black', border: '2px solid #2980b9',backgroundColor: 'white', padding: '8px 15px', margin: '10px', borderRadius:'10px'}} type="submit" value="Edytuj"  />
                 </div>
               </form>
-              </div>
+              </div> */}
             </StyledContainer>
             )  
           }
