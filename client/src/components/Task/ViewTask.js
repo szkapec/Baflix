@@ -54,6 +54,7 @@ export default class ViewTask extends Component {
             this.setState({
                 exercises: this.state.exercises.filter(el=>el._id !== id) //zwroc elementy el.id nierowne id
             })
+        
     }
 
     exercisesList = () => {

@@ -35,11 +35,11 @@ class Landing extends Component {
                 Chat
               </Link>
           </li>
-          {/* <li className="nav-item">
-              <Link to="/addtask" className="nav-link">
-                Dodaj notatkę
+          <li className="nav-item">
+              <Link to="/list" className="nav-link">
+                Lista 
               </Link>
-          </li> */}
+          </li>
 
           <li  className="nav-item">
             <Link to="/viewtask" className="nav-link">

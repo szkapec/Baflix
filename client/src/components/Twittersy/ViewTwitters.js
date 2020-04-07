@@ -57,7 +57,6 @@ export default class ViewTask extends Component {
     exercisesList = () => {
        
         return this.state.exercises.map(poj => {
-            console.log(poj)
             return <ExerciseTwitter twitters={poj} user={this.state.username} deleteTwitters={this.deleteExercise}  key={poj._id} username={poj.username}/>
 
         })

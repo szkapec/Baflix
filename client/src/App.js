@@ -25,6 +25,7 @@ import Programing from './components/Filmy/Programing';
 import Music from './components/Filmy/Music';
 import Mountains from './components/Filmy/Mountains';
 import Story from './components/Filmy/Story';
+import Context from './components/ListItem/Context';
 class App extends Component {
   render() {
     return (
@@ -55,6 +56,7 @@ class App extends Component {
             <Route exact path="/profile/film/music" component={Music} />
             <Route exact path="/profile/film/mountains" component={Mountains} />
             <Route exact path="/profile/film/story" component={Story} />
+            <Route exact path="/list" component={Context} />
 
 
           </div>

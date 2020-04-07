@@ -8,11 +8,12 @@ const Exercise = props => {
 
 
     let conn = () => {
-        let min = props.twitters.updatedAt.substr(11,8)
+        let min = props.twitters.updatedAt.substr(11,5)
         let time = props.twitters.updatedAt.substr(0,10)
-        let conn = time.concat(`:${min}`)
+        let conn = time.concat(` ${min}`)
         return conn
      }
+
     return(
         <>
                     <>
@@ -25,7 +26,7 @@ const Exercise = props => {
                                   {props.username===props.user?(
                                   <StyledButton><Link style={{textDecoration: 'none', color:'black'}} to={"/editTwitter/"+props.twitters._id}>Edytuj</Link></StyledButton>) 
                                    :null}
-                                   <StyledCzas>{conn()} </StyledCzas>
+                                   <StyledCzas><b>Dodano: </b>{conn()} </StyledCzas>
                             </StyledTextarea>
                         </StyledCard>
                 
@@ -42,10 +43,14 @@ const Exercise = props => {
 
 
     const StyledCzas = styled.div`
+    font-size: 12px;
     position: absolute;
     left: 10px;
     bottom: 50px;
     color: black; 
+    @media(min-width:1000px){
+        font-size: 14px;
+    }
     `
 
     const StyledCard = styled.div`

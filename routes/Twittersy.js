@@ -31,12 +31,14 @@ twitters.post('/add', (req,res) => {
             const username = req.body.username;
             const title = req.body.title;
             const description = req.body.description;
+            const link = req.body.link;
 
         
            const newTwitt = new Twitters({
                username,
                title,
                description,
+               link,
 
            });
            newTwitt.save()

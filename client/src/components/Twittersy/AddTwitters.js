@@ -49,7 +49,7 @@ export default class AddTwitters extends Component {
         })
     }
 
-    onChangePlus = (e) => {
+    onChangePlus = () => {
         this.setState({
             plus: !this.state.plus
         })
@@ -68,7 +68,7 @@ export default class AddTwitters extends Component {
             infoTitle: "Za któtka treść!"
           })
         }
-        
+        console.log(this.state.link)
         if(this.state.description.length>5 && this.state.title.length>3) {
           const twitt = {
             username: this.props.username,
@@ -84,7 +84,7 @@ export default class AddTwitters extends Component {
           plus: false,
 
         })
-        window.location = '/viewTwitter'; //na strone glowna
+        // window.location = '/viewTwitter'; //na strone glowna
         } 
 
     
