@@ -5,27 +5,7 @@ import jwt_decode from 'jwt-decode';
 import styled from 'styled-components'
 
 
-const StyledH3 = styled.h3`
-    font-size: 20px;
-    text-decoration: underline;
-    padding: 20px 20px;
-    @media(min-width:500px){
-        font-size: 22px;
-    }
-`
-const StyledLabel = styled.label `
-    font-size: 17px;
-    margin: 20px 0px;
-    @media(min-width:800px){
-        font-size: 19px;
-    }
-`
 
-
-const StyledContainer = styled.div`
-  background-color: #ecf0f1;
-  min-height: 100vh;
-`
 export default class EditTwitter extends Component {
 
     constructor(props){
@@ -144,3 +124,28 @@ console.log(this.state.username)
             )  
           }
         }
+
+
+
+
+        const StyledH3 = styled.h3`
+    font-size: 20px;
+    text-decoration: underline;
+    padding: 20px 20px;
+    @media(min-width:500px){
+        font-size: 22px;
+    }
+`
+const StyledLabel = styled.label `
+    font-size: 17px;
+    margin: 20px 0px;
+    @media(min-width:800px){
+        font-size: 19px;
+    }
+`
+
+
+const StyledContainer = styled.div`
+  background-color: #ecf0f1;
+  min-height: 100vh;
+`

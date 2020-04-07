@@ -3,13 +3,13 @@ import {Link} from "react-router-dom";
 import styled from 'styled-components';
 
 const StyledCard = styled.div`
-    
-    margin-top: 30px;
-    margin: 30px auto 0;
-    width: 250px;
-    min-height: 150px;
-  
-   
+    position: relative;
+    width: 80vw;
+    margin: 0px auto;
+    padding: 40px 0;
+    min-height: 200px;
+    max-width: 1000px;
+
     @media(min-width: 400px){
         width: 80%;
         margin: 30px auto 0;
@@ -19,45 +19,79 @@ const StyledCard = styled.div`
         width: 500px;
     }
 
+`
+
+const StyledImg = styled.img`
+    width:50px;
+    height:50px;
+    position: relative;
+    float: right;
+    margin: 20px;
 
 `
+
 const StyledUser = styled.div`
-    padding: 10px 0 10px 0;
-    background-color: #bdc3c7;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 50px;
-    text-align: center;
-
+padding: 10px 10px;
+background-color: #2980b9;
+border-Top-Left-Radius: 20px;
+border-top-right-radius: 20px;
+font-size: 18px;
+@media(min-width: 500px) {
+     font-size: 20px;   
+    }
+    @media(min-width: 1000px) {
+     font-size: 21px;   
+    }
 `
-const StyledText = styled.div`
-    min-height: 150px;
-    padding: 10px 0 10px 10px;
+const StyledTitle = styled.div`
+padding: 10px 10px;
+background-color: #2980b9;
+font-size: 16px;
+@media(min-width: 500px) {
+     font-size: 18px;   
+    }
+    @media(min-width: 1000px) {
+     font-size: 20px;   
+    }
+`
+
+const StyledTextarea = styled.div`
+    padding: 10px 10px;
     box-shadow: 0 0 10px grey;
-    background-color: white;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-
+    font-size: 14px;
+    min-height: 100px;
+    @media(min-width: 500px) {
+     font-size: 16px;   
+     min-height: 150px;
+     padding: 15px 10px;
+    }
+    @media(min-width: 1000px) {
+     font-size: 18px;   
+     min-height: 200px;
+    }
 `
-const StyledLink = styled.div`
-    text-align:center;
-    padding: 5px;
-
+const StyledButton = styled.button`
+    position: absolute;
+    right: 10px;
+    bottom: 50px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #2980b9;
+    border-radius: 20px;
 `
+
 
 const Exercise = props => {
 
 console.log(props)
     return(
-       
         <>
-            
                     <>
                         <StyledCard>
                              <StyledUser>  <b>{props.twitters.username}</b>   </StyledUser>
-                             <StyledUser>  <b>{props.twitters.title}</b>   </StyledUser>
+                             <StyledTitle>  <b>{props.twitters.title}</b>   </StyledTitle>
 
-                             <StyledText> <b>Treść: </b>  {props.twitters.description}</StyledText>
+                             <StyledTextarea> <b>Treść: </b>  {props.twitters.description}</StyledTextarea>
                              
                              {/* <div>Czas: {props.exercise.duration}</div> */}
                             {/* <div> Data {props.exercise.date.substring(0,10)}</div> */}
