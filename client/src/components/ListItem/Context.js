@@ -26,6 +26,14 @@ function Context() {
     localStorage.setItem('expenses', JSON.stringify(expenses))
   },[expenses])
 
+
+  useEffect(() => {
+    if(!localStorage.usertoken) {
+        return window.location = '/login';
+      } 
+  }, []);
+  
+
    const handleCharge = e => {
     setCharge(e.target.value);
   }
@@ -39,6 +47,7 @@ function Context() {
     }, 3000)
   }
 
+  
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -90,8 +99,9 @@ function Context() {
     
   }
 
+
   return (
-    <div>
+    <StyledContainer>
       {alert.show&&<Alert type={alert.type} text={alert.text}/>}
       <StyledH1>Lista zakupów</StyledH1>
       <StyledMain className="App">
@@ -100,12 +110,17 @@ function Context() {
       <StyledH1>Koszt całkowity: <span className="total">{expenses.reduce((suma,nast)=> {return(suma+=parseFloat(nast.amount))},0)}zł</span></StyledH1> 
       </StyledMain>
        
-    </div>
+    </StyledContainer>
   );
 }
 
 export default Context;
 
+const StyledContainer = styled.div`
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ecf0f1;
+`
 const StyledMain = styled.main`
     width: 90%;
     margin: 20px 5%;

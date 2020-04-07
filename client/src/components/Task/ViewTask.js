@@ -21,8 +21,6 @@ export default class ViewTask extends Component {
 
 
     componentDidMount() {
-
-
         if(!localStorage.usertoken) {
             return window.location = '/login';
           } 
@@ -34,9 +32,6 @@ export default class ViewTask extends Component {
             })
           }
 
-            
-            
-        
 
         axios.get('http://localhost:5000/exercises/')
             .then(response => {
@@ -83,14 +78,14 @@ export default class ViewTask extends Component {
 }
 
 const StyledPlus = styled.div`
-    position:absolute;
-    left: 30px;
-    bottom: 30px;
+    position:fixed;
+    left: 20px;
+    bottom: 20px;
     background-color: #7f8c8d;
-    width: 35px;
-    height: 35px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    padding: 4px 0 0 4px;
+    padding: 12px 0 0 12px;
 `
 
 const StyledButton = styled.button`

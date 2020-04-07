@@ -1,13 +1,35 @@
 import React, { Component } from 'react'
 import { Link, withRouter } from 'react-router-dom'
-
+import jwt_decode from 'jwt-decode';
+import Navi from './Filmy/Navi';
 class Landing extends Component {
+
+  state={
+    username: '',
+    premium: false,
+    admin: false,
+  }
+
   logOut(e) {
     e.preventDefault()
     localStorage.removeItem('usertoken')  //wylogowanie
     this.props.history.push(`/login`)
   }
 
+  componentDidMount() {
+    if(!localStorage.usertoken) {
+      // return window.location = '/login';
+    } 
+    else {
+      const token = localStorage.usertoken
+      const decoded = jwt_decode(token)
+      this.setState({
+        username: decoded.username,
+        premium: decoded.premium,
+        admin: decoded.admin,
+      })
+    }
+  }
   render() {
     const loginRegLink = (
       <ul className="navbar-nav">
@@ -40,6 +62,15 @@ class Landing extends Component {
                 Lista 
               </Link>
           </li>
+          {this.state.premium ? 
+            <li  className="nav-item">
+            <Link to="/profile/film" className="nav-link">
+                Filmy
+              </Link>
+            </li>
+          : null}
+
+            
 
           <li  className="nav-item">
             <Link to="/viewtask" className="nav-link">
@@ -58,14 +89,27 @@ class Landing extends Component {
             Uzytkownik
           </Link>
         </li>
+        {this.state.premium&&this.state.admin ? 
+            <li  className="nav-item">
+            <Link to="/profile/admin" className="nav-link">
+                pA
+              </Link>
+            </li>
+          : null} 
         <li className="nav-item">
           <Link to="/login" onClick={this.logOut.bind(this)} className="nav-link">
             Wyloguj
           </Link>
         </li>
+
+       
       </ul>
     )
+
+
+
     return (
+      <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded">
         <button
           className="navbar-toggler"
@@ -92,8 +136,11 @@ class Landing extends Component {
             
           </ul>
           {localStorage.usertoken ? userLink : loginRegLink}
+          
         </div>
       </nav>
+      
+      </>
     )
   }
 }

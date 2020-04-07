@@ -4,7 +4,6 @@ import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 import styled from 'styled-components';
 
-
 const StyledH3 = styled.h3`
     font-size: 20px;
     padding: 30px 0px 10px;
@@ -77,7 +76,7 @@ export default class CreateExercise extends Component {
             description: '',
             duration: 0,
             date: new Date(),
-            users: []
+            users: [],
         }
     }
 
@@ -111,28 +110,34 @@ export default class CreateExercise extends Component {
             duration: e.target.value
         })
     }
-    onChangeDate=(date) =>{
+    onChangeDate=(date) => {
         this.setState({
             date,
     })
   }
 
     onSubmit=(e)=>{
+        this.state.flaga = true;
         e.preventDefault();
         const exercise = {
             username: this.state.username,
             description: this.state.description,
             duration: this.state.duration,
-            date: this.state.date
+            date: this.state.date,
         }
 
+     
         axios.post('http://localhost:5000/exercises/add', exercise)
         .then(res => console.log(res.data));
-        window.location = '/viewtask'; //na strone glowna
-    }
+        
+        
+      }
+
+
 
 
     render() {
+      
         return (
           <StyledContainer>
             <div className="container">
@@ -161,8 +166,8 @@ export default class CreateExercise extends Component {
                       />
                 </div>
                 
+       
                 
-        
                 <div className="form-group">
                 <StyledInput2 type="text" ><a style={{textDecoration: 'none',color: 'black'}} href="/viewtask">Wróć</a></StyledInput2>
                   <StyledInput type="submit" value="Utwórz" className="btn" />

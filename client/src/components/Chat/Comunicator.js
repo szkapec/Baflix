@@ -4,6 +4,118 @@ import jwt_decode from 'jwt-decode';
 import ComunicatorMessage from './ComunicatorMessage';
 import styled from 'styled-components';
 
+
+
+export default class Comunicator extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            exercises: [],
+            username: "",
+            description: '',
+            input: true,
+            flaga: false,
+        };
+    }
+
+
+    componentDidMount() {
+        
+        
+
+        if(!localStorage.usertoken) {
+            return window.location = '/login';
+          } 
+          else {
+            const token = localStorage.usertoken
+            const decoded = jwt_decode(token)
+            this.setState({
+              username: decoded.username,
+            })
+          }
+
+
+        axios.get('http://localhost:5000/message/')
+            .then(response => {
+                this.setState({
+                    exercises: response.data
+                })
+            })
+            .catch(error => console.log(error))
+    }
+
+
+onChangeDescription=(e)=> {
+    this.setState({
+        description: e.target.value
+    })
+}
+
+
+onSubmit=(e)=>{
+    e.preventDefault();
+    const message = {
+        username: this.state.username,
+        description: this.state.description,
+    }
+
+    axios.post('http://localhost:5000/message/add', message)
+    .then(res => console.log(res.data))
+    window.location = '/chat'; //na strone glowna
+    this.setState({
+        flaga: true,
+    })
+
+    
+}
+
+    exercisesList = () => {
+        var description = []
+        var username = [];
+        this.state.exercises.length>0&&this.state.exercises.map((poj,number) => {
+           description.push(poj.description)
+           username.push(poj.username)
+        })
+
+        return <ComunicatorMessage username={username.reverse()} description={description.reverse()}/>
+    }
+
+    onChangeInput = () => {
+        this.setState({
+            input: !this.state.input,
+        })
+    }
+    //   return <Message exercise={poj} key={poj._id}/>
+    render() {
+        return (
+            <StyledAll>
+            <div>
+                <StyledH3>Czat:</StyledH3>
+                <div style={{marginTop:'30px'}}>{this.exercisesList()}</div>
+            </div>
+            <div>
+              <form onSubmit={this.onSubmit}>
+                <div className="form-group"> 
+                  <StyledLabel>Napisz wiadomość: </StyledLabel>
+                  <StyledTextArea   type="text"
+                      required
+                      className="form-control"
+                      value={this.state.description}
+                      onChange={this.onChangeDescription}
+                      placeholder="Text"
+                     
+                      />
+                </div>
+                <div style={{textAlign:'center'}}>
+                  <StyledInput inputs={this.state.input} onClick={this.onChangeInput} type="submit" value="Wyślij" className="btn" />
+                </div>
+              </form>
+            </div>
+            </StyledAll>
+        )
+    }
+}
+
 const StyledTextArea = styled.textarea`
     max-width: 80%;
     margin: auto;
@@ -57,111 +169,3 @@ const StyledH3 = styled.h3`
          margin: 0;
         background-color: #2c3e50;
    `
-
-
-export default class Comunicator extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            exercises: [],
-            username: "",
-            description: '',
-            input: true,
-        };
-    }
-
-
-    componentDidMount() {
-        
-        if(!localStorage.usertoken) {
-            return window.location = '/login';
-          } 
-          else {
-            const token = localStorage.usertoken
-            const decoded = jwt_decode(token)
-            this.setState({
-              username: decoded.username,
-            })
-          }
-
-
-        axios.get('http://localhost:5000/message/')
-            .then(response => {
-                this.setState({
-                    exercises: response.data
-                })
-            })
-            .catch(error => console.log(error))
-    }
-
-
-onChangeDescription=(e)=> {
-    this.setState({
-        description: e.target.value
-    })
-}
-
-
-onSubmit=(e)=>{
-    e.preventDefault();
-    const message = {
-        username: this.state.username,
-        description: this.state.description,
-        
-    }
-
-    axios.post('http://localhost:5000/message/add', message)
-    .then(res => console.log(res.data))
-    window.location = '/chat'; //na strone glowna
-}
-
-    exercisesList = () => {
-        var description = []
-        var username = [];
-        this.state.exercises.length>0&&this.state.exercises.map((poj,number) => {
-           description.push(poj.description)
-           username.push(poj.username)
-        })
-
-        return <ComunicatorMessage username={username.reverse()} description={description.reverse()}/>
-    }
-
-    onChangeInput = () => {
-        this.setState({
-            input: !this.state.input,
-        })
-    }
-    //   return <Message exercise={poj} key={poj._id}/>
-    render() {
-        return (
-            <StyledAll>
-            <div>
-                <StyledH3>Czat:</StyledH3>
-                <div style={{marginTop:'30px'}}>{this.exercisesList()}</div>
-                        
-        
-            </div>
-
-            <div>
-            <br></br>
-              <form onSubmit={this.onSubmit}>
-                <div className="form-group"> 
-                  <StyledLabel>Napisz wiadomość: </StyledLabel>
-                  <StyledTextArea   type="text"
-                      required
-                      className="form-control"
-                      value={this.state.description}
-                      onChange={this.onChangeDescription}
-                      placeholder="Text"
-                     
-                      />
-                </div>
-                <div style={{textAlign:'center'}}>
-                  <StyledInput inputs={this.state.input} onClick={this.onChangeInput} type="submit" value="Wyślij" className="btn" />
-                </div>
-              </form>
-            </div>
-            </StyledAll>
-        )
-    }
-}

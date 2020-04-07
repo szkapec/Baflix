@@ -17,6 +17,12 @@ export default class Twitter extends Component {
         if(!localStorage.usertoken) {
           return window.location = '/login';
         } 
+        else if(!this.state.admin){
+          return localStorage.removeItem('usertoken');
+        }
+        else if(!this.state.premium) {
+          return localStorage.removeItem('usertoken');
+        }
         else {
           const token = localStorage.usertoken
           const decoded = jwt_decode(token)

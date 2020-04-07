@@ -1,56 +1,7 @@
 import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode';
 import styled  from "styled-components";
-import Navi from './Navi';
-
-const StyledIframe = styled.iframe`
-  width: 99%;
-  margin: 0px 1px 10px;
-  height: 200px;
-
-  @media(min-width: 400px) {
-    height: 300px;
-    margin: 0px 1px 30px;
-  }
-  @media(min-width: 500px) {
-    height: 400px;
-    width: 80%;
-    margin: 0px 10% 50px;
-  }
-  @media(min-width: 800px) {
-    width: 700px;
-    margin: 0px 10% 50px;
-  }
-`
-const StyledTitle = styled.div`
-    text-align:center;
-    font-weight: 700;
-    margin-bottom: 5px;
-    font-size: 12px;
-    
-  @media(min-width: 400px) {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  @media(min-width: 500px) {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  @media(min-width: 800px) {
-    text-align: center;
-    width: 700px;
-    margin: 0px 10% 10px;
-  }
-`
-const StyledCard = styled.div`
-  background-color: #ecf0f1;
-  min-height: 100vh;
-`
-const StyledContener = styled.div`
-  position: relative;
-  width: 100%;
-  margin: auto;
-`
+import StyledCard from './ChangeLight';
 
 
 
@@ -101,13 +52,10 @@ class Programing extends Component {
     render() {
       return this.state.admin&&this.state.premium?(<>
         <StyledCard>
-          <Navi/>
-          <StyledContener>
             
               <StyledTitle>CSS Grid Layout Crash Course</StyledTitle>
               <StyledIframe width="560" height="315" src="https://www.youtube.com/embed/jV8B24rSN5o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
-
-          </StyledContener>
+              <StyledIframe width="560" height="315" src="https://www.youtube.com/embed/UB1O30fR-EE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
         </StyledCard>
         
     
@@ -117,3 +65,46 @@ class Programing extends Component {
 }
 
 export default Programing;
+
+
+
+const StyledIframe = styled.iframe`
+  width: 99%;
+  margin: 0px 1px 10px;
+  height: 200px;
+
+  @media(min-width: 400px) {
+    height: 300px;
+    margin: 0px 1px 30px;
+  }
+  @media(min-width: 500px) {
+    height: 400px;
+    width: 80%;
+    margin: 0px 10% 50px;
+  }
+  @media(min-width: 800px) {
+    width: 700px;
+    margin: 0px 10% 50px;
+  }
+`
+const StyledTitle = styled.div`
+    text-align:center;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 12px;
+    padding-top: 30px;
+    
+  @media(min-width: 400px) {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  @media(min-width: 500px) {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  @media(min-width: 800px) {
+    text-align: center;
+    width: 700px;
+    margin: 0px 10% 10px;
+  }
+`

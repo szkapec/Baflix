@@ -43,6 +43,8 @@ const Zalogowany = () => {
       <hr></hr>
       <StyledDiv>Strona została napisana w React + Express + Node + MongoDB</StyledDiv>
       <hr></hr>
+      <StyledDiv>Dodatkowo: React hook, React icons, context API, localStorage </StyledDiv>
+      <hr></hr>
       <StyledDiv>Konto premium daje dodatkowe możliwości w aplikacji - napisz do Admina </StyledDiv>
       <hr></hr>
       <StyledDiv>Zapraszam do testowania aplikacji!</StyledDiv>

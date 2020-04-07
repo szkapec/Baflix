@@ -2,41 +2,8 @@ import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode';
 import styled  from "styled-components";
 import Navi from './Navi';
+import StyledCard from './ChangeLight';
 
-
-const StyledContainer = styled.div`
-  background-color: #ecf0f1;
-  min-height: 100vh;
-`
-
-
-
-const StyledIframe = styled.div`
-  width: 99%;
-  margin: 0px 1px 10px;
-  height: 200px;
-
-  @media(min-width: 400px) {
-    height: 300px;
-    margin: 0px 1px 30px;
-  }
-  @media(min-width: 500px) {
-    height: 400px;
-    width: 80%;
-    margin: 0px 10% 50px;
-  }
-  @media(min-width: 800px) {
-    width: 700px;
-    margin: 0px 10% 50px;
-  }
-`
-
-
-const StyledContener = styled.div`
-  position: relative;
-  width: 100%;
-  margin: auto;
-`
 
 class Story extends Component {
   constructor() {
@@ -73,12 +40,9 @@ class Story extends Component {
   all = () => {
     return(
       <>
-        <StyledContainer>
-
-        
-          <Navi/>
-          
-        </StyledContainer>
+        <StyledCard>
+          <StyledTitle>Tu będa bajki dla Modelsona ale czekam na prawa autorskie</StyledTitle>
+        </StyledCard>
       </>
     )
   }
@@ -94,3 +58,58 @@ class Story extends Component {
 }
 
 export default Story;
+
+
+const StyledContainer = styled.div`
+  background-color: #ecf0f1;
+  min-height: 100vh;
+`
+const StyledTitle = styled.div`
+    text-align:center;
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 12px;
+    padding-top: 30px;
+    
+  @media(min-width: 400px) {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  @media(min-width: 500px) {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  @media(min-width: 800px) {
+    text-align: center;
+    width: 700px;
+    margin: 0px 10% 10px;
+  }
+`
+
+
+const StyledIframe = styled.div`
+  width: 99%;
+  margin: 0px 1px 10px;
+  height: 200px;
+
+  @media(min-width: 400px) {
+    height: 300px;
+    margin: 0px 1px 30px;
+  }
+  @media(min-width: 500px) {
+    height: 400px;
+    width: 80%;
+    margin: 0px 10% 50px;
+  }
+  @media(min-width: 800px) {
+    width: 700px;
+    margin: 0px 10% 50px;
+  }
+`
+
+
+const StyledContener = styled.div`
+  position: relative;
+  width: 100%;
+  margin: auto;
+`

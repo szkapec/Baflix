@@ -2,11 +2,78 @@ import React, { Component } from 'react'
 import jwt_decode from 'jwt-decode';
 import styled  from "styled-components";
 import Navi from './Navi';
+import StyledCard from './Music';
 
-const StyledContainer = styled.div`
-  background-color: #ecf0f1;
-  min-height: 100vh;
-`
+class ViewFilm extends Component {
+  constructor() {
+    super()
+    this.state = {
+      username: '',
+      last_name: '',
+      admin: '',
+      premium: '',
+    }
+  }
+
+  componentDidMount() {
+    if(!localStorage.usertoken) {
+      return this.props.history.push(`/login`)
+    } 
+    else {
+      const token = localStorage.usertoken
+      const decoded = jwt_decode(token)
+      this.setState({
+        username: decoded.username,
+        premium: decoded.premium,
+        admin: decoded.admin,
+      })
+      
+    }
+  }
+
+filmy = () => {
+
+  return (
+    <>
+
+    
+
+    <StyledCard>
+    <Navi/>
+    <StyledContener>
+        <StyledTitle>Ambient Music for Studying</StyledTitle>
+        <StyledIframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1yuDK3IXnb4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
+        <StyledTitle>CSS Grid Layout Crash Course</StyledTitle>
+        <StyledIframe width="560" height="315" src="https://www.youtube.com/embed/jV8B24rSN5o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
+      
+    </StyledContener>
+    </StyledCard>
+
+    </>
+  )
+}
+
+forwarding = (e) => {
+  if(this.state.admin===undefined){
+    localStorage.removeItem('usertoken')  //wylogowanie
+    return this.props.history.push(`/login`)
+  }
+}
+
+    render() {
+        return this.state.admin&&this.state.premium?<div>{this.filmy()}</div>:<div>{this.forwarding()}</div>
+    }
+}
+
+export default ViewFilm;
+
+
+
+
+// const StyledContainer = styled.div`
+//   background-color: #ecf0f1;
+//   min-height: 100vh;
+// `
 
 const StyledIframe = styled.iframe`
   width: 99%;
@@ -55,63 +122,3 @@ const StyledContener = styled.div`
 
 
 `
-
-class ViewFilm extends Component {
-  constructor() {
-    super()
-    this.state = {
-      username: '',
-      last_name: '',
-      admin: '',
-      premium: '',
-    }
-  }
-
-  componentDidMount() {
-    if(!localStorage.usertoken) {
-      return this.props.history.push(`/login`)
-    } 
-    else {
-      const token = localStorage.usertoken
-      const decoded = jwt_decode(token)
-      this.setState({
-        username: decoded.username,
-        premium: decoded.premium,
-        admin: decoded.admin,
-      })
-      
-    }
-  }
-
-filmy = () => {
-
-  return (
-    <>
-    <StyledContainer>
-    <Navi/>
-    <StyledContener>
-        <StyledTitle>Ambient Music for Studying</StyledTitle>
-        <StyledIframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1yuDK3IXnb4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
-        <StyledTitle>CSS Grid Layout Crash Course</StyledTitle>
-        <StyledIframe width="560" height="315" src="https://www.youtube.com/embed/jV8B24rSN5o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
-  
-    </StyledContener>
-    </StyledContainer>
-
-    </>
-  )
-}
-
-forwarding = (e) => {
-  if(this.state.admin===undefined){
-    localStorage.removeItem('usertoken')  //wylogowanie
-    return this.props.history.push(`/login`)
-  }
-}
-
-    render() {
-        return this.state.admin&&this.state.premium?<div>{this.filmy()}</div>:<div>{this.forwarding()}</div>
-    }
-}
-
-export default ViewFilm;

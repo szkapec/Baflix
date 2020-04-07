@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Navbar from './components/Navbar'
 import Landing from './components/Landing'
@@ -26,24 +26,26 @@ import Music from './components/Filmy/Music';
 import Mountains from './components/Filmy/Mountains';
 import Story from './components/Filmy/Story';
 import Context from './components/ListItem/Context';
+import Error404 from './components/Error404';
 class App extends Component {
   render() {
     return (
       <Router>
+        
         <div className="App">
           <Navbar />
+          <Switch>
           <Route exact path="/" component={Landing} />
-          <div className="">
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/profile" component={Profile} />
             
 
-            <Route path="/edit/:id" component={EditTask}/>
+            <Route exact path="/edit/:id" component={EditTask}/>
             <Route exact path="/addtask" component={Addtask} />
             <Route exact path="/viewtask" component={ViewTask} />
 
-            <Route path="/editTwitter/:id" component={EditTwitters}/>
+            <Route exact path="/editTwitter/:id" component={EditTwitters}/>
             {/* <Route exact path="/addtwitters" component={ViewTwitters} /> */}
             <Route exact path="/viewTwitter" component={ViewTwitters} />
 
@@ -57,9 +59,8 @@ class App extends Component {
             <Route exact path="/profile/film/mountains" component={Mountains} />
             <Route exact path="/profile/film/story" component={Story} />
             <Route exact path="/list" component={Context} />
-
-
-          </div>
+            <Route exact component={Error404}></Route>
+            </Switch>
         </div>
       </Router>
     )

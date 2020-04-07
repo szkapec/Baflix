@@ -2,6 +2,9 @@ import React from 'react'
 import {MdSend} from 'react-icons/md'
 import styled from 'styled-components';
 export default function ExpenseForm({charge,amount,handleCharge,handleAmount,handleSubmit, edit}) {
+
+
+    
     return (
         <form onSubmit={handleSubmit}>
             <StyledForm>

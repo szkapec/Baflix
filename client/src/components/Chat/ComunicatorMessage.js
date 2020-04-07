@@ -65,11 +65,15 @@ const StyledName1 = styled.div`
  }
 `
 const StyledCard = styled.div`
-   box-shadow: 0 0 5px black;
-   padding: 10px;
-   width: 80%;
+   width: 100%;
    margin: 0 auto;
 
+    @media (min-width: 600px) {
+        box-shadow: 0 0 5px black;
+        padding: 10px;
+        width: 80%;
+        margin: 0 auto;
+    }
    @media(min-width: 1000px) {
     max-width: 800px;
    }
