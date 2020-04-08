@@ -18,7 +18,7 @@ class Music extends Component {
 
   componentDidMount() {
     if(!localStorage.usertoken) {
-      return this.props.history.push(`/login`)
+      // return this.props.history.push(`/login`)
     } 
     else {
       const token = localStorage.usertoken
@@ -34,8 +34,18 @@ class Music extends Component {
   forwarding = (e) => {
     if(this.state.admin===undefined){
       localStorage.removeItem('usertoken')  //wylogowanie
-      return this.props.history.push(`/login`)
+      return console.log("MUSIC")//this.props.history.push(`/login`)
     }
+    setTimeout(() => {
+      if(!this.state.admin){
+        return  window.location = '/profile';
+      }
+      if(!this.state.premium){
+        return  window.location = '/profile';
+      }
+  }, 3000);
+    return <div style={{textAlign: 'center', marginTop: '20px'}}> 404 Brak dostępu</div>
+    
   }
 
 
@@ -44,7 +54,7 @@ class Music extends Component {
     return(
       <StyledCard >
           <StyledTitle>Concentration Programming Music</StyledTitle>
-          <StyledIframe width="560" height="315" src="https://www.youtube.com/embed/0r6C3z3TEKw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
+          <StyledIframe width="560" height="315" src="https://www.youtube.com/embed/l9nh1l8ZIJQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
       </StyledCard>
 
     )
@@ -61,7 +71,7 @@ class Music extends Component {
   // <StyledIframe width="560" height="315" src="https://www.youtube.com/embed/IfL0JsTbv0M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
 
     render() {
-        return this.state.admin&&this.state.premium?<div>{this.container()}</div>:<div>{this.forwarding()}</div>
+      return this.state.admin&&this.state.premium?<div>{this.container()}</div>:<div>{this.forwarding()}</div>
     }
 }
 

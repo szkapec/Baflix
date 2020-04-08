@@ -18,7 +18,7 @@ class Programing extends Component {
 
   componentDidMount() {
     if(!localStorage.usertoken) {
-      return this.props.history.push(`/login`)
+      // return this.props.history.push(`/login`)
     } 
     else {
       const token = localStorage.usertoken
@@ -45,11 +45,22 @@ class Programing extends Component {
   forwarding = (e) => {
     if(this.state.admin===undefined){
       localStorage.removeItem('usertoken')  //wylogowanie
-      return this.props.history.push(`/login`)
+      return console.log("MUSIC")//this.props.history.push(`/login`)
     }
+    setTimeout(() => {
+      if(!this.state.admin){
+        return  window.location = '/profile';
+      }
+      if(!this.state.premium){
+        return  window.location = '/profile';
+      }
+  }, 3000);
+    return <div style={{textAlign: 'center', marginTop: '20px'}}> 404 Brak dostępu</div>
+    
   }
 
     render() {
+
       return this.state.admin&&this.state.premium?(<>
         <StyledCard>
             
@@ -57,9 +68,7 @@ class Programing extends Component {
               <StyledIframe width="560" height="315" src="https://www.youtube.com/embed/jV8B24rSN5o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
               <StyledIframe width="560" height="315" src="https://www.youtube.com/embed/UB1O30fR-EE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
         </StyledCard>
-        
-    
-        </>) : <div>{this.forwarding()}</div>
+           </>) : <div>{this.forwarding()}</div>
 
     }
 }

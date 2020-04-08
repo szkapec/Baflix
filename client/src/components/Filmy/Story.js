@@ -18,7 +18,7 @@ class Story extends Component {
 
   componentDidMount() {
     if(!localStorage.usertoken) {
-      return this.props.history.push(`/login`)
+      // return this.props.history.push(`/login`)
     } 
     else {
       const token = localStorage.usertoken
@@ -34,8 +34,18 @@ class Story extends Component {
   forwarding = (e) => {
     if(this.state.admin===undefined){
       localStorage.removeItem('usertoken')  //wylogowanie
-      return this.props.history.push(`/login`)
+      return console.log("MUSIC")//this.props.history.push(`/login`)
     }
+    setTimeout(() => {
+      if(!this.state.admin){
+        return  window.location = '/profile';
+      }
+      if(!this.state.premium){
+        return  window.location = '/profile';
+      }
+  }, 3000);
+    return <div style={{textAlign: 'center', marginTop: '20px'}}> 404 Brak dostępu</div>
+    
   }
   all = () => {
     return(

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from "styled-components";
 import {Link} from 'react-router-dom';
 import Navi from '../Filmy/Navi';
-
+import StyledCard from '../Filmy/ChangeLight';
 
 
 
@@ -12,32 +12,45 @@ export default class Admin extends Component {
 
         super(props)
         this.state = {
-          username: '',
-          premium: false,
-          admin: false,
+         
         }
     }
 
     render() {
         return (
             <>
-            <Navi/>
-            <StyledContainer>
+            <StyledCard>
               <StyledTitle> Panel Administatora</StyledTitle>
               <StyledTitle> Ten panel jest tylko dla Admina</StyledTitle>
               <StyledDiv>Będzie dodane:</StyledDiv>
               <br></br>
-              <ul>
+              <ol>
+                <li>Lista zadań do zrobienia</li>
+                <li>dodanie alertow przy usuwaniu i dodawaniu czy modyfikacji</li>
+                <li>jebane prawa autorskie</li>
+                <li>O... banowanie(usuniecie z bazy?) i sprawdzanie obrazliwych słów</li>
                 <li>zmiana nazwy uzytkownika</li>
                 <li>zmiana emaila</li>
                 <li>wyswietlenie notatek i twitterow  po użytkowniku</li>
-                <li>możliwośc zmienay i usuniecia notatki</li>
+                <li>możliwośc zmienay i usuniecia notatki(kazdej tylko admin)</li>
+                <li>polaczenie z 2 bazami danych dla bezpieczeństwa</li>
+                <li>calkowite zabezpieczenie PSBC</li>
+                
+                
+              </ol>
+
+              <ul>
+                lista zadan do zrobienia:
+                <li>to co bylo u samuraja czyli dodawanie do tablicy z wymiarem czasowym</li>
+
+                <li>dodawanie zadan juz zrobionych i usuwanie ich </li>
+                <li>a na samym koncu zapisywanie do bazy wanych odzielnym buttonem</li>
               </ul>
          
             <br></br><br></br>
               <StyledDiv>Idz do fimów: <Link to="/profile/film">Filmy</Link></StyledDiv>
               <StyledDiv>Wróć do strony głównej:  <Link to="/profile">Wróć</Link> </StyledDiv>
-              </StyledContainer>
+              </StyledCard>
             </>
 
         )}

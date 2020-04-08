@@ -72,12 +72,14 @@ onSubmit=(e)=>{
     exercisesList = () => {
         var description = []
         var username = [];
+        var data = [];
         this.state.exercises.length>0&&this.state.exercises.map((poj,number) => {
+           data.push(poj.createdAt)
            description.push(poj.description)
            username.push(poj.username)
         })
 
-        return <ComunicatorMessage username={username.reverse()} description={description.reverse()}/>
+        return <ComunicatorMessage username={username.reverse()} description={description.reverse()} data={data.reverse()}/>
     }
 
     onChangeInput = () => {

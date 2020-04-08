@@ -62,7 +62,7 @@ class Landing extends Component {
                 Lista 
               </Link>
           </li>
-          {this.state.premium ? 
+          {this.state.premium&&this.state.admin? 
             <li  className="nav-item">
             <Link to="/profile/film" className="nav-link">
                 Filmy

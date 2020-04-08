@@ -13,16 +13,13 @@ export default class Twitter extends Component {
           admin: false,
         }
     }
+
+
     componentDidMount() {
+
         if(!localStorage.usertoken) {
           return window.location = '/login';
         } 
-        else if(!this.state.admin){
-          return localStorage.removeItem('usertoken');
-        }
-        else if(!this.state.premium) {
-          return localStorage.removeItem('usertoken');
-        }
         else {
           const token = localStorage.usertoken
           const decoded = jwt_decode(token)
@@ -33,17 +30,35 @@ export default class Twitter extends Component {
             admin: decoded.admin,
           })
         }
+      
       }
 
       forwarding = (e) => {
         if(this.state.admin===undefined){
           localStorage.removeItem('usertoken')  //wylogowanie
-          return this.props.history.push(`/login`)
+          return console.log("MUSIC")//this.props.history.push(`/login`)
         }
-      }
-
-    render() {
+        setTimeout(() => {
+          if(!this.state.admin){
+            window.location = '/login'
+            return localStorage.removeItem('usertoken');
+          }
+          else if(!this.state.premium){
+            window.location = '/login'
+            return localStorage.removeItem('usertoken');
+          }
+         
+      }, 100);
+        return <div style={{textAlign: 'center', marginTop: '20px'}}> 404 Brak dostępu</div>
         
-        return this.state.admin&&this.state.premium?<Admin/>: <h2 style={{textAlign:'center', marginTop: '20px'}}><div>{this.forwarding()}</div></h2>
+      }
+        
+        
+        //window.location = '/login';//localStorage.removeItem('usertoken');
+      
+    render() {
+      
+      console.log(this.state)
+    return this.state.admin&&this.state.premium?<Admin/>: <div>{this.forwarding()}</div> //<h2 style={{textAlign:'center', marginTop: '20px'}}><div>{this.forwarding()}</div></h2>
           }
         }
