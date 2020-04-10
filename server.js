@@ -50,6 +50,10 @@ var twittersy = require('./routes/Twittersy');
 app.use('/twittery', twittersy)
 
 
+var list = require('./routes/ListWorks');
+app.use('/list', list)
+
+
 if(process.env.NODE_ENV === "production") {
   //set static folder
   app.use(express.static('client/build'));

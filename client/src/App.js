@@ -27,6 +27,7 @@ import Mountains from './components/Filmy/Mountains';
 import Story from './components/Filmy/Story';
 import Context from './components/ListItem/Context';
 import Error404 from './components/Error404';
+import Works from './components/ListWorks/Works';
 class App extends Component {
   render() {
     return (
@@ -58,6 +59,7 @@ class App extends Component {
             <Route exact path="/profile/film/music" component={Music} />
             <Route exact path="/profile/film/mountains" component={Mountains} />
             <Route exact path="/profile/film/story" component={Story} />
+            <Route exact path="/list-works" component={Works} />
             <Route exact path="/list" component={Context} />
             <Route exact component={Error404}></Route>
             </Switch>

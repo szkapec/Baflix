@@ -66,7 +66,10 @@ class Programing extends Component {
             
               <StyledTitle>CSS Grid Layout Crash Course</StyledTitle>
               <StyledIframe width="560" height="315" src="https://www.youtube.com/embed/jV8B24rSN5o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
+              <StyledTitle>HTML Crash Course For Absolute Beginners</StyledTitle>
               <StyledIframe width="560" height="315" src="https://www.youtube.com/embed/UB1O30fR-EE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
+              <StyledTitle>React JS Crash Course</StyledTitle>
+              <StyledIframe width="560" height="315" src="https://www.youtube.com/embed/sBws8MSXN7A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
         </StyledCard>
            </>) : <div>{this.forwarding()}</div>
 

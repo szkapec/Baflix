@@ -24,7 +24,7 @@ export default class AddTwitters extends Component {
 
 
     deleteExercise(id) { 
-        axios.delete('http://localhost:5000/twittery/'+id)
+        axios.delete('/twittery/'+id)
             .then(res=> console.log(res.data));
             this.setState({
                 exercises: this.state.exercises.filter(el=>el._id !== id) //zwroc elementy el.id nierowne id
@@ -77,7 +77,7 @@ export default class AddTwitters extends Component {
             description: this.state.description,
             
         }
-        axios.post('http://localhost:5000/twittery/add', twitt)
+        axios.post('/twittery/add', twitt)
         .then(res => console.log(res.data));
         this.setState({
           info: '',

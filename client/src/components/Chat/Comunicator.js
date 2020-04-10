@@ -35,7 +35,7 @@ export default class Comunicator extends Component {
           }
 
 
-        axios.get('http://localhost:5000/message/')
+        axios.get('/message/')
             .then(response => {
                 this.setState({
                     exercises: response.data
@@ -59,7 +59,7 @@ onSubmit=(e)=>{
         description: this.state.description,
     }
 
-    axios.post('http://localhost:5000/message/add', message)
+    axios.post('/message/add', message)
     .then(res => console.log(res.data))
     window.location = '/chat'; //na strone glowna
     this.setState({

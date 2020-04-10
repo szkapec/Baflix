@@ -53,8 +53,10 @@ class Music extends Component {
   container = () => {
     return(
       <StyledCard >
-          <StyledTitle>Concentration Programming Music</StyledTitle>
-          <StyledIframe width="560" height="315" src="https://www.youtube.com/embed/l9nh1l8ZIJQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
+          <StyledTitle>Focus Boost Coding Music 🧩#15</StyledTitle>
+          <StyledIframe width="560" height="315" src="https://www.youtube.com/embed/cQ-a18zEBmI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
+          <StyledTitle>Hacking Music Mix - Mr. Robot 🤖#13</StyledTitle>
+          <StyledIframe width="560" height="315" src="https://www.youtube.com/embed/iAYMJk9IsDA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></StyledIframe>
       </StyledCard>
 
     )

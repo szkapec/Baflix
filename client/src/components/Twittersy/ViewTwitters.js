@@ -39,7 +39,7 @@ export default class ViewTask extends Component {
             
         
 
-        axios.get('http://localhost:5000/twittery/')
+        axios.get('/twittery/')
             .then(response => {
                 this.setState({
                     exercises: response.data

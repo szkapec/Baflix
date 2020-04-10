@@ -33,7 +33,7 @@ export default class ViewTask extends Component {
           }
 
 
-        axios.get('http://localhost:5000/exercises/')
+        axios.get('/exercises/')
             .then(response => {
                 this.setState({
                     exercises: response.data
@@ -44,7 +44,7 @@ export default class ViewTask extends Component {
     }
 
     deleteExercise(id) { 
-        axios.delete('http://localhost:5000/exercises/'+id)
+        axios.delete('/exercises/'+id)
             .then(res=> console.log(res.data));
             this.setState({
                 exercises: this.state.exercises.filter(el=>el._id !== id) //zwroc elementy el.id nierowne id
@@ -78,6 +78,7 @@ export default class ViewTask extends Component {
 }
 
 const StyledPlus = styled.div`
+
     position:fixed;
     left: 20px;
     bottom: 20px;
@@ -86,6 +87,7 @@ const StyledPlus = styled.div`
     height: 50px;
     border-radius: 50%;
     padding: 12px 0 0 12px;
+    z-index: 999;
 `
 
 const StyledButton = styled.button`

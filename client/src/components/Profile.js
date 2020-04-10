@@ -89,7 +89,7 @@ class Profile extends Component {
       
     }
 
-    axios.get('http://localhost:5000/twitter/')
+    axios.get('/twitter/')
     .then(response => {
         this.setState({
             twittersy: response.data
@@ -98,7 +98,7 @@ class Profile extends Component {
     
     .catch(error => console.log(error))
 
-    axios.get('http://localhost:5000/exercises/')
+    axios.get('/exercises/')
     .then(response => {
         this.setState({
           notte: response.data

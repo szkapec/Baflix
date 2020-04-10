@@ -22,7 +22,7 @@ export default class EditTwitter extends Component {
 
     componentDidMount() {
 
-        axios.get('http://localhost:5000/twittery/'+this.props.match.params.id)
+        axios.get('/twittery/'+this.props.match.params.id)
             .then(response => {
               console.log(response)
                 this.setState({
@@ -73,7 +73,7 @@ export default class EditTwitter extends Component {
             
         }
         
-        axios.post('http://localhost:5000/twittery/updateTwitter/' + this.props.match.params.id, twitters)
+        axios.post('/twittery/updateTwitter/' + this.props.match.params.id, twitters)
         .then(res => console.log(res));
         window.location = '/viewTwitter'; //na strone glowna
     }
