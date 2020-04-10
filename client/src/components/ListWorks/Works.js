@@ -28,7 +28,7 @@ export default class Works extends Component {
             })
           }
 
-        axios.get('/list/')
+        axios.get('http://localhost:5000/list/')
             .then(response => {
                 this.setState({
                     listWorks: response.data
@@ -60,7 +60,7 @@ export default class Works extends Component {
             priorytet: this.state.priorytet,
             date: this.state.date,
         }
-        axios.post('/list/add', list)
+        axios.post('http://localhost:5000/list/add', list)
         .then(res => console.log(res.data));
         this.listMap()
 
@@ -69,7 +69,7 @@ export default class Works extends Component {
         })
     }
     deleteExercise = (id) => { 
-        axios.delete('/list/'+id)
+        axios.delete('http://localhost:5000/list/'+id)
             .then(res=> console.log(res.data));
             this.setState({
                 listWorks: this.state.listWorks.filter(el=>el._id !== id) //zwroc elementy el.id nierowne id
