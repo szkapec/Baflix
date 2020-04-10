@@ -23,10 +23,12 @@ const Exercise = props => {
 
                              <StyledTextarea style={{borderBottomLeftRadius: '20px',borderBottomRightRadius: '20px'}}> 
                                   <b>Treść: </b>  {props.twitters.description}
+                                  <StyledDivGodzina>
                                   {props.username===props.user?(
                                   <StyledButton><Link style={{textDecoration: 'none', color:'black'}} to={"/editTwitter/"+props.twitters._id}>Edytuj</Link></StyledButton>) 
                                    :null}
                                    <StyledCzas><b>Dodano: </b>{conn()} </StyledCzas>
+                                  </StyledDivGodzina>
                             </StyledTextarea>
                         </StyledCard>
                 
@@ -41,6 +43,9 @@ const Exercise = props => {
 
     export default Exercise;
 
+    const StyledDivGodzina = styled.div`
+        margin-top: 20px;
+    `
 
     const StyledCzas = styled.div`
     font-size: 12px;

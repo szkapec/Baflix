@@ -11,7 +11,7 @@ const StyledAll = styled.div`
     color: white;
     flex-wrap: wrap;
     font-size: 12px;
-    box-shadow: 0 0 5px  #6B4226;
+    box-shadow: 0 0 10px  #6B4226;
     border-radius: 20px;
     @media(min-width:600px){
     font-size: 14px;
@@ -21,13 +21,13 @@ const StyledAll1 = styled.div`
     padding: 10px;
     margin: 10px;
     margin-left: 40px;
-    background-color: #00CC66;
+    background-color: #2980b9;
     color: white;
     margin-bottom: 10px;
     display: flex;
     flex-wrap: wrap;
     font-size: 12px;
-    box-shadow: 0 0 5px #00CC66;
+    box-shadow: 0 0 10px #2980b9;
     border-radius: 20px;
     @media(min-width:600px){
     font-size: 14px;
@@ -133,12 +133,12 @@ const Message = (props) => {
                 </div>)}
 
                 {props.username[8]&&(<div>
-                    <StyledName>{props.username[8]&&props.username[8]}:{props.data[8]}</StyledName>
+                    <StyledName>{props.username[8]&&props.username[8]}: {props.data[8]}</StyledName>
                     <StyledAll>{props.username[8]&&props.description[8]}</StyledAll>
                 </div>)}
 
                 {props.username[9]&&(<div>
-                    <StyledName1>{props.username[9]&&props.username[9]}:{props.data[9]}</StyledName1>
+                    <StyledName1>{props.username[9]&&props.username[9]}: props.data[9]}</StyledName1>
                     
                     <StyledAll1>{props.username[9]&&props.description[9]}</StyledAll1>
                 </div>)}
@@ -149,23 +149,23 @@ const Message = (props) => {
                 </div>)}
                 
                 {props.username[11]&&(<div>
-                    <StyledName1>{props.username[11]&&props.username[11]}:{props.data[11]}</StyledName1>
+                    <StyledName1>{props.username[11]&&props.username[11]}: {props.data[11]}</StyledName1>
                     <StyledAll1>{props.username[11]&&props.description[11]}</StyledAll1>
                 </div>)}
                 
                 {props.username[12]&&(<div>
-                    <StyledName>{props.username[12]&&props.username[12]}:{props.data[12]}</StyledName>
+                    <StyledName>{props.username[12]&&props.username[12]}: {props.data[12]}</StyledName>
                     <StyledAll>{props.username[12]&&props.description[12]}</StyledAll>
                 </div>)}
                 
                 {props.username[13]&&(<div>
-                    <StyledName1>{props.username[13]&&props.username[13]}:{props.data[13]}</StyledName1>
+                    <StyledName1>{props.username[13]&&props.username[13]}: {props.data[13]}</StyledName1>
                     <StyledAll1>{props.username[13]&&props.description[13]}</StyledAll1>
                 </div>)}
                 
                 {props.username[14]&&(<div>
                     <StyledName>{props.username[14]&&props.username[14]}: {props.data[14]}</StyledName>
-                    <StyledAll>{props.username[14]&&props.description[14]}</StyledAll>
+                    <StyledAll>{props.username[14]&&props.description[14]} </StyledAll>
                 </div>)}
             </StyledCard>
             </>
