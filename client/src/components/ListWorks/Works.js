@@ -28,7 +28,7 @@ export default class Works extends Component {
             })
           }
 
-        axios.get('http://localhost:5000/list/')
+        axios.get('/list/')
             .then(response => {
                 this.setState({
                     listWorks: response.data
@@ -60,7 +60,7 @@ export default class Works extends Component {
             priorytet: this.state.priorytet,
             date: this.state.date,
         }
-        axios.post('http://localhost:5000/list/add', list)
+        axios.post('/list/add', list)
         .then(res => console.log(res.data));
         this.listMap()
 
@@ -69,7 +69,7 @@ export default class Works extends Component {
         })
     }
     deleteExercise = (id) => { 
-        axios.delete('http://localhost:5000/list/'+id)
+        axios.delete('/list/'+id)
             .then(res=> console.log(res.data));
             this.setState({
                 listWorks: this.state.listWorks.filter(el=>el._id !== id) //zwroc elementy el.id nierowne id
@@ -100,7 +100,7 @@ changePriorytet = () => {
 
     render() {
         return (
-            <div>
+            <StyledAll>
                 <StyledContainer onSubmit={this.onSubmit} >
                   
                    <div>
@@ -123,10 +123,15 @@ changePriorytet = () => {
                 {this.state.listWorks.length>0?this.listMap():<StyledWar>Brak zadań do wykonania;)</StyledWar>}
 
                 
-            </div>
+            </StyledAll>
         )
     }
 }
+const StyledAll = styled.div`
+    background-color: #ecf0f1;
+    min-height: 100vh;
+`
+
 const StyledWar = styled.div`
     text-align: center;
 `

@@ -117,7 +117,7 @@ const StyledUl = styled.ul`
     display: grid;
     grid-template-columns: 1fr;
     /* grid-template-rows: repeat(2,1fr); */
-    background-color: ${({poTerminie,dzisiaj,jutro}) => poTerminie?'red':dzisiaj?'yellow': jutro ? '#2980b9' : 'white'};
+    background-color: ${({poTerminie,dzisiaj,jutro}) => poTerminie?'red':dzisiaj?'yellow': jutro ? '#2980b9' : 'green'};
     font-size: 12px;
     margin: 20px 5%;
     width: 90%;
