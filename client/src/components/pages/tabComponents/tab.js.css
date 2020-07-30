@@ -1,0 +1,84 @@
+
+.tab-icon-door {
+    width: 48px;
+    height: 48px;
+    fill: var(--main-grey);
+}
+@media(max-width: 900px) {
+    .tab-icon-door {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+}
+
+.tab-icon-devices {
+    width: 130px;
+    height: 130px;
+    fill: var(--main-grey);
+}
+@media(max-width: 900px) {
+    .tab-icon-devices {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+.tab-icon-price {
+    width: 48px;
+    height: 48px;
+    fill: var(--main-grey);
+}
+@media(max-width: 900px) {
+    .tab-icon-price {
+
+    }
+}
+
+
+
+.tabs {
+    padding-top: 16px;
+
+}
+
+.tab-nav-container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px;
+    list-style: none;
+    color: var(--main-grey);
+    margin: 0 12%;
+}
+
+ul li:hover {
+    color: white;
+    cursor: pointer;
+}
+ul li:hover svg path {
+    fill: white;
+}
+
+.active {
+    border-bottom: 4px solid var(--main-red);
+}
+.tab-selected {
+    color: #fff;
+}
+.tab-selected svg path {
+    fill: white;
+}
+
+
+@media(min-width: 900px) {
+    .mdScreen {
+        display: none;
+    }
+}
+@media(max-width: 900px) {
+    .lgScreen {
+        display: none;
+    }
+}

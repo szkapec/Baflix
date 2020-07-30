@@ -1,0 +1,209 @@
+{
+
+    "description": {
+     "one": "Popularne w serwisie baflix",
+      "two": "Popularne teraz",
+      "three": "top 10 w Polsce dzisiaj",
+      "four": "Baflix Originals",
+
+      "Czas trwania": "1godz 32min"
+  }, 
+
+    "pictures": [
+      {"id":1, "alt": "Trzynascie powodów",
+      "img": "https://cdn.pixabay.com/photo/2020/04/18/18/18/door-5060421_960_720.jpg" 
+        , "description": "Hannah Baker popełnia samobójstwo, a jej znajomy dostaje trzynaście nagrań magnetofonowych, na których dziewczyna nagrała powody odebrania sobie życia."
+        , "seasons": 4
+        , "type": "Dramat"
+        , "presage": "https://www.filmweb.pl/video/Zwiastun/Trzyna%C5%9Bcie+powod%C3%B3w+sezon+4+Zwiastun+nr+4+%2C+polski-53746"
+      },
+      
+      {"id":3, "alt": "Dark", "img": "https://cdn.pixabay.com/photo/2020/07/16/13/34/lake-5410987_960_720.jpg" 
+        , "description": "Zaginięcie dzieci ujawnia podwójne życie i nadszarpnięte relacje członków czterech rodzin, łącząc się z wydarzeniami sprzed trzydziestu lat."
+        , "seasons": 3
+        , "type": "Sci-Fi"
+        , "presage": "https://www.filmweb.pl/video/Zwiastun/Dark+sezon+3+Zwiastun+nr+5+%2C+polski-54100"
+      },
+      {"id":4, "alt": "Czarne lustro",  "img": "https://cdn.pixabay.com/photo/2020/07/12/02/34/night-5395836_960_720.jpg" 
+        , "description": "W przyszłości ludzie mierzą się z problemami, których przysparzają im nowoczesne technologie i rozwój cywilizacji."
+        , "seasons": 5
+        , "type": "Dramat"
+        , "presage": "https://www.filmweb.pl/video/Zwiastun/Czarne+lustro+sezon+5+Zwiastun+nr+5+%2C+odc.+Striking+vipers+polski-50201"
+      },
+      {"id":5, "alt": "Parasite",  "img": "https://cdn.pixabay.com/photo/2020/07/11/13/35/heron-5394026_960_720.jpg" 
+        , "description": "Kiedy Ki-woo dostaje pracę jako korepetytor córki zamożnego małżeństwa, wymyśla sposób na zapewnienie zatrudnienia również reszcie swojej rodziny."
+        , "seasons": 0
+        , "time":"1godz 31min"
+        , "type": "Dramat"
+        , "presage": "https://www.filmweb.pl/video/Zwiastun/Parasite+Zwiastun+nr+4+polski-51098"
+      },
+      {"id":6, "alt": "Gospel",  "img": "https://cdn.pixabay.com/photo/2020/07/22/08/17/power-station-5428427_960_720.jpg" 
+        , "description": "'The Gospel' jest współczesnym dramatem o miłości i zbawieniu, osadzonym w świecie muzyki gospel i Afro - Amerykańskiego kościoła. Gwiazdą filmu 'Gospel' jest Boris Kodjoe grający popularnego artystę R'n'B, który będąc u szczytu swojej kariery, odseparowany od swojej rodziny - liderów chrześcijańskich w rodzinnym kościele na południu - dowiaduje się, że jego ojciec (Clifton Powell), biskup kościoła jest śmiertelnie chory, powraca do domu, gdzie jest zmuszony zmierzyć się z demonami z przeszłości. "
+        , "seasons": 0
+        , "time":"1godz 31min"
+        , "type": "Dramat"
+        , "presage": "https://www.filmweb.pl/video/Zwiastun/Gospel+Zwiastun+nr+1-15375"
+      },
+      {"id":7, "alt": "Sabrina",  "img": "https://cdn.pixabay.com/photo/2020/07/21/20/16/yacht-5427299_960_720.jpg" 
+        , "description": "David zamierza poślubić Sabrinę. Jego starszy brat Linus stara się do tego nie dopuścić."
+        , "seasons": 0
+        , "time":"1godz 31min"
+        , "type" :"Dramat"
+        , "presage": "https://www.filmweb.pl/video/Zwiastun/Sabrina+Zwiastun+nr+1+polski-14303"
+      },
+      {"id":8, "alt": "Daybreak",  "img": "https://cdn.pixabay.com/photo/2020/07/09/10/32/water-5386820_960_720.jpg" 
+        , "description":  "Nastoletni outsider poszukuje swojej zaginionej sympatii w postapokaliptycznym świecie pełnym zombie i gangów rodem z 'Mad Maxa'."
+        , "seasons": 1
+        , "type": "Sci-Fi"
+        , "presage": "https://www.filmweb.pl/video/Zwiastun/Daybreak+Zwiastun+nr+2+polski-51710"
+      },
+      {"id":9, "alt": "Dom z papieru",  "img": "https://cdn.pixabay.com/photo/2020/06/06/14/36/fantasy-5266805_960_720.jpg" 
+        , "description":  "Ośmioro zamaskowanych przestępców napada na hiszpańską mennicę narodową. Ich przedstawicielem jest tajemniczy Profesor, który prowadzi negocjacje z policją."
+        , "seasons": 3
+        , "type": "Thriller"
+        , "presage": "https://www.filmweb.pl/video/Zwiastun/Dom+z+papieru+Zwiastun+nr+4+sezon+4%2C+polski-53184"
+      },
+      {"id":2, "alt": "Hakowanie świata", "img": "https://cdn.pixabay.com/photo/2020/07/02/10/25/moonlight-5362539_960_720.jpg" 
+        , "description":  "Po wyborach prezydenckich w USA w 2016 r. firma Cambridge Analytica stała się symbolem ciemnej strony mediów społecznościowych."
+        , "seasons": 1
+        , "type": "Horror"
+        , "presage": "https://www.filmweb.pl/video/Zwiastun/Hakowanie+%C5%9Bwiata+Zwiastun+nr+1+polski-50675"
+      },
+      {"id":10, "alt": "Orange black",  "img": "https://cdn.pixabay.com/photo/2017/06/30/19/52/apocalypse-2459465_960_720.jpg" 
+        , "description":  "Piper Chapman zostaje skazana na 15 miesięcy więzienia za przestępstwo sprzed dekady."
+        , "seasons": 7
+        , "type": "Komedia"
+        , "presage": "https://www.filmweb.pl/video/Zwiastun/Orange+Is+the+New+Black+sezon+7+Zwiastun+nr+4+%2C+polski-50565"
+      }
+
+
+    ],
+
+    "picturesTwo": [
+        {"id":10, "alt": "orange black",  "img": "https://occ-0-1299-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABQFiPQG56QM1DjxwDEW78A6Vn6svLBymIUOU8ooZ-Yoiw6V0WnydBMX48ep-EWUdpA99zVzymy3aKEnHeHJi_Vbsqm-zWFumM5SPvRJirO3Y-6XfLSiMEgeYAdcK.webp?r=a79" },
+        {"id":7, "alt": "sabrina",  "img": "https://occ-0-1299-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABVE2OsQVgCmy_0pkAitesfwF9NYQQ37w0RhxwmrlP0Zl7oRR6tlCATDpkKx3TfezX-nr62Z4ZTk-sn66WPxxKYjmBKU6gK5thZMut6_ytLAyhFyP8oiL2ZsKZnlY.webp?r=745" },
+        {"id":9, "alt": "dom z papieru",  "img": "https://occ-0-1299-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTrKoUKrzy2CQ4pzb_dcUhjGn0aseXmW5c7RVeT80iQOzDGadf19BJRgrrl8HyT7tKr8lqkuoZXvceRNIoJRjcyIM6hcG4StXztyV4Ybwo6CfUYOzKjOTLJt0CVF.jpg?r=48e" },
+        {"id":1, "alt": "trzynascie powodów", "img": "https://occ-0-53-1489.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABeDA_iH-8_7f3-DV3qSAbaCwSRQsiZgNLXDaG8gDJghH7pfhariPnjbkp8N2gfajTN277hxgrGLMR_xkvzd3F4pCH9Ge2sRtvh4mL4UETJ5LDwyKJTS-IMoEf2Y-x9qZwu-IdyLm7XgpR3RJeBVq0ud5j1rXaw.jpg?r=8a8" },
+        {"id":4, "alt": "czarne lustro",  "img": "https://occ-0-1299-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABfXMAZOnuPkyb0i2cS35oJ8e6yuJsAZDsdkwbRTjQc3z5X_LcIZIe-joB_CDn9SfhU-kcgMZoBC037dGp1OxlfQCrzLqHJYwAW3yy1p_6kHzGMy0C8BUrejG3ZpN.jpg?r=bd1" },
+        {"id":3, "alt": "dark", "img": "https://occ-0-1299-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABbsAhibWUdZygSGBwzQtYbb4zu78Bbd5iETSCakh6hUu0ZZGeeDN_d5q1X-NvDDyz8cCYwypuuDK2YVMBxkLrs6lxCoxAIVSqI9sixoN5llSvy9_keotuplbbxI0k18BjSupTZ3iwkNvZDf3dx1xBNU-vcgYzoq0uTxFAYlEe-ofNLi1J6AQqPqQr4DIVDG_DsT0zhilNapUBOm3JJB8msPb.webp?r=264" },
+        {"id":6, "alt": "gospel",  "img": "https://occ-0-1299-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABQfQpPq6p_AQEKs7LkfBqRWNgu0-7bgvcDY2eS6NSvnocdbAjoWW2Ajb-qdfR72oblCcBD4ScaZdvPFjAYcgEujA7k7blRVZZu4jLNi4w2s_qTjTw1uTIOd61-CU.webp?r=42e" },
+        {"id":2, "alt": "hakowanie świata", "img": "https://occ-0-1299-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABZTYLJWYFCJTUWeqXu9gDwzMt_qKayEaBPFVD9osxbWRPG6t2lul3N5KsIexJgyNW2atrkzyGnsJit5GCZ4Yy0ROUSc80o8vTi3COeooYxMGUDm5olf8z-Pk7Z5Y.jpg?r=601" },
+        {"id":5, "alt": "paradise",  "img": "https://occ-0-1299-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABYwokx6O48tckKYNULqxlkDvAERwLGBRHuvb2oHR5_4jqCnkHE9XHDWS3gI_clEor5mooZrL8NAQCJ6zOYrz2QKB3_axohgOlV-ArCjvMvkz2KFf1Q1MlcVgpqiZ.jpg?r=3f9" },
+        {"id":8, "alt": "daybreak",  "img": "https://occ-0-1299-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABW7zMYHtXEJl9gz0Tg-HqulHRy5Ucv5sVKI82-oa0IJkREv9Erc2JuHhhhM7rbjKUWBS02a2lVXwGeZNKfQanVyRZOXGOWYYnITAnc6AgJXEQYB7tPVxgw6ozGSb.webp?r=534" }
+    ],
+    "picturesThree": [
+        {"id":1, "alt": "trzynascie powodów", "img": "https://occ-0-53-1489.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABeDA_iH-8_7f3-DV3qSAbaCwSRQsiZgNLXDaG8gDJghH7pfhariPnjbkp8N2gfajTN277hxgrGLMR_xkvzd3F4pCH9Ge2sRtvh4mL4UETJ5LDwyKJTS-IMoEf2Y-x9qZwu-IdyLm7XgpR3RJeBVq0ud5j1rXaw.jpg?r=8a8" },
+        {"id":7, "alt": "sabrina",  "img": "https://occ-0-1299-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABVE2OsQVgCmy_0pkAitesfwF9NYQQ37w0RhxwmrlP0Zl7oRR6tlCATDpkKx3TfezX-nr62Z4ZTk-sn66WPxxKYjmBKU6gK5thZMut6_ytLAyhFyP8oiL2ZsKZnlY.webp?r=745" },
+        {"id":10, "alt": "orange black",  "img": "https://occ-0-1299-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABQFiPQG56QM1DjxwDEW78A6Vn6svLBymIUOU8ooZ-Yoiw6V0WnydBMX48ep-EWUdpA99zVzymy3aKEnHeHJi_Vbsqm-zWFumM5SPvRJirO3Y-6XfLSiMEgeYAdcK.webp?r=a79" },
+        {"id":6, "alt": "gospel",  "img": "https://occ-0-1299-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABQfQpPq6p_AQEKs7LkfBqRWNgu0-7bgvcDY2eS6NSvnocdbAjoWW2Ajb-qdfR72oblCcBD4ScaZdvPFjAYcgEujA7k7blRVZZu4jLNi4w2s_qTjTw1uTIOd61-CU.webp?r=42e" },
+        {"id":2, "alt": "hakowanie świata", "img": "https://occ-0-1299-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABZTYLJWYFCJTUWeqXu9gDwzMt_qKayEaBPFVD9osxbWRPG6t2lul3N5KsIexJgyNW2atrkzyGnsJit5GCZ4Yy0ROUSc80o8vTi3COeooYxMGUDm5olf8z-Pk7Z5Y.jpg?r=601" },
+        {"id":3, "alt": "dark", "img": "https://occ-0-1299-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABbsAhibWUdZygSGBwzQtYbb4zu78Bbd5iETSCakh6hUu0ZZGeeDN_d5q1X-NvDDyz8cCYwypuuDK2YVMBxkLrs6lxCoxAIVSqI9sixoN5llSvy9_keotuplbbxI0k18BjSupTZ3iwkNvZDf3dx1xBNU-vcgYzoq0uTxFAYlEe-ofNLi1J6AQqPqQr4DIVDG_DsT0zhilNapUBOm3JJB8msPb.webp?r=264" },
+        {"id":9, "alt": "dom z papieru",  "img": "https://occ-0-1299-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTrKoUKrzy2CQ4pzb_dcUhjGn0aseXmW5c7RVeT80iQOzDGadf19BJRgrrl8HyT7tKr8lqkuoZXvceRNIoJRjcyIM6hcG4StXztyV4Ybwo6CfUYOzKjOTLJt0CVF.jpg?r=48e" },
+        {"id":4, "alt": "czarne lustro",  "img": "https://occ-0-1299-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABfXMAZOnuPkyb0i2cS35oJ8e6yuJsAZDsdkwbRTjQc3z5X_LcIZIe-joB_CDn9SfhU-kcgMZoBC037dGp1OxlfQCrzLqHJYwAW3yy1p_6kHzGMy0C8BUrejG3ZpN.jpg?r=bd1" },
+        {"id":5, "alt": "paradise",  "img": "https://occ-0-1299-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABYwokx6O48tckKYNULqxlkDvAERwLGBRHuvb2oHR5_4jqCnkHE9XHDWS3gI_clEor5mooZrL8NAQCJ6zOYrz2QKB3_axohgOlV-ArCjvMvkz2KFf1Q1MlcVgpqiZ.jpg?r=3f9" },
+        {"id":8, "alt": "daybreak",  "img": "https://occ-0-1299-1432.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABW7zMYHtXEJl9gz0Tg-HqulHRy5Ucv5sVKI82-oa0IJkREv9Erc2JuHhhhM7rbjKUWBS02a2lVXwGeZNKfQanVyRZOXGOWYYnITAnc6AgJXEQYB7tPVxgw6ozGSb.webp?r=534" }
+    ],
+
+    "hightSlider": [
+      {"id":1, "alt": "Trzynascie powodów",
+        "img": "https://cdn.pixabay.com/photo/2019/10/29/14/46/landscape-4587079_960_720.jpg" 
+          , "description": "Hannah Baker popełnia samobójstwo, a jej znajomy dostaje trzynaście nagrań magnetofonowych, na których dziewczyna nagrała powody odebrania sobie życia."
+          , "seasons": 4
+          , "type": "dramat"
+          , "presage": "https://www.filmweb.pl/video/Zwiastun/Trzyna%C5%9Bcie+powod%C3%B3w+sezon+4+Zwiastun+nr+4+%2C+polski-53746"
+          , "time": "1godz 31min"
+        },
+        
+        {"id":3, "alt": "Dark", "img": "https://cdn.pixabay.com/photo/2020/05/22/07/59/girl-5204280_960_720.jpg" 
+          , "description": "Zaginięcie dzieci ujawnia podwójne życie i nadszarpnięte relacje członków czterech rodzin, łącząc się z wydarzeniami sprzed trzydziestu lat."
+          , "seasons": 3
+          , "type": "Sci-Fi"
+          , "presage": "https://www.filmweb.pl/video/Zwiastun/Dark+sezon+3+Zwiastun+nr+5+%2C+polski-54100"
+          , "time": "1godz 31min"
+        },
+        {"id":4, "alt": "Czarne lustro", 
+           "img": "https://cdn.pixabay.com/photo/2020/07/04/09/47/theater-5368958_960_720.jpg" 
+          , "description": "W przyszłości ludzie mierzą się z problemami, których przysparzają im nowoczesne technologie i rozwój cywilizacji."
+          , "seasons": 5
+          , "type": "dramat"
+          , "presage": "https://www.filmweb.pl/video/Zwiastun/Czarne+lustro+sezon+5+Zwiastun+nr+5+%2C+odc.+Striking+vipers+polski-50201"
+          , "time": "1godz 31min"
+        },
+        {"id":5, "alt": "Parasite",  "img": "https://cdn.pixabay.com/photo/2020/07/06/01/24/natural-5374990_960_720.jpg" 
+          , "description": "Kiedy Ki-woo dostaje pracę jako korepetytor córki zamożnego małżeństwa, wymyśla sposób na zapewnienie zatrudnienia również reszcie swojej rodziny."
+          , "seasons": 0
+          , "type": "dramat"
+          , "presage": "https://www.filmweb.pl/video/Zwiastun/Parasite+Zwiastun+nr+4+polski-51098"
+          , "time": "1godz 31min"
+        },
+        {"id":6, "alt": "Gospel",
+            "img": "https://cdn.pixabay.com/photo/2020/07/05/14/40/landscape-5373242_960_720.jpg" 
+          , "description": "'The Gospel' jest współczesnym dramatem o miłości i zbawieniu, osadzonym w świecie muzyki gospel i Afro - Amerykańskiego kościoła. Gwiazdą filmu 'Gospel' jest Boris Kodjoe grający popularnego artystę R'n'B, który będąc u szczytu swojej kariery, odseparowany od swojej rodziny - liderów chrześcijańskich w rodzinnym kościele na południu - dowiaduje się, że jego ojciec (Clifton Powell), biskup kościoła jest śmiertelnie chory, powraca do domu, gdzie jest zmuszony zmierzyć się z demonami z przeszłości. "
+          , "seasons": 0
+          , "type": "dramat"
+          , "presage": "https://www.filmweb.pl/video/Zwiastun/Gospel+Zwiastun+nr+1-15375"
+          , "time": "1godz 31min"
+        },
+        {"id":7, "alt": "Sabrina",  "img": "https://cdn.pixabay.com/photo/2017/03/15/13/27/rough-horn-2146181_960_720.jpg" 
+          , "description": "David zamierza poślubić Sabrinę. Jego starszy brat Linus stara się do tego nie dopuścić."
+          , "seasons": 0
+          , "type" :"dramat"
+          , "presage": "https://www.filmweb.pl/video/Zwiastun/Sabrina+Zwiastun+nr+1+polski-14303"
+          , "time": "1godz 31min"
+        },
+        {"id":8, "alt": "Daybreak",  "img": "https://cdn.pixabay.com/photo/2017/08/06/12/06/people-2591874_960_720.jpg" 
+          , "description":  "Nastoletni outsider poszukuje swojej zaginionej sympatii w postapokaliptycznym świecie pełnym zombie i gangów rodem z 'Mad Maxa'."
+          , "seasons": 1
+          , "type": "Sci-Fi"
+          , "presage": "https://www.filmweb.pl/video/Zwiastun/Daybreak+Zwiastun+nr+2+polski-51710"
+          , "time": "1godz 31min"
+          
+        },
+        {"id":9, "alt": "Dom z papieru",  "img": "https://cdn.pixabay.com/photo/2014/05/03/01/04/manhattan-336708_960_720.jpg" 
+          , "description":  "Ośmioro zamaskowanych przestępców napada na hiszpańską mennicę narodową. Ich przedstawicielem jest tajemniczy Profesor, który prowadzi negocjacje z policją."
+          , "seasons": 3
+          , "type": "thriller"
+          , "presage": "https://www.filmweb.pl/video/Zwiastun/Dom+z+papieru+Zwiastun+nr+4+sezon+4%2C+polski-53184"
+          , "time": "1godz 31min"
+        },
+        {"id":2, "alt": "Hakowanie świata", "img": "https://cdn.pixabay.com/photo/2015/07/29/18/32/building-866406_960_720.jpg" 
+          , "description":  "Po wyborach prezydenckich w USA w 2016 r. firma Cambridge Analytica stała się symbolem ciemnej strony mediów społecznościowych."
+          , "seasons": 1
+          , "type": "dokumentalny"
+          , "presage": "https://www.filmweb.pl/video/Zwiastun/Hakowanie+%C5%9Bwiata+Zwiastun+nr+1+polski-50675"
+          , "time": "1godz 31min"
+        },
+        {"id":10, "alt": "Orange black",  "img": "https://cdn.pixabay.com/photo/2020/05/15/19/37/book-5174879_960_720.jpg" 
+          , "description":  "Piper Chapman zostaje skazana na 15 miesięcy więzienia za przestępstwo sprzed dekady."
+          , "seasons": 7
+          , "type": "komedia"
+          , "presage": "https://www.filmweb.pl/video/Zwiastun/Orange+Is+the+New+Black+sezon+7+Zwiastun+nr+4+%2C+polski-50565"
+          , "time": "1godz 31min"
+        }
+  
+      ]
+    
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  

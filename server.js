@@ -15,7 +15,7 @@ app.use(
   })
 )
 
-const mongoURI = 'mongodb+srv://admin1:admin@cluster0-rqbof.mongodb.net/test?retryWrites=true&w=majority'
+const mongoURI = 'mongodb+srv://admin1:admin@cluster0-rqbof.mongodb.net/films?retryWrites=true&w=majority'
 
 mongoose
   .connect(
@@ -27,42 +27,38 @@ mongoose
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err))
   
-var Users = require('./routes/Users')
-app.use('/users', Users)
+// var Users = require('./routes/Users')
+// app.use('/users', Users)
 
 
-var ExercisesRouter = require('./routes/Exercises');
-app.use('/exercises', ExercisesRouter); 
+var ExercisesRouter = require('./routes/Description');
+app.use('/description', ExercisesRouter); 
 
 
-// const userRouter = require('./routes/users');
+var FilmsRouter = require('./routes/Films');
+app.use('/filmsOne', FilmsRouter); 
 
-// app.use('/users', userRouter);
+var PicturesTwo = require('./routes/PicturesTwo');
+app.use('/PicturesTwo', PicturesTwo); 
 
+var PicturesThree = require('./routes/PicturesThree');
+app.use('/PicturesThree', PicturesThree); 
 
-var messages = require('./routes/Messages');
-app.use('/message', messages)
+var HightSlider = require('./routes/hightSlider');
+app.use('/hightSlider', HightSlider); 
 
-var twitters = require('./routes/Twitter');
-app.use('/twitter', twitters)
-
-var twittersy = require('./routes/Twittersy');
-app.use('/twittery', twittersy)
-
-
-var list = require('./routes/ListWorks');
-app.use('/list', list)
 
 
 if(process.env.NODE_ENV === "production") {
   //set static folder
-  app.use(express.static('client/build'));
+  app.use(express.static('../netflyx/build'));
   app.get('*', (req,res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, '../', 'netflyx', 'build', 'index.html'));
   });
 }
 
 var port = process.env.PORT || 5000
+
 
 
 app.listen(port, function() {

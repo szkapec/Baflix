@@ -1,72 +1,94 @@
-import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import React from 'react';
+import Navbar from './components/layout/Navbar';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import Index from './components/projects/Index';
+import Film from './components/projects/Film/Film';
+import Main from './components/pages/Main';
+import Login from './components/pages/Logger/Login';
+import {ChoosePlan} from './components/pages/Logger/ChoosePlan';
+import ResponsivePlayer from './components/projects/Film/ResponsivePlayer';
+import AppContext from './context';
+import Cart from './components/projects/Cart/Cart';
+import News from './components/projects/News/News';
+import YourAccount from './components/projects/YourAccount/YourAccount';
+import Error from './components/projects/Error/Error';
+import Information from './components/pages/Information/Information';
+class App extends React.Component {
 
-import Navbar from './components/Navbar'
-import Landing from './components/Landing'
-import Login from './components/Login'
-import Register from './components/Register'
-import Profile from './components/Profile'
+  state = {
+    value: 'Wybór',
+    cart: [
+ 
+    ],
+    like: [
 
-import Addtask from './components/Task/AddTask'
-import ViewTask from './components/Task/ViewTask'
-import EditTask from './components/Task/EditTask';
+    ],
+    heart: [
+  
+    ]
+  }
 
-import AddTwitters from './components/Twittersy/AddTwitters';
-import ViewTwitters from './components/Twittersy/ViewTwitters';
-import EditTwitters from './components/Twittersy/EditTwitters';
+  addItem = e => {
+    this.setState({
+      value: e.target.value,
+  })
+}
 
+  addCart = (item) => {
+    this.setState({
+      cart: [...this.state.cart, item]
+    })
+    console.log(this.state.cart.length+1)
+}
 
-import Twitter from './components/Twitter/Twitter';
-import EditTwitter from './components/Twitter/EditTwitter'
-import Comunicator from './components/Chat/Comunicator';
-import ViewAdmin from './components/Admin/ViewAdmin';
-import ViewsFilm from './components/Filmy/ViewsFilm';
-import Programing from './components/Filmy/Programing';
-import Music from './components/Filmy/Music';
-import Mountains from './components/Filmy/Mountains';
-import Story from './components/Filmy/Story';
-import Context from './components/ListItem/Context';
-import Error404 from './components/Error404';
-import Works from './components/ListWorks/Works';
-class App extends Component {
+  addLike = (item) => {
+    this.setState({
+      like: [...this.state.like, item]
+    })
+    console.log(this.state)
+  }
+  addHeart = (item) => {
+    this.setState({
+      heart: [...this.state.heart, item]
+    })
+    console.log(this.state)
+  }
+
   render() {
+
+    const contextElement = {
+      ...this.state,
+      addItems: this.addItem,
+      addCart: this.addCart,
+      addLike: this.addLike,
+      addHeart: this.addHeart,
+    }
+
+
     return (
-      <Router>
-        
-        <div className="App">
-          <Navbar />
-          <Switch>
-          <Route exact path="/" component={Landing} />
-            <Route exact path="/register" component={Register} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/profile" component={Profile} />
-            
+      <div className="App">
+        <BrowserRouter>
+            <AppContext.Provider value={contextElement}>
+              <Navbar></Navbar>
+                <Switch>
+                    <Route exact path="/" component={Main}></Route>
+                    <Route exact path="/login/" component={Login}></Route>
 
-            <Route exact path="/edit/:id" component={EditTask}/>
-            <Route exact path="/addtask" component={Addtask} />
-            <Route exact path="/viewtask" component={ViewTask} />
-
-            <Route exact path="/editTwitter/:id" component={EditTwitters}/>
-            {/* <Route exact path="/addtwitters" component={ViewTwitters} /> */}
-            <Route exact path="/viewTwitter" component={ViewTwitters} />
-
-            {/* <Route exact path="/twitter" component={Twitter} />
-            <Route exact path="/twitter/add" component={Twitter} /> */}
-            <Route exact path="/chat" component={Comunicator} />
-            <Route exact path="/profile/admin" component={ViewAdmin} />
-            <Route exact path="/profile/film" component={ViewsFilm} />
-            <Route exact path="/profile/film/programing" component={Programing} />
-            <Route exact path="/profile/film/music" component={Music} />
-            <Route exact path="/profile/film/mountains" component={Mountains} />
-            <Route exact path="/profile/film/story" component={Story} />
-            <Route exact path="/list-works" component={Works} />
-            <Route exact path="/list" component={Context} />
-            <Route exact component={Error404}></Route>
-            </Switch>
-        </div>
-      </Router>
-    )
+                    <Route exact path="/browse" component={Index}></Route>
+                    <Route exact path="/film/:id" component={Film}></Route>
+                    <Route exact path="/watch" component={ResponsivePlayer}></Route>
+                    <Route exact path="/choose-plan/" component={ChoosePlan}></Route>
+                    <Route exact path="/cart/" component={Cart}></Route>
+                    <Route exact path="/news/" component={News}></Route>
+                    <Route exact path="/YourAccount/" component={YourAccount}></Route>
+                    <Route exact path="/information/" component={Information}></Route>
+                    <Route component={Error}></Route>
+                </Switch>
+            </AppContext.Provider>
+        </BrowserRouter>
+      </div>
+    );
   }
 }
 
-export default App
+export default App;
