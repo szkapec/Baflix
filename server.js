@@ -44,16 +44,16 @@ app.use('/PicturesTwo', PicturesTwo);
 var PicturesThree = require('./routes/PicturesThree');
 app.use('/PicturesThree', PicturesThree); 
 
-var HightSlider = require('./routes/hightSlider');
+var HightSlider = require('./routes/HightSlider');
 app.use('/hightSlider', HightSlider); 
 
 
 
 if(process.env.NODE_ENV === "production") {
   //set static folder
-  app.use(express.static('../netflyx/build'));
+  app.use(express.static('client/build'));
   app.get('*', (req,res) => {
-    res.sendFile(path.resolve(__dirname, '../', 'netflyx', 'build', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
 
