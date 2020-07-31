@@ -31,7 +31,14 @@
     "react-icons": "^3.9.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
-    "uuid": "^7.0.3"
+    "uuid": "^7.0.3",
+    "react-player": "^2.6.0",
+    "react-tabs": "^3.1.1",
+    "styled-components": "^5.0.1",
+    "swiper": "^5.4.5",
+    "json-server": "^0.16.1",
+    "react-router": "^5.2.0",
+    "react-web-media-player": "^1.1.6"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
