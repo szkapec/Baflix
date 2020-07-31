@@ -14,7 +14,7 @@ export default class Film extends Component {
     }
 
         componentDidMount() {
-            axios.get(`http://localhost:5000/filmsOne/`).then(res => {
+            axios.get(`/filmsOne/`).then(res => {
                 res.data.map(item => {
                     if(item.id===this.props.match.params.id) {
                         this.setState({
