@@ -15,16 +15,13 @@ import Error from './components/projects/Error/Error';
 import Information from './components/pages/Information/Information';
 class App extends React.Component {
 
-  state = {
+  state = { // git add . // git commit -am 'version ...' //git push heroku master
     value: 'Wybór',
     cart: [
- 
     ],
     like: [
-
     ],
     heart: [
-  
     ]
   }
 
@@ -34,25 +31,52 @@ class App extends React.Component {
   })
 }
 
-  addCart = (item) => {
-    this.setState({
-      cart: [...this.state.cart, item]
-    })
-    console.log(this.state.cart.length+1)
+  addCart = (items) => {
+    let fill = this.state.cart.filter(item => item===items)
+    console.log(fill)
+    if(fill.length===0) {
+      this.setState({
+        cart: [...this.state.cart, items]
+      })
+    }
+ 
 }
 
-  addLike = (item) => {
+  addLike = (items) => {
+    let fill = this.state.like.filter(item => item===items)
+    if(fill.length===0) {
     this.setState({
-      like: [...this.state.like, item]
+      like: [...this.state.like, items]
     })
-    console.log(this.state)
-  }
-  addHeart = (item) => {
+  }}
+  addHeart = (items) => {
+    let fill = this.state.heart.filter(item => item===items)
+    if(fill.length===0) {
     this.setState({
-      heart: [...this.state.heart, item]
+      heart: [...this.state.heart, items]
     })
-    console.log(this.state)
+  }}
+
+
+  removeCart = (items) => {
+      let filt = this.state.cart.filter(item => item!==items)
+    this.setState({
+      cart: filt
+    })
   }
+  removeLike = (items) => {
+      let filt = this.state.cart.filter(item => item!==items)
+    this.setState({
+      like: filt
+    })
+  }
+  removeHeart = (items) => {
+      let filt = this.state.cart.filter(item => item!==items)
+    this.setState({
+      heart: filt
+    })
+  }
+
 
   render() {
 
@@ -62,6 +86,9 @@ class App extends React.Component {
       addCart: this.addCart,
       addLike: this.addLike,
       addHeart: this.addHeart,
+      removeCart: this.removeCart,
+      removeLike: this.removeLike,
+      removeHeart: this.removeHeart,
     }
 
 

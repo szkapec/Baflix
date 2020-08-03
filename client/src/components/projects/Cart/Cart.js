@@ -7,15 +7,21 @@ export default function Cart(props) {
     
 
     return (
+        <>
+         <Image alt={image} className="img-baflix" src={image}></Image>
         <StyledAll>
+           
             <AppContext.Consumer>
                 {(context) => {
                    return <div key={context}>
-                       <img alt={image} className="img-baflix" src={image}></img>
+                       
                             
 
-                            {!context.cart.length===0 ? null : <h2>Moja lista filmów i seriali </h2>}
-                            {context.cart.length===0 ? <div>Nie masz dodanych filmów i seriali do obejrzenia</div> : null}
+                            {context.cart.length===0 ? null : <h2>Moja lista filmów i seriali </h2>}
+                            {context.cart.length===0&&context.heart.length===0&&context.like.length===0 ? <div><h2>Moja lista filmów i seriali</h2>Nie masz dodanych filmów i seriali do obejrzenia</div> : null}
+                       
+                       
+                      
 
 
                             {context.cart&&context.cart.map(item => {
@@ -23,7 +29,14 @@ export default function Cart(props) {
                                 <div>Tytuł: {item.alt}</div>
                                 <div className="container-img">
                                     <img alt={item.img} className="img-film" src={item.img}></img>
-                                    <span alt={item.alt} className="relative"><Link to={'/film/'+item.id}><i className="fas fa-play"></i></Link></span>
+                                    <span alt={item.alt} className="relative">
+                                        <Link to={'/film/'+item.id}>
+                                            <i className="fas fa-play"></i>
+                                        </Link>
+                                        <span onClick={()=> {
+                                          context.removeCart(item);
+                                           }}><i className="fas fa-trash-alt"></i></span>
+                                        </span>
                                 </div>
                             </div>
                             })}
@@ -31,17 +44,23 @@ export default function Cart(props) {
                 }}
             </AppContext.Consumer>
             <AppContext.Consumer>
-                {(context) => {
-                   return <div key={context}>
-                            <img alt={image} style={{opacity:'0'}} className="img-baflix" src={image}></img>
-                            {!context.like.length===0 ? null : <h2>Polubione filmy i seriale </h2>}
-                            {context.like.length===0 ? <div>Brak polubień</div> : null}
+                {(context) => { return context.like.length!==0 && <div key={context}>
+                            {context.like.length===0 ? null : <h2>Polubione filmy i seriale </h2>}
                             {context.like&&context.like.map(item => {
                              return <div key={item.id}>
                                 <div>Tytuł: {item.alt}</div>
                                 <div className="container-img">
                                     <img alt={item.img} className="img-film" src={item.img}></img>
-                                    <span alt={item.alt} className="relative"><Link to={'/film/'+item.id}><i className="fas fa-play"></i></Link></span>
+                                    <span alt={item.alt} className="relative">
+                                        <Link to={'/film/'+item.id}>
+                                            <i className="fas fa-play"></i>
+                                        </Link>
+                                        <span onClick={()=> {
+                                          context.removeLike(item);
+                                           }}><i className="fas fa-trash-alt"></i>
+                                           </span>
+                                        </span>
+                                        
                                 </div>
                             </div>
                             })}
@@ -50,16 +69,22 @@ export default function Cart(props) {
             </AppContext.Consumer>
             <AppContext.Consumer>
                 {(context) => {
-                   return <div key={context}>
-                            <img alt={image} style={{opacity:'0'}} className="img-baflix" src={image}></img>
-                            {!context.heart.length===0 ? null : <h2>Ulubione</h2>}
-                            {context.heart.length===0 ? <div>Brak ulubionych</div> : null}
+                   return context.heart.length!==0 && <div key={context}>
+                            {context.heart.length===0 ? null : <h2>Ulubione</h2>}
                             {context.heart&&context.heart.map(item => {
                              return <div key={item.id}>
                                 <div>Tytuł: {item.alt}</div>
                                 <div className="container-img">
                                     <img alt={item.img} className="img-film" src={item.img}></img>
-                                    <span alt={item.alt} className="relative"><Link to={'/film/'+item.id}><i className="fas fa-play"></i></Link></span>
+                                    <span alt={item.alt} className="relative">
+                                        <Link to={'/film/'+item.id}>
+                                            <i className="fas fa-play"></i>
+                                        </Link>
+                                        <span onClick={()=> {
+                                          context.removeHeart(item);
+                                           }}><i className="fas fa-trash-alt"></i>
+                                           </span>
+                                        </span>
                                 </div>
                             </div>
                             })}
@@ -68,54 +93,41 @@ export default function Cart(props) {
             </AppContext.Consumer>
             
         </StyledAll>
+        </>
     )
   
 
 }
-
+const Image = styled.img`
+        width: 120px;
+        height: 60px;
+        margin:100px 100px 0px;
+`
 
 const StyledAll = styled.div`
-
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-
-    @media(min-width: 800px) {
-        grid-template-columns: repeat(2, 1fr);
-
-    }
-    @media(min-width: 1200px) {
-        grid-template-columns: repeat(3, 1fr);
-    }
-.div1 { grid-area: 1 / 1 / 2 / 2; }
-.div2 { grid-area: 1 / 2 / 2 / 3; }
-.div3 { grid-area: 1 / 3 / 2 / 4; } 
-
-
     color: white;
     margin-top: 60px;
     margin-left: 10px;
 
-
     .container-img {
         position: relative;
     }
-    .img-baflix {
-        width: 120px;
-        height: 60px;
-        margin:20px auto 40px;
-      
-    }
+
     .relative { 
   
         position: absolute;
-        top: 30px;
+        top: 10px;
         left: 40px;
         margin-bottom: 30px;
         margin-top: 30px;
         svg {
             color: red;
+            width: 20px;
+            height: 20px;
+            margin-right: 20px;
+            @media(min-width:1000px) {
+                height: 40px;
+            }
             :hover {
                 color: #c0392b;
             }
@@ -144,9 +156,19 @@ const StyledAll = styled.div`
         margin-left: 60px;
 
         .img-film {
-        width: 300px;
-        height: 140px;
+        width: 400px;
+        height: 240px;
         margin-bottom: 50px
+        }
+    }
+    @media(min-width: 1000px){
+        .img-film {
+            width: 500px;
+            height: 340px;
+            margin-bottom: 50px
+        }
+        img {
+            width: 100px;
         }
     }
 `

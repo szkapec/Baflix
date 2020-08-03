@@ -28,13 +28,13 @@ export default [
     {"id":5, "alt":"Parasite", "img":"https://cdn.pixabay.com/photo/2020/07/11/13/35/heron-5394026_960_720.jpg",
       "text": "Kiedy Ki-woo dostaje pracę jako korepetytor córki zamożnego małżeństwa, wymyśla sposób na zapewnienie zatrudnienia również reszcie swojej rodziny."
       ,"top":4
-      ,"seazon":0
+      ,"seazon":0, "time":" czas 2godz 23min"
     , "type": "Dramat", "triller":"https://www.filmweb.pl/serial/Dark-2017-771383"},
 
   {"id":6, "alt":"Gospel", "img":"https://cdn.pixabay.com/photo/2020/07/22/08/17/power-station-5428427_960_720.jpg", 
     "text": "The Gospel' jest współczesnym dramatem o miłości i zbawieniu, osadzonym w świecie muzyki gospel i Afro - Amerykańskiego kościoła.",
     "top":5,
-    "seazon": 0, "type":"Dramat", "triller":"https://www.filmweb.pl/video/Zwiastun/Gospel+Zwiastun+nr+1-15375"},
+    "seazon": 0, "time":" czas 2godz 39min", "type":"Dramat", "triller":"https://www.filmweb.pl/video/Zwiastun/Gospel+Zwiastun+nr+1-15375"},
 
    
     {"id":1, "alt":"Trzynascie powodów", "img":"https://cdn.pixabay.com/photo/2020/04/18/18/18/door-5060421_960_720.jpg", 

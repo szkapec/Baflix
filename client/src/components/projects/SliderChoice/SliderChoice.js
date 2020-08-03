@@ -48,7 +48,6 @@ export default class SliderChoice extends Component {
         let sort = (item) => {
           let values = picture&&picture.filter(item => item.type===value);
           this.state.slidesPerView = values
-          console.log(values)
           if(values.length === 0) return;
           return values.map(items => (
             <div style={{width: '300px', marginRight: '5px'}} key={items.id} className="swiper-slide">
@@ -76,10 +75,7 @@ export default class SliderChoice extends Component {
                                       </>
                                       )}
                             </AppContext.Consumer>
-                  
                   </span>
-
-            
          </div>
           ))
         }
@@ -89,7 +85,6 @@ export default class SliderChoice extends Component {
         {value !== "Wybór" && (
              <StyledAll className="containerFilms">
              {netflix&&<h1>Baflix</h1>}
-             {console.log(value)}
               {value !== "Wybor" ? <h2>Wyszukiwarka w serwisie Baflix: Kategoria <b>{value}</b></h2> : null}
                <Swiper {...params} className="swiper-container">
                 {value!== "Wybor" && sort()}

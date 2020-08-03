@@ -10,29 +10,29 @@ export default class Footer extends Component {
                 <span className="footer-span">Jakieś pytania? Zadzwoń <Link to="/">888-888-888</Link> </span>
                 <div className="footer-columns">
                     <ul>
-                        <li><Link to="/">FAQ</Link></li>
-                        <li><Link to="/">Relacje z inwestorami</Link></li>
-                        <li><Link to="/">Często zadawane pytania</Link></li>
-                        <li><Link to="/">Jak oglądać?</Link></li>
-                        <li><Link to="/">Informacje o firmie</Link></li>
+                        <li><Link to="/browse">FAQ</Link></li>
+                        <li><Link to="/browse">Inwestorzy</Link></li>
+                        <li><Link to="/browse">Często zadawane pytania</Link></li>
+                        <li><Link to="/browse">Jak oglądać?</Link></li>
+                        <li><Link to="/browse">Informacje o Baflix</Link></li>
                     </ul>
                     <ul>
-                        <li><Link to="/">Centrum pomocy</Link></li>
-                        <li><Link to="/">Praca</Link></li>
-                        <li><Link to="/">Warunki korzystania</Link></li>
-                        <li><Link to="/">Skontaktuj się z nami</Link></li>
+                        <li><Link to="/browse">Centrum pomocy</Link></li>
+                        <li><Link to="/browse">Warunki</Link></li>
+                        <li><Link to="/browse">Warunki korzystania</Link></li>
+                        <li><Link to="/browse">Kontakt</Link></li>
                     </ul>
                     <ul>
-                        <li><Link to="/">Konto</Link></li>
-                        <li><Link to="/">Karty podarunkowe</Link></li>
-                        <li><Link to="/">Prywatność</Link></li>
-                        <li><Link to="/">Test prędkości</Link></li>
+                        <li><Link to="/browse">Konto</Link></li>
+                        <li><Link to="/browse">Karty</Link></li>
+                        <li><Link to="/browse">Prywatność</Link></li>
+                        <li><Link to="/browse">Test prędkości</Link></li>
                     </ul>
                     <ul>
-                        <li><Link to="/">Media center</Link></li>
-                        <li><Link to="/">Kup karty podarunkowe</Link></li>
-                        <li><Link to="/">Ustawienia plików cookie</Link></li>
-                        <li><Link to="/">Informacje prawne</Link></li>
+                        <li><Link to="/browse">Media center</Link></li>
+                        <li><Link to="/browse">Kup karty podarunkowe</Link></li>
+                        <li><Link to="/browse">Pliki cookie</Link></li>
+                        <li><Link to="/browse">Informacje prawne</Link></li>
                     </ul>
                     
                      </div>

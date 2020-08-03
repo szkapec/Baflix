@@ -56,7 +56,7 @@ export default class SliderFilms extends Component {
                               </StyledText>
                             <Description>
                               <div>Gatunek: <b>{item.type}</b></div>
-                              <div> Liczba sezonów: <b>{item.seazon}</b></div>
+                              <div> {item.seazon===0?"Film " : "Liczba sezonów:"} <b>{item.seazon!==0?item.seazon:item.time}</b></div>
                               <div>Triller: <button><a href={item.triller}>triller</a></button> </div>
                             </Description>
                              
