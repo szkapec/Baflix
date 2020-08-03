@@ -14,23 +14,23 @@ export default class News extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/description').then(res => {
+        axios.get('/description').then(res => {
             this.setState({
                 description: res.data,
             })
     }).catch(err => console.log(err))
 
-    axios.get('http://localhost:5000/pictures').then(res => {
+    axios.get('/pictures').then(res => {
         this.setState({
             pictures: res.data,
         })                
 }).catch(err => console.log(err))
-    axios.get('http://localhost:5000/picturesThree').then(res => {
+    axios.get('/picturesThree').then(res => {
         this.setState({
             picturesThree: res.data,
         })
     }).catch(err => console.log(err))
-    axios.get('http://localhost:5000/picturesTwo').then(res => {
+    axios.get('/picturesTwo').then(res => {
         this.setState({
             picturesTwo: res.data,
         })
