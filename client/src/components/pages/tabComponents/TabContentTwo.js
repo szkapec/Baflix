@@ -11,26 +11,26 @@ export default function TabContentTwo() {
         <TabContainer>
             <div className="tab-content">
                 <div className="tab-top-content">
-                    <span className="title">Watch TV shows and movies anytime, anywhere - prersonalized for you.</span>
+                    <span className="title">Oglądaj programy telewizyjne i filmy w dowolnym miejscu i czasie - spersonalizowane dla Ciebie</span>
                     <Link className="btn" to="/choose-plan">
-                    <Button>try it now</Button>
+                    <Button>Spróbuj teraz</Button>
                     </Link>
                 </div>
                 <div className="tab-bottom-content">
                     <div>
                         <img className="tab-img" src={tabTv} alt="tabTv"/>
-                        <h3>Watch on your TV</h3>
-                        <p>Smart TVs, playstation, Xbox, Chomecast, Apple TV, Blu-ray players and more.</p>
+                        <h3>Oglądaj na telewizorze</h3>
+                        <p>Telewizory Smart TV, playstation, Xbox, Chromecast, Apple TV, Blu-ray.</p>
                     </div>
                     <div>
                         <img className="tab-img" src={tablet} alt="tablet"/>
-                        <h3>Watch on your TV</h3>
-                        <p>Smart TVs, playstation, Xbox, Chomecast, Apple TV, Blu-ray players and more.</p>
+                        <h3>Oglądaj na tablecie</h3>
+                        <p>Telewizory Smart TV, playstation, Xbox, Chromecast, Apple TV, Blu-ray. </p>
                     </div>
                     <div >
                         <img className="tab-img" src={mac} alt="mac"/>
-                        <h3>Watch on your TV</h3>
-                        <p>Smart TVs, playstation, Xbox, Chomecast, Apple TV, Blu-ray players and more.</p>
+                        <h3>Oglądaj na telefonie</h3>
+                        <p>Telewizory Smart TV, playstation, Xbox, Chromecast, Apple TV, Blu-ray. </p>
                     </div>
                 </div>
                 
@@ -45,13 +45,21 @@ export default function TabContentTwo() {
 const TabContainer = styled.div`
     background: var(--main-deep-dark);
     color: white;
+    line-height: 30px;
+    button{
+        min-width: 160px;
+        margin: 10px -50px;
+    }
     .tab-content {
-        margin: 0 15%;
+        line-height: 30px;
+        margin: 0 auto;
         .title {
+            margin: 0 11%;
+            font-size: 20px;
+            line-height: 30px;
+        @media(min-width: 1440px) {
+            line-height: 30px;
             font-size: 32px;
-            @media(max-width: 1440px) {
-                font-size: 20px;
-            line-height: 1;
             }
         }
     }
@@ -70,6 +78,7 @@ const TabContainer = styled.div`
               text-align: center;
               row-gap: 18px;
             }
+           
 
     }
     span {
@@ -82,7 +91,6 @@ const TabContainer = styled.div`
         margin-top: 32px; 
         @media(max-width: 1440px) {
             font-size: 20px;
-            line-height: 1;
             }
 
     }

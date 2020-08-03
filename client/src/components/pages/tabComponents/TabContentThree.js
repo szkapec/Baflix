@@ -11,9 +11,9 @@ export default function TabContentThree() {
         <TabContainer>
             <div className="tab-content">
                 <div className="tab-top-content">
-                    <span className="title">Choose one plan and watch everything on Baflix</span>
+                    <span className="title">Wybierz jeden plan i oglądaj wszystko na Baflix</span>
                     <Link className="btn" to="/choose-plan">
-                        <Button>try it now</Button>
+                        <Button>Spróbuj teraz</Button>
                     </Link>
                 </div>
                 <div className="tab-bottom-content">
@@ -21,50 +21,50 @@ export default function TabContentThree() {
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>Basic</th>
-                                <th>Standard</th>
+                                <th>Postawowy</th>
+                                <th>Standardowy</th>
                                 <th>Premium</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>monthly price</td>
+                                <td>Cena za miesiąc</td>
                                 <td>$9.99</td>
                                 <td>$13.99</td>
                                 <td>$16.99</td>
                             </tr>
                             <tr>
-                                <td>HD available</td>
+                                <td>HD</td>
                                 <td><Icon icon={cross} size={10}/></td>
                                 <td><Icon icon={checkmark} size={10}/></td>
                                 <td><Icon icon={checkmark} size={10}/></td>
                             </tr>
                             <tr>
-                                <td>Ultra HD available</td>
+                                <td>Ultra HD</td>
                                 <td><Icon icon={cross} size={10}/></td>
                                 <td><Icon icon={checkmark} size={10}/></td>
                                 <td><Icon icon={checkmark} size={10}/></td>
                             </tr>
                             <tr>
-                                <td>Screen you can watch on the same time</td>
+                                <td>Ilość urządzeń</td>
                                 <td>1</td>
                                 <td>2</td>
                                 <td>4</td>
                             </tr>
                             <tr>
-                                <td>Watch on your laptop, TV, phone and tablet</td>
+                                <td>Oglądaj na swoim laptopie, telewizorze, telefonie i tablecie</td>
                                 <td><Icon icon={checkmark} size={10}/></td>
                                 <td><Icon icon={checkmark} size={10}/></td>
                                 <td><Icon icon={checkmark} size={10}/></td>
                             </tr>
                             <tr>
-                                <td>Unlimited movies and TV shows</td>
+                                <td>Oglądaj na swoim telewizorze, telefonie i tablecie</td>
                                 <td><Icon icon={checkmark} size={10}/></td>
                                 <td><Icon icon={checkmark} size={10}/></td>
                                 <td><Icon icon={checkmark} size={10}/></td>
                             </tr>
                             <tr>
-                                <td>Cancel anytime</td>
+                                <td>Anuluj w dowolnym momencie</td>
                                 <td><Icon icon={checkmark} size={10}/></td>
                                 <td><Icon icon={checkmark} size={10}/></td>
                                 <td><Icon icon={checkmark} size={10}/></td>
@@ -83,14 +83,10 @@ const TabContainer = styled.div`
     background: var(--main-deep-dark);
     margin: 0 auto;
     color: white;
- 
+
     .tab-top-content {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
         padding: 48px 0 0;
         @media(max-width: 1350px){
-            grid-template-columns: 1fr;
-            row-gap: 18px;
             text-align: center;
             color: white;
             font-size: 15px;
@@ -98,15 +94,23 @@ const TabContainer = styled.div`
     
     }
     .tab-content {
-        margin: 0 15%;
+        margin: 0 1%;
+        @media(min-width: 900px) {
+            margin: 0 15%;
+        }
         padding-bottom: 48px 0 0;
         .title {
-            float: left;
-            font-size: 32px;
-            @media(max-width: 1350px){
-                font-size: 20px;
-                line-height: 1;
+            text-align: left;
+            margin: 0 5%;
+            font-size: 20px;
+            line-height: 30px;
+        @media(min-width: 600px) {
+            margin: 0 11%;
         }
+        @media(min-width: 1440px) {
+            line-height: 30px;
+            font-size: 32px;
+            }
         }
     }
     span {
@@ -119,16 +123,18 @@ const TabContainer = styled.div`
 
     }
     .btn {
+        button {
+            min-width: 160px;
+            margin: 10px -50px;
+        }
         grid-column: 9/12;
-        margin-left: 48px;
-        margin-right: 70px;
         @media(max-width: 960px){
             grid-column: 1/-1;
             margin-left: 30%;
             margin-right: 30%;
         }
-
     }
+
     .tab-bottom-content {
      margin: 32px auto;   
     }

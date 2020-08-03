@@ -148,6 +148,7 @@ const FormContainer = styled.div`
         border-radius: 0.25rem;
         height: 3rem;
         padding: 15px 18px 0;
+        max-width: 99%;
     }
     form div label {
         position: absolute;

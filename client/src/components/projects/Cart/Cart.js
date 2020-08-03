@@ -13,6 +13,7 @@ export default function Cart(props) {
                    return <div key={context}>
                        <img alt={image} className="img-baflix" src={image}></img>
                             
+
                             {!context.cart.length===0 ? null : <h2>Moja lista filmów i seriali </h2>}
                             {context.cart.length===0 ? <div>Nie masz dodanych filmów i seriali do obejrzenia</div> : null}
 
@@ -51,7 +52,7 @@ export default function Cart(props) {
                 {(context) => {
                    return <div key={context}>
                             <img alt={image} style={{opacity:'0'}} className="img-baflix" src={image}></img>
-                            {!context.heart.length===0 ? null : <h2>Ulubione!</h2>}
+                            {!context.heart.length===0 ? null : <h2>Ulubione</h2>}
                             {context.heart.length===0 ? <div>Brak ulubionych</div> : null}
                             {context.heart&&context.heart.map(item => {
                              return <div key={item.id}>

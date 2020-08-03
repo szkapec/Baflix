@@ -7,6 +7,7 @@ import TabComponentOne from './TabContentOne';
 import TabComponentTwo from './TabContentTwo';
 import TabComponentThree from './TabContentThree';
 import './tab.js.css';
+import styled from 'styled-components';
 class TabComponents extends Component {
     state = {
         tabIndex: 0,
@@ -18,18 +19,18 @@ class TabComponents extends Component {
                     <TabList className="tab-nav-container">
                         <Tab className={`${this.state.tabIndex === 0 ? 'active tab-selected' : null}`}>
                             <TabDor/>
-                            <p><strong className="lgScreen">No commitments <br/> Cancel online at anytime</strong></p>
-                            <span className="mdScreen">Cancel</span>
+                            <p><strong className="lgScreen">Żadnych zobowiązań <br/> Anuluj w dowolnym momencie</strong></p>
+                            <span className="mdScreen">Anuluj</span>
                         </Tab>
                         <Tab className={`${this.state.tabIndex === 1 ? 'active tab-selected' : null}`}>
                             <TabDevices/>
-                            <p  style={{marginTop:"-5.3rem"}}><strong className="lgScreen">Watch anywhere</strong></p>
-                            <span className="mdScreen">Devices</span>
+                            <p  style={{marginTop:"-5.3rem"}}><strong className="lgScreen">Oglądaj wszędzie, na każdym urządzeniu</strong></p>
+                            <span className="mdScreen">Urządzenia</span>
                         </Tab>
                         <Tab className={`${this.state.tabIndex === 2 ? 'active tab-selected' : null}`}>
                             <TabPrice/>
-                            <p><strong className="lgScreen">Pick your price</strong></p>
-                            <span className="mdScreen">Price</span>
+                            <StyledPriceP><strong className="lgScreen">Wybierz pakiet</strong></StyledPriceP>
+                            <span className="mdScreen price">Cena</span>
                         </Tab>
                     </TabList>
                     <TabPanel>
@@ -47,3 +48,8 @@ class TabComponents extends Component {
     }
 }
 export default TabComponents;
+
+
+const StyledPriceP = styled.p`
+    margin: 0;
+`

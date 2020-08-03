@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
 export const StyledAll = styled.div`
-
 .B_absolute {
   position:absolute;
-  top: 10px;
+  top: 20px;
   left: 10px;
   color: #c0392b;
   font-weight: 900;
-  font-size: 22px;
+  font-size: 16px;
   cursor: default;
   @media(min-width: 680px) {
     top: 10px;
@@ -30,6 +29,13 @@ export const StyledAll = styled.div`
   text-decoration: underline;
   letter-spacing: 3px;
   cursor: default;
+  font-size: 12px;
+  @media(min-width: 400px) {
+    font-size: 14px;
+  }
+  @media(min-width: 700px) {
+    font-size: 16px;
+  }
 }
 .swiper-container {
       width: 100%;
@@ -62,8 +68,12 @@ export const StyledAll = styled.div`
       font-weight: 900;
     }
     h2 {
+      font-size: 24px;
       margin-left: 20px;
       color: white;
+      @media(min-width: 600px) {
+        font-size: 28px;
+      }
     }
 
     :root {
@@ -75,34 +85,29 @@ export const StyledAll = styled.div`
     }
 
 
-
-    /* .swiper-slide:hover {
-        transform: scale(1.4);
-        z-index: 9999;
-    } */
     .swiper-slide:nth-child(1):hover {
-      margin: 0 30px;
+      margin: 0 10px;
     }
 
     .swiper-slide:nth-child(10):hover {
-      margin: 0 -30px;
+      margin: 0 -10px;
     }
 
     @media(min-width:500px) {
       .swiper-slide:nth-child(1):hover {
-        margin: 0 35px;
+        margin: 0 10px;
       }
       .swiper-slide:nth-child(10):hover {
-        margin: 0 -35px;
+        margin: 0 -10px;
       }
     }
 
     @media(min-width:600px) {
       .swiper-slide:nth-child(1):hover {
-        margin: 0 40px;
+        margin: 0 10px;
       }
       .swiper-slide:nth-child(10):hover {
-        margin: 0 -40px;
+        margin: 0 -10px;
       }
     }
 
@@ -185,9 +190,13 @@ padding: 30px 0;
 background-color: #222f3e;
 }
 .swiper-slide:hover {
-  transform: scale(1.4);
+  transform: scale(1.1);
   z-index: 9999;
+  @media(min-width: 700px){
+  transform: scale(1.4);
 }
+}
+
 
 .opacity {
   position: absolute;

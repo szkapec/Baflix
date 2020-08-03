@@ -13,14 +13,14 @@ class Header extends Component {
                 
                 <div className="header-top">
                         <StyledLogo src={logs}></StyledLogo>
-                    <NavLink to="/login" className="sugnIn-btn">Sign In</NavLink>
+                    <NavLink to="/login" className="sugnIn-btn">Zaloguj się</NavLink>
                 </div>
                 <div className="header-content">
-                    <StyledTitle>See what's next</StyledTitle>
-                    <StyledSubTitle>watch anywhere. Cancel anytime</StyledSubTitle>
+                    <StyledTitle>Witamy</StyledTitle>
+                    <StyledSubTitle>Nieograniczona oferta filmów, seriali, programów i nie tylko.</StyledSubTitle>
                     <Link to="/choose-plan">
                         <Button to="/choose-plan" className="main-offer-btn" primary>
-                            try it not
+                            Zapisz się
                             <Icon className="icon" icon={ic_keyboard_arrow_right} size={37}></Icon>
                         </Button>
                     </Link>
@@ -57,15 +57,16 @@ const StyledSubTitle = styled.h2`
 
 `
 const StyledLogo = styled.img`
-    width: 250px;
-    height: 100px;
+ width: 200px;
     position: absolute;
     top: 25%;
-    left: 50%;
+    left: 100px;
     transform: translate(-50%,-50%);
-    @media(max-width:736px){
-        left: 20%;
-        width: 200px;
+    margin-left: 0;
+    @media(min-width: 500px){
+        width: 350px;
+        height: 80px;
+        left: 150px;
     }
 
 `
@@ -146,7 +147,7 @@ const StyledHeader = styled.div`
         border: none;
         outline: none;
         margin: 10px 33%;
-        padding: 5px 15px;
+        padding: 10px 35px;
         border-radius: 5px;
         font-size: 24px;
         text-align: center;

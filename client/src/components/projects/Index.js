@@ -20,14 +20,14 @@ export default class Index extends Component {
 
     //.post('/users/register', {     /////////git add . ///git commit -m 'assdda' ///// git push heroku master xD
     componentDidMount() {
-        axios.get('/description').then(res => { 
+        axios.get('http://localhost:5000/description').then(res => { 
             console.log(res)
                 this.setState({
                     description: res.data[0],
                 })
         }).catch(err => console.log(err))
     //to juz jest z bazy danych 
-        axios.get('/filmsone').then(res => {
+        axios.get('http://localhost:5000/filmsone').then(res => {
                 this.setState({
                     pictures: res.data,
                 })
@@ -52,17 +52,17 @@ export default class Index extends Component {
         // }).catch(err => console.log(err))
         
 
-        axios.get('/picturesTwo').then(res => {
+        axios.get('http://localhost:5000/picturesTwo').then(res => {
             this.setState({
                 picturesTwo: res.data,
             })
         }).catch(err => console.log(err))
-        axios.get('/picturesThree').then(res => {
+        axios.get('http://localhost:5000/picturesThree').then(res => {
             this.setState({
                 picturesThree: res.data,
             })
         }).catch(err => console.log(err))
-        axios.get('/hightSlider').then(res => {
+        axios.get('http://localhost:5000/hightSlider').then(res => {
             this.setState({
                 hightSlider: res.data,
             })

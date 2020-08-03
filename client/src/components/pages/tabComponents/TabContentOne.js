@@ -12,10 +12,10 @@ import {Link} from 'react-router-dom';
                 <div className="containers">
                     <div className="tab-content">
                         <div>
-                            <span className="title" style={{marginBottom: '2rem'}}>If you decide Baflix isn't for you - no problem. No commitment. Cancel online anytime</span>
+                            <span className="title" style={{marginBottom: '2rem'}}>Jeśli zdecydujesz, że Baflix nie jest dla Ciebie - nie ma problemu, bez problemu anulujesz</span>
                             <br></br>
                             <Link to="/choose-plan">
-                            <Button style={{marginTop: '2rem'}}>try it now</Button>
+                            <Button style={{marginTop: '2rem'}}>Spróbuj teraz</Button>
                             </Link>
                         </div>
                         <img src={images} alt="tab1"/>
@@ -30,16 +30,16 @@ export default TabContentOne;
 
 
 const TabContentContainer = styled.div`
-
     background: var(--main-deep-dark);
+    line-height: 30px;
     .containers {
         margin: 0 10%;
     }
     img {
-        width: 300px;
-        @media(max-width: 960px){
-            margin: 0 auto;
-           width: 250px;
+        width: 200px;
+        margin: 0 auto;
+        @media(min-width: 960px){
+            width: 250px;
         }
    
     }
@@ -62,6 +62,7 @@ const TabContentContainer = styled.div`
 
     .title {
         margin-top: 32px; 
+      
         @media(max-width: 1440px){
             font-size: 20px;
             line-height: 1;
