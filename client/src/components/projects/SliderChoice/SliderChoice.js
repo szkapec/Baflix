@@ -48,6 +48,7 @@ export default class SliderChoice extends Component {
         let sort = (item) => {
           let values = picture&&picture.filter(item => item.type===value);
           this.state.slidesPerView = values
+          console.log(values)
           if(values.length === 0) return;
           return values.map(items => (
             <div style={{width: '300px', marginRight: '5px'}} key={items.id} className="swiper-slide">

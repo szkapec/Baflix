@@ -1,175 +1,113 @@
-/** @jsx jsx */
-import { useState, useEffect, useRef } from 'react'
-import { css, jsx } from '@emotion/core'
-import {SliderContent, Slide, Arrow, Dots} from './SliderContent'
+import React, { Component } from 'react'
+import Swiper from 'react-id-swiper';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
+import AppContext from '../../../context';
+import movies from '../../../assets/Glosss.m4a';
+ 
+export default class SliderFilms extends Component {
 
-
-const getWidth = () => window.innerWidth
-
-/**
- * @function Slider
- */
-const SliderFilms = props => {
-  const { slides } = props
-  const firstSlide = slides[0]
-  const secondSlide = slides[1]
-  const lastSlide = slides[slides.length - 1]
-
-  const [state, setState] = useState({
-    activeSlide: 0,
-    translate: getWidth(),
-    transition: 0.45,
-    id: 0,
-    _slides: [lastSlide, firstSlide, secondSlide]
-  })
-
-  const { activeSlide, translate, _slides, transition, id } = state
-
-  const autoPlayRef = useRef()
-  const transitionRef = useRef()
-  const resizeRef = useRef()
-
-  useEffect(() => {
-    autoPlayRef.current = nextSlide
-    transitionRef.current = smoothTransition
-    resizeRef.current = handleResize
-  })
-
-  useEffect(() => {
-    const play = () => {
-      autoPlayRef.current()
-    }
-
-    const smooth = e => {
-      if (e.target.className.includes('SliderContent')) {
-        transitionRef.current()
+    state = {
+        info: '',
+      }
+  
+      render() {
+        // const {id,img,time, alt, presage, seasons,type} = this.props
+        const {picture} = this.props
+        const params = {
+          slidesPerGroup: 1,
+          slidesPerView: 1,
+          pagination: {
+            type: 'bullets',
+            clickable: true,
+          },
+          breakpoints: {
+            0: {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+            },
+           
+        },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          spaceBetween: 10
+      }
+      let audio = new Audio(movies);
+        return(
+          <>
+            <StyledAll className="one">
+              <h2>Top filmy</h2>
+                <Swiper {...params} className="swiper-containers">
+                      {picture&&picture.map((item,id)=> {
+                        return <div key={id} className="swiper-slides">
+                            <StyledTop>
+                                Top {item.top}
+                            </StyledTop>
+                            <StyledText>
+                              <div className="">
+                              <StyledNameSeries>{item.alt}</StyledNameSeries>
+                                <StyledTitle>
+                                  {item.text}
+                                </StyledTitle>
+                              </div>
+                              
+                              </StyledText>
+                            <Description>
+                              <div>Gatunek: <b>{item.type}</b></div>
+                              <div> Liczba sezonów: <b>{item.seazon}</b></div>
+                              <div>Triller: <button><a href={item.triller}>triller</a></button> </div>
+                            </Description>
+                             
+                            <img className="pictures" src={item.img} alt={item.alt}/>
+                            <div className="absolut">
+                              <Link to={'film/'+item.id}><i className="fas fa-play"></i></Link>
+                                  
+                                  <AppContext.Consumer>
+                                    {(context) => {
+                                     return <span value={item.alt}  className="relative" onClick={()=> {
+                                       context.addCart(item)
+                                       audio.play() }}>
+                                          <i className="fas fa-plus-square"></i>
+                                        </span> 
+                                    }}
+                                  </AppContext.Consumer>
+                                  
+                            </div>
+                        </div>
+                      })}
+                </Swiper>
+            </StyledAll>
+         
+        </>
+        )
       }
     }
 
-    const resize = () => {
-      resizeRef.current()
-    }
-
-    const transitionEnd = window.addEventListener('transitionend', smooth)
-    const onResize = window.addEventListener('resize', resize)
-
-    let interval = null
-
-    if (props.autoPlay) {
-      interval = setInterval(play, props.autoPlay * 1000)
-    }
-
-    return () => {
-      window.removeEventListener('transitionend', transitionEnd)
-      window.removeEventListener('resize', onResize)
-
-      if (props.autoPlay) {
-        clearInterval(interval)
-      }
-    }
-  }, [])
-
-  useEffect(() => {
-    if (transition === 0) setState({ ...state, transition: 0.45 })
-  }, [transition])
-
-  const handleResize = () => {
-    setState({ ...state, translate: getWidth(), transition: 0 })
-  }
-
-  const smoothTransition = () => {
-    let _slides = []
-
-    // We're at the last slide.
-    if (activeSlide === slides.length - 1)
-      _slides = [slides[slides.length - 2], lastSlide, firstSlide]
-    // We're back at the first slide. Just reset to how it was on initial render
-    else if (activeSlide === 0) _slides = [lastSlide, firstSlide, secondSlide]
-    // Create an array of the previous last slide, and the next two slides that follow it.
-    else _slides = slides.slice(activeSlide - 1, activeSlide + 2)
-
-    setState({
-      ...state,
-      _slides,
-      transition: 0,
-      translate: getWidth()
-    })
-  }
-  const nextSlide = () =>
-    setState({
-      ...state,
-      id:  id>2?0:id+1,
-      translate: translate + getWidth(),
-      activeSlide: activeSlide === slides.length - 1 ? 0 : activeSlide + 1,
-
-    })
-  const prevSlide = () =>
-    setState({
-      id: id<0?3:id-1,
-      ...state,
-      translate: 0,
-      activeSlide: activeSlide === 0 ? slides.length - 1 : activeSlide - 1
-    })
-  return (
-    <div css={SliderCSS}>
-      <SliderContent
-        translate={translate}
-        key={translate}
-        transition={transition}
-        width={getWidth() * _slides.length}
-      >
-        {_slides.map((_slide, i) => {
-          return <Slide width={getWidth()} key={_slide.link + i + _slide} content={_slide.link} />
-      })}
-      </SliderContent>
-      <StyledTop>
-          Top {props.slides[activeSlide].top}
-      </StyledTop>
-      <StyledText>
-       <div className="">
-
-       <StyledNameSeries>{props.slides[activeSlide].alt}</StyledNameSeries>
-
-        <StyledTitle>
-          {props.slides[activeSlide].text}
-        </StyledTitle>
-        
-          
-       </div>
-       
-      </StyledText>
-      
-      <Description>
-            <div>Gatunek: <b>{props.slides[activeSlide].type}</b></div>
-            <div> Liczba sezonów: <b>{props.slides[activeSlide].seazon}</b></div>
-            <div>Triller: <button><a href={props.slides[activeSlide].triller}>triller</a></button> </div>
-          </Description>
-      <Arrow direction="left" handleClick={prevSlide} />
-      <Arrow direction="right" handleClick={nextSlide} />
-      <Dots slides={slides} activeSlide={activeSlide} />
-    </div>
-  )
-}
-
-
-
-const SliderCSS = css`
-  z-index:0;
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  margin: 0 auto;
-  overflow: hidden;
-`
 const StyledTop = styled.div`
   position:absolute;
   right: 10px;
-  top: 10px;
+  top: 30px;
   color:white;
   padding: 5px 10px;
   font-weight: 700;
   border: 2px solid white;
+`
+const StyledText = styled.div`
+  color: white;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+  right: 10px;
+  @media(min-width: 700px) {
+    width: 70%;
+    font-size: 18px;
+  }
+  @media(min-width: 1200px) {
+    width: 50%;
+    font-size: 20px;
+  }
 `
 
 const StyledNameSeries = styled.div`
@@ -189,22 +127,6 @@ const StyledNameSeries = styled.div`
   }
 `
 
-const StyledText = styled.div`
-  color: white;
-  position: absolute;
-  top: 50px;
-  left: 10px;
-  right: 10px;
-  @media(min-width: 700px) {
-    width: 70%;
-    font-size: 18px;
-  }
-  @media(min-width: 1200px) {
-    width: 50%;
-    font-size: 20px;
-  }
-`
-
 const StyledTitle = styled.div`
   width: 100%;
   text-align: center;
@@ -219,15 +141,14 @@ const StyledTitle = styled.div`
     font-size: 20px;
   }
 `
-
 const Description = styled.div`
-  position: absolute;
-  bottom: 100px;
-  left: 0px;
-  letter-spacing: 2.5px;
-  color: white;
-  margin: 30px 30px;
- 
+position: absolute;
+bottom: 100px;
+left: 0px;
+letter-spacing: 2.5px;
+color: white;
+margin: 30px 30px;
+
   div{
     margin-top: 15px;
   }
@@ -249,15 +170,69 @@ const Description = styled.div`
     color:black;
     text-decoration: none;
   }
-}
+  }
 
-button:hover {
+  button:hover {
   background-color: #555555;
- a {
+  a {
   color: white;
- }
+  }
 }
 `
+    
+    
+    const StyledAll = styled.div`
+    color: white;
+    position: relative;
+    margin-bottom: 10px;
+    h2 {
+      font-size: 24px;
+      margin-left: 20px;
+      color: white;
+      @media(min-width: 600px) {
+        font-size: 28px;
+      }
+    }
+    .pictures {
+      width: 100vw;
+      height: 80vh;
+     padding-top: 30px;
 
 
-export default SliderFilms
+    }
+    .absolut {
+      position: absolute;
+      bottom: 10px;
+      opacity: 1;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      svg {
+        height: 50px;
+        width: 50px;
+        border: 2px solid rgba(197,184,184,0.4);
+        background-color: rgba(197,184,184,0.5);
+        margin: 10px;
+        padding: 10px;
+        border-radius: 50%;
+        @media(min-width: 700px) {
+          margin: 30px;
+          padding: 10px;
+        }
+        :hover {
+          border: 2px solid rgba(197,184,184,0.7);
+          background-color: rgba(197,184,184,0.8);
+        }
+      }
+      a { 
+        text-decoration: none;
+        color: white;
+
+      }
+      :hover{
+          animation-name:opacity;
+      }
+    }
+
+`
+

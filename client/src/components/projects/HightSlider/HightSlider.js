@@ -63,7 +63,7 @@ export default class HightSlider extends Component {
                               <span className="title">{item.time}</span>
                              </div>
                             <br></br>
-                              <div> <span className="seasons">Sezonów <b>{item.seasons}</b></span> <b className="seasons"> || Typ {item.type}</b></div>
+                              <div> <span className="seasons">{item.seasons!=0?"Sezonów ":"Film "} <b>{item.seasons!=0&&item.seasons}</b></span> <b className="seasons"> || Typ {item.type}</b></div>
                              
                             </StyledSpan>
                             <img src={item.img} alt={item.alt}/>
@@ -115,7 +115,9 @@ export default class HightSlider extends Component {
         margin: 10px;
       }
       .description {
-        color: green;
+        color: red;
+        text-transform: uppercase;
+        text-decoration: underline;
       }
     `
     
@@ -129,7 +131,7 @@ export default class HightSlider extends Component {
       .B_absolute {
           position:absolute;
           top: 0px;
-          left: 10px;
+          left: 20px;
           color: #c0392b;
           font-weight: 900;
           font-size: 26px;
@@ -145,7 +147,7 @@ export default class HightSlider extends Component {
     .absolut {
       position: absolute;
       bottom: 50px;
-      opacity: 0;
+      opacity: 1;
       transition: 1000ms all;
       color: white;
       svg {
@@ -193,8 +195,8 @@ export default class HightSlider extends Component {
       img{
         height: 600px;
         width: 100%;
-        padding-top: 50px;
-        padding-bottom: 50px;
+        padding-top: 30px;
+        padding-bottom: 30px;
         background-color: black;
       }
       :hover {
@@ -213,7 +215,7 @@ export default class HightSlider extends Component {
           
         }
         .seasons {
-          color: green;
+          color: red;
         }
       }
     }

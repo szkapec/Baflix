@@ -84,7 +84,7 @@ export default class Index extends Component {
                 <IndexSlider description={description.two} picture={picturesTwo}/>
                 <IndexSlider description={description.four} picture={picturesThree}/>
                 
-                <SliderFilms slides={Images}/>
+                <SliderFilms picture={Images}/>
                 <IndexSlider description={description.two} picture={picturesTwo}/>
                 <IndexSlider description={description.four} picture={picturesThree}/>
                 <HightSlider picture={hightSlider}/>

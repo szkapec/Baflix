@@ -13,3 +13,11 @@
 }
 
 /* header container */
+
+.header.containers {
+    z-index: 0;
+}
+
+.navbar-link {
+    z-index:999;
+}

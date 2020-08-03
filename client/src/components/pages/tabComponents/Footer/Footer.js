@@ -7,32 +7,32 @@ export default class Footer extends Component {
     render() {
         return (
             <FooterContainer>
-                <span className="footer-span">Questions? Call <Link to="/">1-888-888-888</Link> </span>
+                <span className="footer-span">Jakieś pytania? Zadzwoń <Link to="/">888-888-888</Link> </span>
                 <div className="footer-columns">
                     <ul>
                         <li><Link to="/">FAQ</Link></li>
-                        <li><Link to="/">Inwestor Rekations</Link></li>
-                        <li><Link to="/">Ways to Watch</Link></li>
-                        <li><Link to="/">Corporate Information</Link></li>
-                        <li><Link to="/">Baflix Originals</Link></li>
+                        <li><Link to="/">Relacje z inwestorami</Link></li>
+                        <li><Link to="/">Często zadawane pytania</Link></li>
+                        <li><Link to="/">Jak oglądać?</Link></li>
+                        <li><Link to="/">Informacje o firmie</Link></li>
                     </ul>
                     <ul>
-                        <li><Link to="/">Help Center</Link></li>
-                        <li><Link to="/">Jobs</Link></li>
-                        <li><Link to="/">Tems of Use</Link></li>
-                        <li><Link to="/">Contact Us</Link></li>
+                        <li><Link to="/">Centrum pomocy</Link></li>
+                        <li><Link to="/">Praca</Link></li>
+                        <li><Link to="/">Warunki korzystania</Link></li>
+                        <li><Link to="/">Skontaktuj się z nami</Link></li>
                     </ul>
                     <ul>
-                        <li><Link to="/">Account</Link></li>
-                        <li><Link to="/">Redeem Gift</Link></li>
-                        <li><Link to="/">Privacy</Link></li>
-                        <li><Link to="/">Speed test</Link></li>
+                        <li><Link to="/">Konto</Link></li>
+                        <li><Link to="/">Karty podarunkowe</Link></li>
+                        <li><Link to="/">Prywatność</Link></li>
+                        <li><Link to="/">Test prędkości</Link></li>
                     </ul>
                     <ul>
                         <li><Link to="/">Media center</Link></li>
-                        <li><Link to="/">Buy gift Cards</Link></li>
-                        <li><Link to="/">Cookie Preferences</Link></li>
-                        <li><Link to="/">Legal Notices</Link></li>
+                        <li><Link to="/">Kup karty podarunkowe</Link></li>
+                        <li><Link to="/">Ustawienia plików cookie</Link></li>
+                        <li><Link to="/">Informacje prawne</Link></li>
                     </ul>
                     
                      </div>

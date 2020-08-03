@@ -18,7 +18,7 @@ export default function Information() {
                 <li>Context API</li>
                 <li>Swiper slide</li>
                 
-                <li>axios</li>
+                <li>Axios</li>
                 <li>Node</li>
                 <li>Express</li>
                 <li>Mongo DB</li>
@@ -36,7 +36,7 @@ export default function Information() {
 
 
 const StyledAll = styled.div`
-    margin-top: 60px;
+    margin-top: 100px;
     margin-left: 40px;
     color:white;
     

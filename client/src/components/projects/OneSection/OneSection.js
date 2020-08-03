@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import AppContext from '../../../context';
-
+import p640 from '../../../assets/640.jpg'
 class OneSection extends Component {
 
     state = {
@@ -92,10 +92,13 @@ const StyledContainer = styled.div`
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
-    background-image: url('https://cdn.pixabay.com/photo/2019/04/14/17/18/gun-4127187_960_720.jpg');
+    background-image: url(${p640});
     overflow: hidden;
     background-size: cover;
-    z-index: -1;
+    z-index: 1;
+    @media(min-width: 520px) {
+        background-image: url('https://cdn.pixabay.com/photo/2019/04/14/17/18/gun-4127187_960_720.jpg');
+    }
 `
 const StyledDescriptionTwo = styled.div`
     color:white;

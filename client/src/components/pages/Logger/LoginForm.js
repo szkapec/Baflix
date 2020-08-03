@@ -38,7 +38,7 @@ export default class LoginForm extends Component {
         }
         if(!this.state.email) {
             inputError = true;
-            errors.emailError = "Please enter a valid email"
+            errors.emailError = "Proszę wpisać prawidłowy email"
         } 
         else if (!this.state.email.match(reqexp)){
             inputError = true;
@@ -48,7 +48,7 @@ export default class LoginForm extends Component {
         }
         if(this.state.password.length<4) {
             inputError= true;
-            errors.passwordError= "Your password must contain between 4 and 60 charaters"
+            errors.passwordError= "Twoje hasło musi zawierać od 4 do 60 znaków"
         }
         this.setState({
             ...errors
@@ -73,10 +73,10 @@ export default class LoginForm extends Component {
             <FormContainer>
                 <div className="form-container">
                     <form>
-                        <h1>Sign in</h1>
+                        <h1>Zaloguj się</h1>
                         <div className="input-container">
                             <input onChange={this.handleEmailChange} value={this.state.email} className={this.state.emailError ? "input-error input-empty" : "input-empty"} type="email" required/>
-                            <label htmlFor="">Email or phone number</label>
+                            <label htmlFor="">E-mail lub numer telefonu</label>
                             <span style={{color:'#db7201'}}>{this.state.emailError}</span>
                         </div>
                         <div className="input-container">
@@ -89,17 +89,17 @@ export default class LoginForm extends Component {
                         </div>
                         <label className="checkbox-container">
                         <input type="checkbox" defaultChecked={this.state.checked} onChange={this.handlerChecked} />
-                           <span  className="remember"> Remember me</span>
+                           <span  className="remember"> Zapamiętaj mnie</span>
                             <span className="checkmark"></span>
                         </label>
-                        <Link to="/" className="need-help">Need help?</Link>
+                        <Link to="/" className="need-help">Potrzebujesz pomocy?</Link>
                         <div className="bottom-form">
                             <img src={FBlogo} alt="fb logo"/>
-                            <Link to="/" className="login-fb-text">Login with Facebook</Link>
+                            <Link to="/" className="login-fb-text">Zaloguj się przez facebooka</Link>
                             <br/>
                             <br/>
-                            <span>New to Baflix? </span>
-                            <Link style={{color:'white'}} to="/" className="sign-up-text"> Sign up now</Link>
+                            <span>Nowy w Baflix? </span>
+                            <Link style={{color:'white'}} to="/" className="sign-up-text"> Zapisz się teraz</Link>
                         </div>
                     </form>
                 </div>

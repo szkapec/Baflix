@@ -42,7 +42,7 @@ export class Logged extends Component {
       )
 
       const usersOption = (
-            <>
+            <span className="navbar-link">
             
                 <span>
                     
@@ -62,7 +62,7 @@ export class Logged extends Component {
                         <StyledImg src="https://placeimg.com/640/480/any" alt="picturerandoms"/>
                     </NavLink>
                 </span>
-            </>
+            </span>
       )
      
        const notification = (
@@ -71,7 +71,7 @@ export class Logged extends Component {
         </>
     )
         return (
-        <div style={{position: 'relative'}}>
+        <div className="navbar-link" style={{position: 'relative'}}>
             
             <StyledNav onClick={ () => this.setState({visible:false})} className="navbar navbar-expand-lg navbar-dark  "> 
                 <button
