@@ -11,29 +11,29 @@ export default [
     
   {"id":9, "alt":"Dom z papieru", "img":"https://cdn.pixabay.com/photo/2020/06/06/14/36/fantasy-5266805_960_720.jpg", 
   "text": "Ośmioro zamaskowanych przestępców napada na hiszpańską mennicę narodową. Ich przedstawicielem jest tajemniczy Profesor, który prowadzi negocjacje z policją.",
-  "top":5,
+  "top":1,
   "seazon": 3, "type":"Thriller", "Thriller":"https://www.filmweb.pl/video/Zwiastun/Dom+z+papieru+Zwiastun+nr+4+sezon+4%2C+polski-53184"},
   
     {"id":10, "alt":"Lucyfer", "img":"https://cdn.pixabay.com/photo/2015/04/23/12/32/hell-735995_1280.jpg"
     , "text": "Nieszczęśliwy i znudzony swoim bytem Lucyfer. Morningstar porzuca funkcję Władcy Piekieł, po czym udaje się do Los Angeles, gdzie zostaje właścicielem luksusowego klubu nocnego.",
-    "top": 1,
+    "top": 2,
    "seazon": 5, "type": "Fantasy", "triller":"https://www.filmweb.pl/serial/Lucyfer-2016-742520" },
 
     {"id":3, "alt":"Dark", "img":"https://cdn.pixabay.com/photo/2018/06/09/17/25/avenue-3464777_1280.jpg",
       "text": "Zaginięcie dzieci ujawnia podwójne życie i nadszarpnięte relacje członków czterech rodzin, łącząc się z wydarzeniami sprzed trzydziestu lat. "
-      ,"top":2
+      ,"top":3
       ,"seazon":3
     , "type": "Sci-Fi", "triller":"https://www.filmweb.pl/video/Zwiastun/Parasite+Zwiastun+nr+4+polski-51098"},
     
     {"id":5, "alt":"Parasite", "img":"https://cdn.pixabay.com/photo/2020/07/11/13/35/heron-5394026_960_720.jpg",
       "text": "Kiedy Ki-woo dostaje pracę jako korepetytor córki zamożnego małżeństwa, wymyśla sposób na zapewnienie zatrudnienia również reszcie swojej rodziny."
-      ,"top":3
+      ,"top":4
       ,"seazon":0
     , "type": "Dramat", "triller":"https://www.filmweb.pl/serial/Dark-2017-771383"},
 
   {"id":6, "alt":"Gospel", "img":"https://cdn.pixabay.com/photo/2020/07/22/08/17/power-station-5428427_960_720.jpg", 
     "text": "The Gospel' jest współczesnym dramatem o miłości i zbawieniu, osadzonym w świecie muzyki gospel i Afro - Amerykańskiego kościoła.",
-    "top":4,
+    "top":5,
     "seazon": 0, "type":"Dramat", "triller":"https://www.filmweb.pl/video/Zwiastun/Gospel+Zwiastun+nr+1-15375"},
 
    
